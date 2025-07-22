@@ -1,0 +1,35 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+title: Welcome to Causal Set Theory
+defaults:
+  maxdepth: 4
+parts:
+  - caption: Causal Set Theory Explained
+    maxdepth: 3
+    chapters:
+    - file: source/chapters/chapter_01.md
+    - file: source/chapters/chapter_02.md
+    - file: source/chapters/chapter_03.md
+    - file: source/chapters/chapter_04.md
+    - file: source/chapters/chapter_05.md
+    - file: source/chapters/chapter_06.md
+  - caption: Examples and Applications
+    maxdepth: 3
+    chapters:
+    - file: source/notebooks/action.ipynb
+    - file: source/notebooks/green_functions.ipynb
+  - caption: About Causal Set Theory
+    maxdepth: 3
+    chapters:
+    - file: source/project/CONTRIBUTING
+    - file: source/project/CHANGELOG
+    - file: source/project/AUTHORS
+  - caption: Sphinx Book Theme
+#    numbered: True  # Only applies to chapters in Part 1.
+    chapters:
+      - file: source/git_book/markdown
+      - file: source/git_book/notebooks
+      - file: source/git_book/markdown-notebooks
