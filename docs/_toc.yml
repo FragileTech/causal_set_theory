@@ -23,6 +23,7 @@ parts:
     - file: source/notebooks/green_functions.ipynb
     - file: source/notebooks/causal_sets.ipynb
     - file: source/questions/electromagnetism.md
+    - file: source/notebooks/chapter_5.ipynb
   - caption: About Causal Set Theory
     maxdepth: 3
     chapters:
