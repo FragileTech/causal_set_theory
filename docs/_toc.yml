@@ -21,6 +21,7 @@ parts:
     chapters:
     - file: source/notebooks/action.ipynb
     - file: source/notebooks/green_functions.ipynb
+    - file: source/notebooks/causal_sets.ipynb
   - caption: About Causal Set Theory
     maxdepth: 3
     chapters:
