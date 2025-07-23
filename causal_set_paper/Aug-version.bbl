@@ -1,0 +1,749 @@
+\begin{thebibliography}{165}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{Abajian and Carlip(2018)}]{carlipdrone}
+Abajian J, Carlip S (2018) {Dimensional reduction in manifoldlike causal sets}.
+  Phys Rev D 97:066007, \doi{10.1103/PhysRevD.97.066007}, \eprint{1710.00938}
+
+\bibitem[{Afshordi et~al(2012)Afshordi, Buck, Dowker, Rideout, Sorkin, and
+  Yazdi}]{sj2ddiamond}
+Afshordi N, Buck M, Dowker F, Rideout D, Sorkin RD, Yazdi YK (2012) {A Ground
+  State for the Causal Diamond in 2 Dimensions}. JHEP 10:088,
+  \doi{10.1007/JHEP10(2012)088}, \eprint{1207.7101}
+
+\bibitem[{Aghili et~al(2018)Aghili, Bombelli, and Pilgrim}]{bomemad}
+Aghili M, Bombelli L, Pilgrim BB (2018) {Statistical Lorentzian geometry and
+  the dimensionality of Minkowski space}. arXiv e-prints \eprint{1807.08701}
+
+\bibitem[{Ahmed and Rideout(2010)}]{davidmaqbool}
+Ahmed M, Rideout D (2010) {Indications of de Sitter Spacetime from Classical
+  Sequential Growth Dynamics of Causal Sets}. Phys Rev D 81:083528,
+  \doi{10.1103/PhysRevD.81.083528}, \eprint{0909.4771}
+
+\bibitem[{Ahmed and Sorkin(2013)}]{eptwo}
+Ahmed M, Sorkin R (2013) {Everpresent $\Lambda$. {II}. {S}tructural stability}.
+  Phys Rev D 87:063515, \doi{10.1103/PhysRevD.87.063515}, \eprint{1210.2589}
+
+\bibitem[{Ahmed et~al(2004)Ahmed, Dodelson, Greene, and Sorkin}]{lambdathree}
+Ahmed M, Dodelson S, Greene PB, Sorkin R (2004) Everpresent $\Lambda$. Phys Rev
+  D 69:103523, \doi{10.1103/PhysRevD.69.103523}
+
+\bibitem[{Ashtekar and Pullin(2017)}]{ashtekar}
+Ashtekar A, Pullin J (2017) {Applications}. In: Ashtekar A, Pullin J (eds) Loop
+  Quantum Gravity: The First 30 Years, World Scientific, p 181,
+  \doi{10.1142/9789813220003_others03}
+
+\bibitem[{Aslanbeigi et~al(2014)Aslanbeigi, Saravani, and Sorkin}]{gendalem}
+Aslanbeigi S, Saravani M, Sorkin RD (2014) {Generalized causal set
+  d`Alembertians}. JHEP 06:024, \doi{10.1007/JHEP06(2014)024},
+  \eprint{1403.1622}
+
+\bibitem[{Bachmat(2007)}]{bachmat}
+Bachmat E (2007) {Discrete spacetime and its applications}. arXiv e-prints
+  \eprint{gr-qc/0702140}
+
+\bibitem[{Barrow(2007)}]{barrow}
+Barrow JD (2007) {A Strong Constraint on Ever-Present Lambda}. Phys Rev D
+  75:067301, \doi{10.1103/PhysRevD.75.067301}, \eprint{gr-qc/0612128}
+
+\bibitem[{Beem et~al(1996)Beem, Ehrlich, and Easley}]{BE}
+Beem J, Ehrlich P, Easley K (1996) Global {L}orentzian Geometry. Marcel Dekker,
+  New York
+
+\bibitem[{Belenchia et~al(2015)Belenchia, Benincasa, and
+  Liberati}]{nonlocalfive}
+Belenchia A, Benincasa DMT, Liberati S (2015) {Nonlocal Scalar Quantum Field
+  Theory from Causal Sets}. JHEP 03:036, \doi{10.1007/JHEP03(2015)036},
+  \eprint{1411.6513}
+
+\bibitem[{Belenchia et~al(2016{\natexlab{a}})Belenchia, Benincasa, and
+  Dowker}]{bbd}
+Belenchia A, Benincasa DMT, Dowker F (2016{\natexlab{a}}) {The continuum limit
+  of a 4-dimensional causal set scalar d'Alembertian}. Class Quantum Grav
+  33:245018, \doi{10.1088/0264-9381/33/24/245018}, \eprint{1510.04656}
+
+\bibitem[{Belenchia et~al(2016{\natexlab{b}})Belenchia, Benincasa, Liberati,
+  Marin, Marino, and Ortolan}]{nonlocalqftfour}
+Belenchia A, Benincasa DMT, Liberati S, Marin F, Marino F, Ortolan A
+  (2016{\natexlab{b}}) {Testing Quantum Gravity Induced Nonlocality via
+  Optomechanical Quantum Oscillators}. Phys Rev Lett 116:161303,
+  \doi{10.1103/PhysRevLett.116.161303}, \eprint{1512.02083}
+
+\bibitem[{Belenchia et~al(2016{\natexlab{c}})Belenchia, Benincasa, Marciano,
+  and Modesto}]{diondr}
+Belenchia A, Benincasa DMT, Marciano A, Modesto L (2016{\natexlab{c}})
+  {Spectral Dimension from Nonlocal Dynamics on Causal Sets}. Phys Rev D
+  93:044017, \doi{10.1103/PhysRevD.93.044017}, \eprint{1507.00330}
+
+\bibitem[{Bell and Kort\'e(2016)}]{weyl}
+Bell JL, Kort\'e H (2016) Hermann Weyl. In: Zalta EN (ed) The Stanford
+  Encyclopedia of Philosophy, winter 2016 edn, Metaphysics Research Lab,
+  Stanford University,
+  \urlprefix\url{https://plato.stanford.edu/archives/win2016/entries/weyl/}
+
+\bibitem[{Benincasa and Dowker(2010)}]{bd}
+Benincasa DM, Dowker F (2010) The Scalar Curvature of a Causal Set. PhysRevLett
+  104:181301, \doi{10.1103/PhysRevLett.104.181301}
+
+\bibitem[{Benincasa et~al(2011)Benincasa, Dowker, and Schmitzer}]{gaussbonnet}
+Benincasa DM, Dowker F, Schmitzer B (2011) The Random Discrete Action for
+  2-Dimensional Spacetime. Class Quantum Grav 28:105018,
+  \doi{10.1088/0264-9381/28/10/105018}
+
+\bibitem[{Benincasa(2013)}]{dionthesis}
+Benincasa DMT (2013) The action of a casual set. PhD thesis, Imperial College
+  London
+
+\bibitem[{Bolognesi and Lamb(2016)}]{nodedegree}
+Bolognesi T, Lamb A (2016) {Simple indicators for Lorentzian causets}. Class
+  Quantum Grav 33:185004, \doi{10.1088/0264-9381/33/18/185004},
+  \eprint{1407.1649}
+
+\bibitem[{Bombelli(1987)}]{bomthesis}
+Bombelli L (1987) Space-time as a Causal Set. PhD thesis, Syracuse University
+
+\bibitem[{Bombelli(2000)}]{bomclose}
+Bombelli L (2000) {Statistical Lorentzian geometry and the closeness of
+  Lorentzian manifolds}. J Math Phys 41:6944--6958, \doi{10.1063/1.1288494},
+  \eprint{gr-qc/0002053}
+
+\bibitem[{Bombelli and Meyer(1989)}]{bommeyer}
+Bombelli L, Meyer DA (1989) {The Origin of Lorentzian Geometry}. Phys Lett A
+  141:226--228, \doi{10.1016/0375-9601(89)90474-X}
+
+\bibitem[{Bombelli and Noldus(2004)}]{bomnoldus}
+Bombelli L, Noldus J (2004) {The Moduli space of isometry classes of globally
+  hyperbolic space-times}. Class Quantum Grav 21:4429--4454,
+  \doi{10.1088/0264-9381/21/18/010}, \eprint{gr-qc/0402049}
+
+\bibitem[{Bombelli et~al(1986)Bombelli, Koul, Lee, and Sorkin}]{bklsEE}
+Bombelli L, Koul RK, Lee J, Sorkin RD (1986) {A Quantum Source of Entropy for
+  Black Holes}. Phys Rev D 34:373--383, \doi{10.1103/PhysRevD.34.373}
+
+\bibitem[{Bombelli et~al(1987)Bombelli, Lee, Meyer, and Sorkin}]{blms}
+Bombelli L, Lee J, Meyer D, Sorkin R (1987) {Space-Time as a Causal Set}. Phys
+  Rev Lett 59:521--524, \doi{10.1103/PhysRevLett.59.521}
+
+\bibitem[{Bombelli et~al(2009)Bombelli, Henson, and Sorkin}]{bomhensor}
+Bombelli L, Henson J, Sorkin RD (2009) Discreteness without symmetry breaking:
+  {A} {Theorem}. ModPhysLett A24:2579--2587, \doi{10.1142/S0217732309031958}
+
+\bibitem[{Bombelli et~al(2012)Bombelli, Noldus, and Tafoya}]{bomnoldustwo}
+Bombelli L, Noldus J, Tafoya J (2012) {Lorentzian Manifolds and Causal Sets as
+  Partially Ordered Measure Spaces}. arXiv e-prints \eprint{1212.0601}
+
+\bibitem[{Brightwell and Georgiou(2010)}]{grnick}
+Brightwell G, Georgiou N (2010) Continuum limits for classical sequential
+  growth models. Rand Struct Alg 36:218--250
+
+\bibitem[{Brightwell and Gregory(1991)}]{bg}
+Brightwell G, Gregory R (1991) {The Structure of random discrete space-time}.
+  Phys Rev Lett 66:260--263, \doi{10.1103/PhysRevLett.66.260}
+
+\bibitem[{Brightwell and Luczak(2011)}]{gmtwo}
+Brightwell G, Luczak M (2011) Order-invariant measures on causal sets. Ann Appl
+  Probab
+
+\bibitem[{Brightwell and Luczak(2012)}]{gmone}
+Brightwell G, Luczak M (2012) Order-invariant measures on fixed causal sets.
+  Comb Prob Comput
+
+\bibitem[{Brightwell and Luczak(2015)}]{grahammalwina}
+Brightwell G, Luczak M (2015) {The mathematics of causal sets}. arXiv e-prints
+  \eprint{1510.05612}
+
+\bibitem[{Brightwell et~al(2003)Brightwell, Dowker, Garcia, Henson, and
+  Sorkin}]{observables}
+Brightwell G, Dowker HF, Garcia RS, Henson J, Sorkin RD (2003) Observables in
+  causal set cosmology. PhysRev D67:084031, \doi{10.1103/PhysRevD.67.084031}
+
+\bibitem[{Brightwell et~al(2008)Brightwell, Henson, and Surya}]{2dorders}
+Brightwell G, Henson J, Surya S (2008) A 2D model of causal set quantum
+  gravity: the emergence of the continuum. Class Quantum Grav 25:105025,
+  \doi{10.1088/0264-9381/25/10/105025}
+
+\bibitem[{Brum and Fredenhagen(2014)}]{bf14}
+Brum M, Fredenhagen K (2014) {`Vacuum-like' Hadamard states for quantum fields
+  on curved spacetimes}. Class Quantum Grav 31:025024,
+  \doi{10.1088/0264-9381/31/2/025024}, \eprint{1307.0482}
+
+\bibitem[{Buck et~al(2015)Buck, Dowker, Jubb, and Surya}]{bdjs}
+Buck M, Dowker F, Jubb I, Surya S (2015) {Boundary Terms for Causal Sets}.
+  Class Quantum Grav 32:205004, \doi{10.1088/0264-9381/32/20/205004},
+  \eprint{1502.05388}
+
+\bibitem[{Buck et~al(2017)Buck, Dowker, Jubb, and Sorkin}]{sjtrousers}
+Buck M, Dowker F, Jubb I, Sorkin R (2017) {The Sorkin--Johnston state in a
+  patch of the trousers spacetime}. Class Quantum Grav 34:055002,
+  \doi{10.1088/1361-6382/aa589c}, \eprint{1609.03573}
+
+\bibitem[{Carlip(2017)}]{carlipdr}
+Carlip S (2017) {Dimension and Dimensional Reduction in Quantum Gravity}. Class
+  Quantum Grav 34:193001, \doi{10.1088/1361-6382/aa8535}, \eprint{1705.05417}
+
+\bibitem[{Christ et~al(1982)Christ, Friedberg, and Lee}]{tdlee}
+Christ NH, Friedberg R, Lee TD (1982) {Random Lattice Field Theory: General
+  Formulation}. Nucl Phys B 202:89, \doi{10.1016/0550-3213(82)90222-X}
+
+\bibitem[{Contaldi et~al(2010)Contaldi, Dowker, and Philpott}]{faypolarisation}
+Contaldi CR, Dowker F, Philpott L (2010) {Polarization Diffusion from Spacetime
+  Uncertainty}. Class Quantum Grav 27:172001,
+  \doi{10.1088/0264-9381/27/17/172001}, \eprint{1001.4545}
+
+\bibitem[{Cort{\^e}s and Smolin(2014)}]{lee}
+Cort{\^e}s M, Smolin L (2014) {Quantum energetic causal sets}. Phys Rev D
+  90:044035, \doi{10.1103/PhysRevD.90.044035}, \eprint{1308.2206}
+
+\bibitem[{Cunningham(2018{\natexlab{a}})}]{tlbdry}
+Cunningham W (2018{\natexlab{a}}) {Inference of Boundaries in Causal Sets}.
+  Class Quantum Grav 35:094002, \doi{10.1088/1361-6382/aaadc4},
+  \eprint{1710.09705}
+
+\bibitem[{Cunningham(2018{\natexlab{b}})}]{willthesis}
+Cunningham WJ (2018{\natexlab{b}}) {High Performance Algorithms for Quantum
+  Gravity and Cosmology}. PhD thesis, Northeastern U., \eprint{1805.04463}
+
+\bibitem[{Daughton(1993)}]{daughton}
+Daughton AR (1993) The Recovery of Locality for Causal Sets and Related Topics.
+  PhD thesis, Syracuse University
+
+\bibitem[{Dhar(1978)}]{dharone}
+Dhar D (1978) Entropy and phase transitions in partially ordered sets. J Math
+  Phys 19(8)
+
+\bibitem[{Dhar(1980)}]{dhartwo}
+Dhar D (1980) Asymptotic enumeration of partially ordered sets. Pacific J Math
+  90(2)
+
+\bibitem[{Diestel and Uhl(1977)}]{du}
+Diestel J, Uhl J (1977) Vector Measures. American Mathematical Society
+
+\bibitem[{Dou and Sorkin(2003)}]{dousorkin}
+Dou D, Sorkin RD (2003) {Black hole entropy as causal links}. Found Phys
+  33:279--296, \doi{10.1023/A:1023781022519}, \eprint{gr-qc/0302009}
+
+\bibitem[{Dowker(2005)}]{fayreview}
+Dowker F (2005) {Causal sets and the deep structure of spacetime}. In: Ashtekar
+  A (ed) 100 Years Of Relativity: space-time structure: Einstein and beyond,
+  World Scientific, pp 445--464, \doi{10.1142/9789812700988_0016},
+  \eprint{gr-qc/0508109}
+
+\bibitem[{Dowker and Ghazi-Tabatabai(2008)}]{kochenspecker}
+Dowker F, Ghazi-Tabatabai Y (2008) {The Kochen-Specker Theorem Revisited in
+  Quantum Measure Theory}. J Phys A 41:105301,
+  \doi{10.1088/1751-8113/41/10/105301}, \eprint{0711.0894}
+
+\bibitem[{Dowker and Glaser(2013)}]{dg}
+Dowker F, Glaser L (2013) Causal set d'Alembertians for various dimensions.
+  Class Quantum Grav 30:195016
+
+\bibitem[{Dowker and Surya(2006)}]{observablesds}
+Dowker F, Surya S (2006) {Observables in extendcarliped percolation models of
+  causal set cosmology}. Class Quantum Grav 23:1381--1390,
+  \doi{10.1088/0264-9381/23/4/018}, \eprint{gr-qc/0504069}
+
+\bibitem[{Dowker and Zalel(2017)}]{faystav}
+Dowker F, Zalel S (2017) {Evolution of Universes in Causal Set Cosmology}.
+  Comptes Rendus Physique 18:246--253, \doi{10.1016/j.crhy.2017.03.002},
+  \eprint{1703.07556}
+
+\bibitem[{Dowker et~al(2004)Dowker, Henson, and Sorkin}]{swerves}
+Dowker F, Henson J, Sorkin RD (2004) {Quantum gravity phenomenology, Lorentz
+  invariance and discreteness}. Mod Phys Lett A 19:1829--1840,
+  \doi{10.1142/S0217732304015026}, \eprint{gr-qc/0311055}
+
+\bibitem[{Dowker et~al(2010{\natexlab{a}})Dowker, Henson, and Sorkin}]{dhstwo}
+Dowker F, Henson J, Sorkin R (2010{\natexlab{a}}) {Discreteness and the
+  transmission of light from distant sources}. Phys Rev D 82:104048,
+  \doi{10.1103/PhysRevD.82.104048}, \eprint{1009.3058}
+
+\bibitem[{Dowker et~al(2010{\natexlab{b}})Dowker, Johnston, and Sorkin}]{hhh}
+Dowker F, Johnston S, Sorkin RD (2010{\natexlab{b}}) {Hilbert Spaces from Path
+  Integrals}. J Phys A 43:275302, \doi{10.1088/1751-8113/43/27/275302},
+  \eprint{1002.0589}
+
+\bibitem[{Dowker et~al(2010{\natexlab{c}})Dowker, Johnston, and Surya}]{djs}
+Dowker F, Johnston S, Surya S (2010{\natexlab{c}}) {On extending the Quantum
+  Measure}. J Phys A 43:505305, \doi{10.1088/1751-8113/43/50/505305},
+  \eprint{1007.2725}
+
+\bibitem[{Dowker et~al(2017)Dowker, Surya, and X}]{dsx}
+Dowker F, Surya S, X N (2017) {Scalar Field Green Functions on Causal Sets}.
+  Class Quantum Grav 34:124002, \doi{10.1088/1361-6382/aa6bc7},
+  \eprint{1701.07212}
+
+\bibitem[{Eichhorn(2018)}]{astridcg}
+Eichhorn A (2018) {Towards coarse graining of discrete Lorentzian quantum
+  gravity}. Class Quantum Grav 35:044001, \doi{10.1088/1361-6382/aaa0a3},
+  \eprint{1709.10419}
+
+\bibitem[{Eichhorn and Mizera(2014)}]{em}
+Eichhorn A, Mizera S (2014) {Spectral dimension in causal set quantum gravity}.
+  Class Quantum Grav 31:125007, \doi{10.1088/0264-9381/31/12/125007},
+  \eprint{1311.2530}
+
+\bibitem[{Eichhorn et~al(2017)Eichhorn, Mizera, and Surya}]{ems}
+Eichhorn A, Mizera S, Surya S (2017) {Echoes of Asymptotic Silence in Causal
+  Set Quantum Gravity}. Class Quantum Grav 34(16):16LT01,
+  \doi{10.1088/1361-6382/aa7d1b}, \eprint{1703.08454}
+
+\bibitem[{Eichhorn et~al(2018)Eichhorn, Surya, and Versteegen}]{esv}
+Eichhorn A, Surya S, Versteegen F (2018) {Induced Spatial Geometry from Causal
+  Structure}. arXiv e-prints \eprint{1809.06192}
+
+\bibitem[{Eichhorn et~al(2019)Eichhorn, Surya, and Versteegen}]{esvsd}
+Eichhorn A, Surya S, Versteegen F (2019) {Spectral dimension on spatial
+  hypersurfaces in causal set quantum gravity}, arXiv:1905.13498
+
+\bibitem[{El-Zahar and Sauer(1988)}]{es}
+El-Zahar MH, Sauer NW (1988) Asymptotic Enumeration of Two-dimensional Posets.
+  Order 5:239
+
+\bibitem[{Fewster(2018)}]{fewsterart}
+Fewster CJ (2018) {The art of the state}. Int J Mod Phys D 27:1843007,
+  \doi{10.1142/S0218271818430071}, \eprint{1803.06836}
+
+\bibitem[{Fewster and Verch(2012)}]{fv12}
+Fewster CJ, Verch R (2012) {On a Recent Construction of 'Vacuum-like' Quantum
+  Field States in Curved Spacetime}. Class Quantum Grav 29:205017,
+  \doi{10.1088/0264-9381/29/20/205017}, \eprint{1206.1562}
+
+\bibitem[{Feynman(1944)}]{Feynman}
+Feynman R (1944) The Character of Physical Law. Modern Library
+
+\bibitem[{Finkelstein(1969)}]{finkelstein}
+Finkelstein D (1969) Space-Time Code. Phys Rev 184:1261--1271,
+  \doi{10.1103/PhysRev.184.1261}
+
+\bibitem[{Gibbons and Solodukhin(2007)}]{gs}
+Gibbons GW, Solodukhin SN (2007) {The Geometry of small causal diamonds}. Phys
+  Lett B649:317--324, \doi{10.1016/j.physletb.2007.03.068},
+  \eprint{hep-th/0703098}
+
+\bibitem[{Glaser(2014)}]{glaser}
+Glaser L (2014) A closed form expression for the causal set d’Alembertian.
+  Class Quantum Grav 31:095007
+
+\bibitem[{Glaser(2018)}]{ising}
+Glaser L (2018) {The {Ising} model coupled to 2d orders}. Class Quantum Grav
+  35:084001, \doi{10.1088/1361-6382/aab139}, \eprint{1802.02519}
+
+\bibitem[{Glaser and Surya(2013)}]{intervals}
+Glaser L, Surya S (2013) {Towards a Definition of Locality in a Manifoldlike
+  Causal Set}. Phys Rev D 88:124026, \doi{10.1103/PhysRevD.88.124026},
+  \eprint{1309.3403}
+
+\bibitem[{Glaser and Surya(2016)}]{2dhh}
+Glaser L, Surya S (2016) {The Hartle--Hawking wave function in 2D causal set
+  quantum gravity}. Class Quantum Grav 33:065003,
+  \doi{10.1088/0264-9381/33/6/065003}, \eprint{1410.8775}
+
+\bibitem[{Glaser et~al(2018)Glaser, O'Connor, and Surya}]{fss}
+Glaser L, O'Connor D, Surya S (2018) {Finite Size Scaling in 2d Causal Set
+  Quantum Gravity}. Class Quantum Grav 35:045006,
+  \doi{10.1088/1361-6382/aa9540}, \eprint{1706.06432}
+
+\bibitem[{Greene and Plesser(1991)}]{string}
+Greene BR, Plesser MR (1991) {Mirror manifolds: A Brief review and progress
+  report}. In: {2nd International Symposium on Particles, Strings and Cosmology
+  (PASCOS 1991) Boston, Massachusetts, March 25-30, 1991}, pp 0648--666,
+  \eprint{hep-th/9110014}
+
+\bibitem[{Hawking and Ellis(1973)}]{HE}
+Hawking S, Ellis G (1973) Large scale structure of spacetime. Cambridge
+  University Press
+
+\bibitem[{Hawking et~al(1976)Hawking, King, and McCarthy}]{hkm}
+Hawking S, King A, McCarthy P (1976) A New Topology for Curved Space-Time Which
+  Incorporates the Causal, Differential, and Conformal Structures. J Math Phys
+
+\bibitem[{Hemion(1988)}]{hemion}
+Hemion G (1988) A Quantum Theory Of Space And Time. Int J Theor Phys 27:1145
+
+\bibitem[{Henson(2005)}]{joecausality}
+Henson J (2005) {Comparing causality principles}. Stud Hist Phil Sci B
+  36:519--543, \doi{10.1016/j.shpsb.2005.04.003}, \eprint{quant-ph/0410051}
+
+\bibitem[{Henson(2006{\natexlab{a}})}]{joeinterval}
+Henson J (2006{\natexlab{a}}) {Constructing an interval of Minkowski space from
+  a causal set}. Class Quantum Grav 23:L29--L35,
+  \doi{10.1088/0264-9381/23/4/L02}, \eprint{gr-qc/0601069}
+
+\bibitem[{Henson(2006{\natexlab{b}})}]{joereviewone}
+Henson J (2006{\natexlab{b}}) {The Causal set approach to quantum gravity}. In:
+  Oriti D (ed) Approaches to quantum gravity, Cambridge University Press,
+  Cambridge, pp 393--413, \eprint{gr-qc/0601121}
+
+\bibitem[{Henson(2010)}]{joereviewtwo}
+Henson J (2010) {Discovering the Discrete Universe}. In: {Proceedings,
+  Foundations of Space and Time: Reflections on Quantum Gravity: Cape Town,
+  South Africa}, \eprint{1003.5890}
+
+\bibitem[{Henson(2011)}]{joequantumbell}
+Henson J (2011) {Causality, Bell's theorem, and Ontic Definiteness}. arXiv
+  e-prints \eprint{1102.2855}
+
+\bibitem[{Henson et~al(2017)Henson, Rideout, Sorkin, and Surya}]{onset}
+Henson J, Rideout D, Sorkin RD, Surya S (2017) Onset of the Asymptotic Regime
+  for (Uniformly Random) Finite Orders. Experimental Mathematics
+  26(3):253--266, \doi{10.1080/10586458.2016.1158134}
+
+\bibitem[{Johnston(2008)}]{johnston}
+Johnston S (2008) {Particle propagators on discrete spacetime}. Class Quantum
+  Grav 25:202001, \doi{10.1088/0264-9381/25/20/202001}, \eprint{0806.3083}
+
+\bibitem[{Johnston(2009)}]{johnstontwo}
+Johnston S (2009) {Feynman Propagator for a Free Scalar Field on a Causal Set}.
+  Phys Rev Lett 103:180401, \doi{10.1103/PhysRevLett.103.180401},
+  \eprint{0909.0944}
+
+\bibitem[{Johnston(2010)}]{johnstonthesis}
+Johnston SP (2010) {Quantum Fields on Causal Sets}. PhD thesis, Imperial Coll.,
+  London, \eprint{1010.5514}
+
+\bibitem[{Jubb(2017)}]{jubb}
+Jubb I (2017) {The Geometry of Small Causal Cones}. Class Quantum Grav
+  34:094005, \doi{10.1088/1361-6382/aa68b7}, \eprint{1611.00785}
+
+\bibitem[{Jubb et~al(2017)Jubb, Samuel, Sorkin, and Surya}]{jsss}
+Jubb I, Samuel J, Sorkin R, Surya S (2017) {Boundary and Corner Terms in the
+  Action for General Relativity}. Class Quantum Grav 34:065006,
+  \doi{10.1088/1361-6382/aa6014}, \eprint{1612.00149}
+
+\bibitem[{Kaloper and Mattingly(2006)}]{swerveconstraint}
+Kaloper N, Mattingly D (2006) {Low energy bounds on Poincare violation in
+  causal set theory}. Phys Rev D 74:106001, \doi{10.1103/PhysRevD.74.106001},
+  \eprint{astro-ph/0607485}
+
+\bibitem[{Khetrapal and Surya(2013)}]{ks}
+Khetrapal S, Surya S (2013) {Boundary Term Contribution to the Volume of a
+  Small Causal Diamond}. Class Quantum Grav 30:065005,
+  \doi{10.1088/0264-9381/30/6/065005}, \eprint{1212.0629}
+
+\bibitem[{Kleitman and Rothschild(1975)}]{kr}
+Kleitman DJ, Rothschild BL (1975) Asymptotic enumeration of partial orders on a
+  finite set. Transactions of the American Mathematical Society 205:205--220
+
+\bibitem[{Kronheimer and Penrose(1967)}]{kp}
+Kronheimer E, Penrose R (1967) On the Structure of causal spaces. Proc Camb
+  Phil Soc 63:481
+
+\bibitem[{Lehner et~al(2016)Lehner, Myers, Poisson, and Sorkin}]{lmps}
+Lehner L, Myers RC, Poisson E, Sorkin RD (2016) {Gravitational action with null
+  boundaries}. Phys Rev D 94:084046, \doi{10.1103/PhysRevD.94.084046},
+  \eprint{1609.00207}
+
+\bibitem[{Levichev(1987)}]{levichev}
+Levichev AV (1987) Prescribing the conformal geometry of a Lorentz manifold by
+  means of its causal structure. Sov Math Dokl 35:452--455
+
+\bibitem[{Liberati and Mattingly(2016)}]{li}
+Liberati S, Mattingly D (2016) {Lorentz breaking effective field theory models
+  for matter and gravity: theory and observational constraints}. In: Peron R,
+  Colpi M, Gorini V, Moschella U (eds) Gravity: Where Do We Stand?, Springer,
+  pp 367--417, \doi{10.1007/978-3-319-20224-2_11}, \eprint{1208.1071}
+
+\bibitem[{Loomis and Carlip(2018)}]{carliploomis}
+Loomis SP, Carlip S (2018) {Suppression of non-manifold-like sets in the causal
+  set path integral}. Class Quantum Grav 35:024002,
+  \doi{10.1088/1361-6382/aa980b}, \eprint{1709.00064}
+
+\bibitem[{Louko and Sorkin(1997)}]{sorkinlouko}
+Louko J, Sorkin RD (1997) Complex actions in two-dimensional topology change.
+  Class Quantum Grav 14:179--204, \doi{10.1088/0264-9381/14/1/018}
+
+\bibitem[{Major et~al(2007)Major, Rideout, and Surya}]{homology}
+Major S, Rideout D, Surya S (2007) {On Recovering continuum topology from a
+  causal set}. J Math Phys 48:032501, \doi{10.1063/1.2435599},
+  \eprint{gr-qc/0604124}
+
+\bibitem[{Major et~al(2009)Major, Rideout, and Surya}]{stablehomology}
+Major S, Rideout D, Surya S (2009) {Stable Homology as an Indicator of
+  Manifoldlikeness in Causal Set Theory}. Class Quantum Grav 26:175008,
+  \doi{10.1088/0264-9381/26/17/175008}, \eprint{0902.0434}
+
+\bibitem[{Major et~al(2006)Major, Rideout, and Surya}]{antichain}
+Major SA, Rideout D, Surya S (2006) Spatial hypersurfaces in causal set
+  cosmology. Class Quantum Grav 23:4743, \doi{10.1088/0264-9381/23/14/011}
+
+\bibitem[{Malament(1977)}]{malament}
+Malament DB (1977) The class of continuous timelike curves determines the
+  topology of spacetime. J Math Phys 18:1399--1404, \doi{10.1063/1.523436}
+
+\bibitem[{Marr(2007)}]{sarahthesis}
+Marr S (2007) Black Hole entropy from causal sets. PhD thesis, Imperial College
+
+\bibitem[{Martin et~al(2001)Martin, O'Connor, Rideout, and Sorkin}]{csgrg}
+Martin X, O'Connor D, Rideout DP, Sorkin RD (2001) {On the `renormalization'
+  transformations induced by cycles of expansion and contraction in causal set
+  cosmology}. Phys Rev D 63:084026, \doi{10.1103/PhysRevD.63.084026},
+  \eprint{gr-qc/0009063}
+
+\bibitem[{Mathur and Surya(2019)}]{mathursurya}
+Mathur A, Surya S (2019) {Sorkin-Johnston vacuum for a massive scalar field in
+  the 2D causal diamond}. Phys Rev D100(4):045007,
+  \doi{10.1103/PhysRevD.100.045007}, \eprint{1906.07952}
+
+\bibitem[{Meyer(1988)}]{meyer}
+Meyer D (1988) The Dimension of Causal Sets,. PhD thesis, M.I.T.
+
+\bibitem[{Munkres(1984)}]{munkres}
+Munkres JR (1984) Elements of algebraic topology. Addison-Wesley
+
+\bibitem[{Myrheim(1978)}]{myrheim}
+Myrheim J (1978) Statistical Geometry. Tech. Rep. CERN-TH-2538, CERN
+
+\bibitem[{Noldus(2002)}]{noldustwo}
+Noldus J (2002) {A new topology on the space of Lorentzian metrics on a fixed
+  manifold}. Class Quantum Grav 19:6075--6107,
+  \doi{10.1088/0264-9381/19/23/313}, \eprint{1104.1811}
+
+\bibitem[{Noldus(2004)}]{noldusone}
+Noldus J (2004) {A Lorentzian Lipschitz, Gromov-Hausdoff notion of distance}.
+  Class Quantum Grav 21:839--850, \doi{10.1088/0264-9381/21/4/007},
+  \eprint{gr-qc/0308074}
+
+\bibitem[{Parrikar and Surya(2011)}]{ps}
+Parrikar O, Surya S (2011) {Causal Topology in Future and Past Distinguishing
+  Spacetimes}. Class Quantum Grav 28:155020,
+  \doi{10.1088/0264-9381/28/15/155020}, \eprint{1102.0936}
+
+\bibitem[{Penrose(1972)}]{penrose}
+Penrose R (1972) Techniques of Differential Topology in Relativity. SIAM
+
+\bibitem[{Petersen(2006)}]{petersen}
+Petersen P (2006) Riemannian Geometry, 2nd edn. Springer,
+  \doi{10.1007/978-0-387-29403-2}
+
+\bibitem[{Philpott et~al(2009)Philpott, Dowker, and Sorkin}]{swervestwo}
+Philpott L, Dowker F, Sorkin RD (2009) {Energy-momentum diffusion from
+  spacetime discreteness}. Phys Rev D 79:124047,
+  \doi{10.1103/PhysRevD.79.124047}, \eprint{0810.5591}
+
+\bibitem[{Promel et~al(2001)Promel, Steger, and Taraz}]{pst}
+Promel H, Steger A, Taraz A (2001) {Phase Transitions in the Evolution of
+  Partial Orders}. J Combin Theory, Series A 94:230
+
+\bibitem[{Reid(2003)}]{reid}
+Reid DD (2003) {The Manifold dimension of a causal set: Tests in conformally
+  flat space-times}. Phys Rev D 67:024034, \doi{10.1103/PhysRevD.67.024034},
+  \eprint{gr-qc/0207103}
+
+\bibitem[{Rideout and Sorkin(2000{\natexlab{a}})}]{csg}
+Rideout D, Sorkin R (2000{\natexlab{a}}) A Classical sequential growth dynamics
+  for causal sets. PhysRev D61:024002, \doi{10.1103/PhysRevD.61.024002}
+
+\bibitem[{Rideout and Wallden(2009)}]{rw}
+Rideout D, Wallden P (2009) {Spacelike distance from discrete causal order}.
+  Class Quantum Grav 26:155013, \doi{10.1088/0264-9381/26/15/155013},
+  \eprint{0810.1768}
+
+\bibitem[{Rideout and Zohren(2006)}]{rz}
+Rideout D, Zohren S (2006) {Evidence for an entropy bound from fundamentally
+  discrete gravity}. Class Quantum Grav 23:6195--6213,
+  \doi{10.1088/0264-9381/23/22/008}, \eprint{gr-qc/0606065}
+
+\bibitem[{Rideout(2001)}]{davidthesis}
+Rideout DP (2001) {Dynamics of causal sets}. PhD thesis, Syracuse U.
+
+\bibitem[{Rideout and Sorkin(2000{\natexlab{b}})}]{csgone}
+Rideout DP, Sorkin RD (2000{\natexlab{b}}) {A Classical sequential growth
+  dynamics for causal sets}. Phys Rev D 61:024002,
+  \doi{10.1103/PhysRevD.61.024002}, \eprint{gr-qc/9904062}
+
+\bibitem[{Rideout and Sorkin(2001)}]{csgtwo}
+Rideout DP, Sorkin RD (2001) {Evidence for a continuum limit in causal set
+  dynamics}. Phys Rev D 63:104011, \doi{10.1103/PhysRevD.63.104011},
+  \eprint{gr-qc/0003117}
+
+\bibitem[{Riemann(1873)}]{Riemann}
+Riemann B (1873) On the Hypotheses Which Lie at the Bases of Geometry. Nature
+  VIII(183, 184):14--17, 36, 37, \doi{10.1038/008036a0}, translated by W.~K.
+  Clifford from Vol.~VIII of the G\"ottingen Abhandlungen
+
+\bibitem[{Robb(1914)}]{robbone}
+Robb A (1914) A Theory of Time and Space. Cambridge University Press
+
+\bibitem[{Robb(1936)}]{robbtwo}
+Robb A (1936) Geometry Of Time And Space. At The University Press
+
+\bibitem[{Roy et~al(2013)Roy, Sinha, and Surya}]{rss}
+Roy M, Sinha D, Surya S (2013) {Discrete geometry of a small causal diamond}.
+  Phys Rev D 87:044046, \doi{10.1103/PhysRevD.87.044046}, \eprint{1212.0631}
+
+\bibitem[{Salgado(2002)}]{salgadoqm}
+Salgado RB (2002) {Some identities for the quantum measure and its
+  generalizations}. Mod Phys Lett A 17:711--728,
+  \doi{10.1142/S0217732302007041}, \eprint{gr-qc/9903015}
+
+\bibitem[{Salgado(2008)}]{salgado}
+Salgado RB (2008) Toward a Quantum Dynamics for Causal Sets. PhD thesis,
+  Syracuse University
+
+\bibitem[{Samuel and Sinha(2006)}]{samsupurna}
+Samuel J, Sinha S (2006) {Surface tension and the cosmological constant}. Phys
+  Rev Lett 97:161302, \doi{10.1103/PhysRevLett.97.161302},
+  \eprint{cond-mat/0603804}
+
+\bibitem[{Saravani and Afshordi(2017)}]{darkmatter}
+Saravani M, Afshordi N (2017) Off-shell dark matter: {A} cosmological relic of
+  quantum gravity. Phys Rev D 95:043514, \doi{10.1103/PhysRevD.95.043514}
+
+\bibitem[{Saravani and Aslanbeigi(2014)}]{aspoisson}
+Saravani M, Aslanbeigi S (2014) {On the Causal Set-Continuum Correspondence}.
+  Class Quantum Grav 31:205013, \doi{10.1088/0264-9381/31/20/205013},
+  \eprint{1403.6429}
+
+\bibitem[{Saravani et~al(2014)Saravani, Sorkin, and Yazdi}]{yasamaneecont}
+Saravani M, Sorkin RD, Yazdi YK (2014) {Spacetime entanglement entropy in 1 + 1
+  dimensions}. Class Quantum Grav 31:214006,
+  \doi{10.1088/0264-9381/31/21/214006}, \eprint{1311.7146}
+
+\bibitem[{Sorkin(1991)}]{lambdaone}
+Sorkin RD (1991) Spacetime and Causal Sets. In: D'Olivo JC (ed) Relativity and
+  Gravitation: Classical and Quantum, World Scientific, Singapore, pp 150--173,
+  proceedings of the SILARG VII Conference, Cocoyocan, Mexico
+
+\bibitem[{Sorkin(1994)}]{qmeasureone}
+Sorkin RD (1994) {Quantum mechanics as quantum measure theory}. Mod Phys Lett A
+  9:3119--3128, \doi{10.1142/S021773239400294X}, \eprint{gr-qc/9401003}
+
+\bibitem[{Sorkin(1995)}]{qmeasuretwo}
+Sorkin RD (1995) {Quantum measure theory and its interpretation}. In: {Physics
+  and experiments with linear colliders. Proceedings, 3rd Workshop,
+  Morioka-Appi, Japan, September 8-12, 1995. Vol. 1, 2}, \eprint{gr-qc/9507057}
+
+\bibitem[{Sorkin(1997)}]{lambdatwo}
+Sorkin RD (1997) {Forks in the road, on the way to quantum gravity}. Int J
+  Theor Phys 36:2759--2781, \doi{10.1007/BF02435709}, \eprint{gr-qc/9706002}
+
+\bibitem[{Sorkin(2005{\natexlab{a}})}]{sorkinledl}
+Sorkin RD (2005{\natexlab{a}}) {Big extra dimensions make lambda too small}.
+  Braz J Phys 35:280--283, \doi{10.1590/S0103-97332005000200012},
+  \eprint{gr-qc/0503057}
+
+\bibitem[{Sorkin(2005{\natexlab{b}})}]{valdivia}
+Sorkin RD (2005{\natexlab{b}}) Causal sets: Discrete gravity. In: Gomberoff A,
+  Marolf D (eds) Proceedings of the Valdivia Summer School, New York, Springer,
+  Series of the Centro de Estudios Cientificos de Santiago),
+  \eprint{gr-qc/0309009}
+
+\bibitem[{Sorkin(2007{\natexlab{a}})}]{sorkinalogic}
+Sorkin RD (2007{\natexlab{a}}) {An Exercise in 'anhomomorphic logic'}. J Phys
+  Conf Ser 67:012018, \doi{10.1088/1742-6596/67/1/012018},
+  \eprint{quant-ph/0703276}
+
+\bibitem[{Sorkin(2007{\natexlab{b}})}]{sorkinnonlocal}
+Sorkin RD (2007{\natexlab{b}}) Does Locality Fail at Intermediate
+  Length-Scales. In: Oriti D (ed) Approaches to quantum gravity, Cambridge
+  University Press, pp 26--43, \eprint{gr-qc/0703099}
+
+\bibitem[{Sorkin(2007{\natexlab{c}})}]{coevents}
+Sorkin RD (2007{\natexlab{c}}) An exercise in ``anhomomorphic logic''. J Phys:
+  Conf Ser 67:012018, \doi{10.1088/1742-6596/67/1/012018}
+
+\bibitem[{Sorkin(2007{\natexlab{d}})}]{sorkinqmeasure}
+Sorkin RD (2007{\natexlab{d}}) {Quantum dynamics without the wave function}. J
+  Phys A 40:3207--3222, \doi{10.1088/1751-8113/40/12/S20},
+  \eprint{quant-ph/0610204}
+
+\bibitem[{Sorkin(2009)}]{lightlinks}
+Sorkin RD (2009) {Light, Links and Causal Sets}. J Phys Conf Ser 174:012018,
+  \doi{10.1088/1742-6596/174/1/012018}, \eprint{0910.0673}
+
+\bibitem[{Sorkin(2011{\natexlab{a}})}]{sorkinsj}
+Sorkin RD (2011{\natexlab{a}}) {Scalar Field Theory on a Causal Set in
+  Histories Form}. J Phys Conf Ser 306:012017,
+  \doi{10.1088/1742-6596/306/1/012017}, \eprint{1107.0698}
+
+\bibitem[{Sorkin(2011{\natexlab{b}})}]{ec}
+Sorkin RD (2011{\natexlab{b}}) {Toward a `fundamental theorem of quantal
+  measure theory'}. arXiv e-prints \eprint{1104.0997}
+
+\bibitem[{Sorkin(2014)}]{sorkinEE}
+Sorkin RD (2014) {Expressing entropy globally in terms of (4D)
+  field-correlations}. J Phys: Conf Ser 484:012004,
+  \doi{10.1088/1742-6596/484/1/012004}, \eprint{1205.2953}
+
+\bibitem[{Sorkin and Yazdi(2018)}]{causetee}
+Sorkin RD, Yazdi YK (2018) {Entanglement Entropy in Causal Set Theory}. Class
+  Quantum Grav 35:074004, \doi{10.1088/1361-6382/aab06f}, \eprint{1611.10281}
+
+\bibitem[{Stachel(1986)}]{Einstein}
+Stachel J (1986) Einstein and the quantum: Fifty years of struggle. In: Colodny
+  R (ed) From Quarks to Quasars, Philosophical Problems of Modern Physics, U.
+  Pittsburgh Press,, p 379
+
+\bibitem[{Stanley(2011)}]{stanley}
+Stanley RP (2011) Enumerative Combinatorics, Volume I, 2nd edn. Cambridge
+  University Press
+
+\bibitem[{Stoyan et~al(1995)Stoyan, Kendall, and Mecke}]{stoyan}
+Stoyan D, Kendall W, Mecke J (1995) Stochastic geometry and its applications,.
+  Wiley
+
+\bibitem[{Surya(2008)}]{suryatop}
+Surya S (2008) {Causal set topology}. Theor Comput Sci 405:188--197,
+  \doi{10.1016/j.tcs.2008.06.033}, \eprint{0712.1648}
+
+\bibitem[{Surya(2012)}]{2dqg}
+Surya S (2012) Evidence for the continuum in 2D causal set quantum gravity.
+  Class Quantum Grav 29:132001, \doi{10.1088/0264-9381/29/13/132001}
+
+\bibitem[{Surya et~al(2018)Surya, X, and Yazdi}]{sxy}
+Surya S, X N, Yazdi YK (2018) {Studies on the SJ Vacuum in de Sitter
+  Spacetime}. arXiv e-prints \eprint{1812.10228}
+
+\bibitem[{Sverdlov and Bombelli(2009)}]{bomsver}
+Sverdlov R, Bombelli L (2009) {Gravity and Matter in Causal Set Theory}. Class
+  Quantum Grav 26:075011, \doi{10.1088/0264-9381/26/7/075011},
+  \eprint{0801.0240}
+
+\bibitem[{Unruh and Wald(1989)}]{unruhwald}
+Unruh WG, Wald RM (1989) {Time and the Interpretation of Canonical Quantum
+  Gravity}. Phys Rev D 40:2598, \doi{10.1103/PhysRevD.40.2598}
+
+\bibitem[{Varadarajan and Rideout(2006)}]{rv}
+Varadarajan M, Rideout D (2006) {A General solution for classical sequential
+  growth dynamics of causal sets}. Phys Rev D 73:104021,
+  \doi{10.1103/PhysRevD.73.104021}, \eprint{gr-qc/0504066}
+
+\bibitem[{Wald(1984)}]{Wald}
+Wald R (1984) General relativity. University of Chicago Press
+
+\bibitem[{Wald(1994)}]{waldqft}
+Wald RM (1994) Quantum Field Theory in Curved Spacetime and Black Hole
+  Thermodynamics. University of Chicago Press
+
+\bibitem[{Wallden(2013)}]{walldenreview}
+Wallden P (2013) {Causal Sets Dynamics: Review \& Outlook}. J Phys Conf Ser
+  453:012023, \doi{10.1088/1742-6596/453/1/012023}
+
+\bibitem[{Winkler(1991)}]{winkler}
+Winkler P (1991) Random orders of dimension 2. Order 7:329
+
+\bibitem[{Yazdi and Kempf(2017)}]{yasamanspectral}
+Yazdi YK, Kempf A (2017) {Towards Spectral Geometry for Causal Sets}. Class
+  Quantum Grav 34:094001, \doi{10.1088/1361-6382/aa663f}, \eprint{1611.09947}
+
+\bibitem[{Zeeman(1964)}]{zeeman}
+Zeeman EC (1964) Causality Implies the Lorentz Group. J Math Phys
+  5(4):490--493, \doi{10.1063/1.1704140}
+
+\bibitem[{Zuntz(2008)}]{zuntz}
+Zuntz JA (2008) {The cosmic microwave background in a causal set universe}.
+  Phys Rev D 77:043002, \doi{10.1103/PhysRevD.77.043002}, \eprint{0711.2904}
+
+\bibitem[{Zwane et~al(2018)Zwane, Afshordi, and Sorkin}]{recentlambda}
+Zwane N, Afshordi N, Sorkin RD (2018) {Cosmological tests of Everpresent
+  $\Lambda$}. Class Quantum Grav 35:194002, \doi{10.1088/1361-6382/aadc36},
+  \eprint{1703.06265}
+
+\end{thebibliography}

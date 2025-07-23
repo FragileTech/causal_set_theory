@@ -7,3 +7,7 @@ build-docs:
 	uv run jupyter-book config sphinx docs/
 	uv run jupyter-book build docs/
 	uv pip freeze > docs/requirements.txt
+
+PHONY: serve
+serve:
+	uv run python3 -m http.server --directory docs/_build/html
