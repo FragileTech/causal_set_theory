@@ -1,0 +1,490 @@
+\section{The causal set hypothesis}
+\label{sec:cst} 
+
+     
+We begin with the definition of a causal set: \\
+
+\noindent {\bf Definition:}  A set $C$ with an order relation $\prec$ is a \emph{causal set}  if it is 
+\begin{enumerate}  
+\item \emph{Acyclic}: $x\prec y$ and $y \prec x $ $\Rightarrow x=y$, $\forall
+  x,y \in C$ 
+\item \emph{Transitive}: $x\prec y$ and $y \prec z $ $\Rightarrow x \prec z$, $\forall
+  x,y,z \in C$ 
+\item \emph{Locally finite}:  $\forall x,y \in C$, $|\cAlex[x,y]|< \infty$, where $\cAlex[x,y]\equiv \fut(x) \cap \past(y)$ \,,  
+\end{enumerate} 
+where $|.|$ denotes the cardinality of the set, and\footnote{These are  the \emph{exclusive} future and past sets since
+  they do not include the element itself.} 
+\begin{eqnarray}  
+\fut(x) &\equiv&\{w \in C| x \prec w, x \neq w\} \nn \\ 
+  \past(x) &\equiv&\{w \in C| w \prec x, x \neq w \}.
+ \label{eq:futpast}                    
+\end{eqnarray}
+We refer to $\cAlex[x,y]$ as an \emph{order interval}, in analogy with the  Alexandrov interval in the continuum. 
+The acyclic and transitive conditions together define a partially
+ordered set or poset, while the  condition of local finiteness
+encodes discreteness.  
+\begin{figure}[ht]
+\centering \resizebox{3in}{!}{\includegraphics{Transitive}}
+\caption{The transitivity condition $x \prec y, y \prec z \Rightarrow x\prec z$ is satisfied by the causality
+    relation $\prec$ in any Lorentzian  spacetime.}
+\label{transitive.fig}
+\end{figure}
+
+
+
+\begin{figure}[ht]
+\centering \resizebox{3.5in}{!}{\includegraphics{causalset}}
+\caption{The \emph{Hasse diagrams} of some simple finite cardinality causal sets. Only the nearest neighbour
+    relations or \emph{links} are depicted. The remaining relations are deduced from transitivity.}
+\label{transitivity.fig}
+\end{figure}
+
+The content of the HKMM theorem can be summarised in the statement:
+\begin{equation} 
+\mathrm{Causal\, \, Structure + Volume\,\, Element = Lorentzian \, \, Geometry},     
+\end{equation}
+which lends itself to a discrete rendition, dubbed  
+the ``CST slogan'': 
+\begin{equation} 
+\mathrm{Order + Number \sim Lorentzian\,\, Geometry }.   
+\label{ordernumber} 
+\end{equation}
+One  therefore assumes a fundamental correspondence between the number of elements in a region of the
+  causal set and the continuum volume element that it represents. The condition of local finiteness means that all
+  order intervals  in the causal set are of finite cardinality and hence correspond in the continuum to
+  finite volume. This CST slogan captures  the essence of the (yet to be specified)  continuum approximation of a {manifold-like }   causal set, which we denote by $C \sim (M,g)$. 
+While the continuum causal structure gives the continuum conformal geometry  via the HKMM theorem, the  discrete  causal
+structure represented by the underlying causal set is conjectured to approximate  the entire spacetime geometry. Thus,  discreteness supplies the missing conformal factor, or the missing $\left(1/10\right)^{\mathrm{th}}$ of the metric, in $d=4$. 
+
+
+
+Motivated thus, CST makes the following  radical proposal \citep{blms}:  
+\begin{enumerate}    
+\item \label{qgcst} Quantum gravity is a quantum theory of causal sets. 
+\item  \label{ca} 
+A continuum spacetime $(M,g)$ is an approximation of an underlying causal set $C \sim (M,g)$, where  
+\begin{enumerate}  
+\item  \label{order} Order $\sim $ Causal Order 
+\item  \label{number} Number $\sim $ Spacetime Volume 
+\end{enumerate} 
+\end{enumerate} 
+
+
+
+In CST, the {kinematical} space of $d=4$ continuum spacetime geometries or histories is replaced with a \emph{
+  sample space} $\Omega$ of causal sets.  Thus,  discreteness is viewed not only as a tool for regulating the
+continuum, but as a fundamental feature of quantum spacetime. $\Omega$ includes causal sets that
+have no continuum counterpart, i.e., they cannot be related via Conditions (\ref{order})  and
+(\ref{number}) to \emph{any}  continuum spacetime in any dimension. These non-manifold-like causal sets are expected to
+play an important role in the deep quantum regime. In order to make this precise we need to define what it means for a
+causal set to be manifold-like, i.e., to make precise the relation ``$C \sim (M,g)$''.  
+
+
+Before doing so, it is important to understand the need for a continuum approximation at all.  Without it, Condition
+(\ref{qgcst}) yields  \emph{any}  quantum theory of locally finite posets: one then has the full freedom of choosing any poset calculus to construct
+a quantum dynamics, without need to connect with the continuum.   Examples of such poset approaches to quantum gravity
+include those by  \cite{finkelstein} and \cite{hemion}, and more recently \cite{lee}. What distinguishes CST from
+these approaches is the critical role played by both causality and discrete covariance which informs the choice of the
+dynamics as well the physical observables.  In particular, condition (\ref{ca}) is the requirement  that in the continuum approximation these observables should
+correspond to appropriate continuum topological and geometric covariant observables. 
+
+
+
+What do we mean by the \emph{continuum approximation}   Condition (\ref{ca})?  We begin to answer this  by looking
+for the underlying causal set of a  causal spacetime $(M,g)$.  A useful analogy to keep in mind  is that of a
+macroscopic  fluid, for example a glass of water.  Here, there are a multitude of  molecular-level configurations
+corresponding to the same macroscopic state.  Similarly, we expect there to be a multitude of  causal sets  approximated by the same
+spacetime $(M,g)$. And,  just as the set of allowed microstates of the glass of
+water depends on the molecular size, the causal set microstate depends on the \emph{discreteness scale $V_c$}, which is
+a fundamental spacetime volume cut-off.\footnote{The most obvious choice for $V_c$ is the Planck volume, but we will not
+  require it at this stage.}
+
+Since the causal set $C$ approximating $(M,g)$ is locally finite,  it represents a proper subset of the event-set $M$.
+An   \emph{  embedding} is  the injective map
+\begin{equation} \Phi:C \hookrightarrow (M,g), \quad x \prec_C y \Leftrightarrow \Phi(x) \prec_M \Phi(y),
+\end{equation} 
+ where $\prec_{C} $ and $\prec_M$ denote  the order relations in $C $ and $ M$ respectively.  Not every causal set can
+ be embedded into a given spacetime $(M,g)$. Moreover, even if an embedding exists, this is not sufficient to ensure
+ that $C \sim (M,g)$ since only Condition (\ref{order})  is satisfied.  In addition to correlate the cardinality
+ of the causal set with the spacetime volume element, Condition (\ref{number}),   the embeddings must also be
+ \emph{uniform}  with respect
+ to the spacetime volume measure of   $(M,g)$.  A causal set  is said to approximate a spacetime $C \sim (M,g)$ at \emph{density}
+ $\rc=V_c^{-1}$ if there exists    
+ a \emph{faithful embedding} 
+ \begin{equation}
+   \Phi: C \hookrightarrow M, \quad \Phi(C) \mathrm{\ is \ a \ uniform \ distribution \ in \ }(M,g) \mathrm{\ at \
+     density \ } \rho_c, 
+ \end{equation}
+ where by \emph{uniform} we mean with respect to the spacetime volume measure of   $(M,g)$. 
+ 
+ 
+
+%\ref{number} 
+
+The uniform distribution at density $\rho_c$ ensures that  every finite spacetime volume $V$ is represented
+by  a finite number of elements $n \sim \rho_c V $ in the causal set.  It is natural to make these finite spacetime regions
+causally convex, so that they can be constructed from unions of Alexandrov intervals $\Alex[p,q] $ in $(M,g)$. 
+%$\equiv J^+(p) \cap J^-(q)$
+ However,  we must
+ensure covariance, since the goal is to be able to recover the approximate covariant spacetime geometry.  This is why 
+$\Phi(C)$ is required to be uniformly distributed in $(M,g)$ with respect to the spacetime volume measure. It is obvious
+that a ``regular'' lattice cannot do the job since it is  not  regular in all frames or coordinate systems. Hence  it is not
+possible to consistently  assign $n \sim \rho_c V$ to such lattices (see Fig.~{\ref{lattice.fig}}). 
+\begin{figure}
+%   \begin{center} 
+% \begin{minipage}{0.5\textwidth}
+% \includegraphics[width=\textwidth]{Diamond-I}
+% %
+% \end{minipage}%\hspace{0.02\textwidth}
+% \begin{minipage}{0.5\textwidth}
+%   \centering
+%   \includegraphics[width=\textwidth]{Diamond-II}
+% \end{minipage}
+\centerline{
+  \includegraphics[width=0.5\textwidth]{Diamond-I}
+  \includegraphics[width=0.5\textwidth]{Diamond-II}
+}
+\caption{The lightcone lattice in $d=2$. The lattice on the left looks ``regular'' in a fixed frame but 
+  transforms into the ``stretched''  lattice on the right under a boost. The $n \sim \rho_cV$ correspondence cannot be
+  implemented as seen from  the example of the Alexandrov interval, which  contains $n=7$ lattice points in the lattice
+  in the left but is empty after a boost.}
+\label{lattice.fig}
+% \end{center} 
+  \end{figure}
+ 
+
+
+The issue of symmetry breaking is of course obvious even in Euclidean space. Any regular discretisation breaks the rotational
+and translational  symmetry of the continuum. In the  lattice calculations for 
+QCD, these symmetries are restored only  in the continuum limit, but 
+are broken as long as the discreteness persists.  In \cite{tdlee} it was suggested
+that symmetry can be restored in a  randomly generated  lattice where there lattice points are uniformly distributed via
+a Poisson process. This has the advantage of not picking any preferred direction and hence not explicitly breaking
+symmetry, at least on average. We will discuss this point in greater detail further on.  
+
+Set in the context of spacetime, the Poisson distribution is a natural choice for $\Phi(C)$, with the probability of finding $n$ elements in a
+spacetime region of volume $v$  given by 
+\begin{equation} 
+P_v(n)=\frac{(\rc v)^n}{n!}\exp^{-\rc v}.  
+\label{eq:poisson} 
+\end{equation} 
+This means that on the \emph{average}
+\begin{equation} 
+\av{\bbn}=\rc v, 
+\end{equation}  
+where $\bn$ is the random variable associated with the random causal set $\Phi(C)$.   
+This distribution then gives us the covariantly defined $n \sim  \rc V$ correspondence we seek.\footnote{Since $\Phi(C)$ is a random
+  causal set, any function of ${\mathbf F}: C \rightarrow \re $ is therefore a random variable.} 
+
+In a \emph{Poisson sprinkling} into a
+spacetime $(M,g)$ at density $\rho_c$ one selects points in $(M,g)$ uniformly at random and imposes a partial ordering on these elements via the induced spacetime causality relation.  Starting from $(M,g)$, we can then
+obtain an ensemble of ``microstates'' or   causal sets, which we denote by   $\cC(M,\rc)$,  via  the Poisson sprinkling.\footnote{$\cC(M,\rc)$
+  explicitly depends on the spacetime metric $g$, which we have suppressed for brevity of notation.} Each causal set thus obtained is a
+\emph{realisation}, while any ``averaging'' is done over the whole ensemble.
+
+We say that a causal set $C$ is approximated by a spacetime $(M,g)$ if $C$ can be
+obtained from  $(M,g)$ via  a high probability Poisson sprinkling. Conversely, for every  $C \in \cC(M,\rc)$  there is a natural embedding map
+\begin{equation}
+\Phi: C \hookrightarrow  M \,,  
+\end{equation}
+where $\Phi(C)$ is a particular realisation in $\cC(M,\rc)$. In Fig.~\ref{causalset.fig}, we show a causal set 
+obtained by Poisson sprinkling into $d=2$ de Sitter spacetime.
+
+\begin{figure}[ht]
+\centering \resizebox{3in}{!}{\includegraphics{hype.png}}
+\caption{A Poisson sprinkling into a portion of 2d de Sitter spacetime embedded in $\mink^3$. The  relations on the elements are deduced from the causal structure of  $\mink^3$.}
+\label{causalset.fig}
+\end{figure}
+
+
+That there is a fundamental discrete randomness even \emph{kinematically}  is not always easy for a newcomer to CST to come to terms with.  Not only
+does CST posit a fundamental  discreteness,  it also requires it to be probabilistic. Thus, even before coming to 
+quantum probabilities, CST makes us work with a  classical, stochastic discrete geometry.  
+
+Let us state some obvious, but important aspects of Eq.~(\ref{eq:poisson}). Let $\Phi: C \hookrightarrow  (M,g)$ be a faithful embedding at density $\rho_c$.  While the set of all finite
+volume regions\footnote{We assume that these are always causally convex.}   $v$ possess {on average}  $\av{\bn}=\rho_c
+v$ elements of $C$,\footnote{Henceforth we will
+  identify $\Phi(C)$ with $C$, whenever $\Phi$ is a faithful embedding.} the  Poisson fluctuations are given by  $\delta n =\sqrt{n}$. 
+Thus, it is possible that  the region contains no elements at all, i.e., there is a ``void''.   An important
+question to ask is how large a void is allowed, since  a  sufficiently large void
+would have an obvious  effect on our macroscopic perception of a
+continuum. If  spacetime is unbounded, as it is in  Minkowski spacetime,
+the probability for the existence of a void of \emph{any} size is one.  Can this be compatible at all with the idea of an
+emergent continuum in which the classical world can exist,  unperturbed by the vagaries of quantum gravity? 
+
+The presence of a macroscopic void means that the continuum approximation is not realised in this region. A prediction
+of CST is then that  the emergent continuum regions of spacetime are 
+bounded both spatially and temporally, even if the underlying causal set is itself ``unbounded'' or countable. Thus, a continuum universe is not
+viable forever. However, since the current phase of the observable universe \emph{does} have a continuum realisation one
+has to ask whether this is compatible with CST discretisation.  In \cite{swerves} the
+probability for there to be  at least one  nuclear size void  $ \sim 10^{-60}m^4 $ was calculated in a region of Minkowski spacetime
+which is  the size of our present universe.  Using general considerations they found that the probability is of order $ 10^{84}
+\times 10^{168} \times e^{-{10^{72}}}$, which is an absurdly small number!  Thus, CST poses no phenomenological inconsistency in
+this regard. 
+
+An example of a manifold-like causal set $C$ which is obtained via a Poisson sprinkling into a
+2d causal diamond is shown in Fig.~\ref{2drandom.fig}.
+\begin{figure}[ht]
+\centering \resizebox{3in}{!}  {\includegraphics[angle=45]{finalset_nice_random}}
+\caption{A \emph{Hasse diagram}  of a causal set that faithfully embeds into a causal diamond in $\mink^2$. In a Hasse diagram
+  only the nearest neighbour relations or \emph{links} are shown. The remaining relations follow by transitivity.}
+\label{2drandom.fig}
+\end{figure}
+A striking feature of the resulting graph is that there is a high degree of connectivity. In the
+ \emph{Hasse diagram} of Fig.~\ref{2drandom.fig} only the nearest neighbour relations or {links} are depicted with the remaining relations following from
+ transitivity.  $e \prec e' \in C$  is said to be  a  \emph{link} if   $\nexists \, \, e''\in C$  
+such 
+ that $e''\neq e,e'$ and $e\prec e''\prec e'$.    In 
+ a  causal set that is obtained from a Poisson sprinkling, the \emph{valency}, i.e., the number of nearest neighbours or
+ links from any given element  is typically very large. This is an important feature of continuum
+ like causal sets and results from the fact that the elements of $C$ are uniformly distributed in $(M,g)$.  For a given
+ element $e \in C$, the
+ probability of an event $x \succ e $ to 
+be a link is equal to the probability that the Alexandrov interval $\Alex[e,x]$ does not contain any
+elements of $C$. Since 
+\begin{equation} 
+P_V(0)=e^{-\rho_c V},  
+\end{equation}  
+the probability is significant only when $V \sim V_c$. As shown in  Fig.~\ref{valency.fig}, in  $\mink^d$, the set of events within a
+proper time $\propto (V)^{1/d}$ to the future (or past) of a point $p$ lies in the region between the future light cone and the
+hyperboloid $-t^2+\Sigma_i x_i^2 \propto (V)^{2/d}$, with $t>0$. 
+\begin{figure}[ht]
+\centering {\resizebox{3.5in}{!}{\includegraphics{Nonlocal}}}
+\caption{The \emph{valency} or number of nearest neighbours  of an element in a causal set obtained from a Poisson sprinkling into $\mink^2$ is infinite.}
+\label{valency.fig}
+\end{figure}
+Up to fluctuations, therefore,  most of the future links to $e$ lie within the hyperboloid with $V=V_c \pm \sqrt{V_c}$. This is a  non-compact, infinite volume
+region and hence the number of future links to $e$ is (almost surely) infinite.   Since linked elements  are the nearest
+neighbours of $e$, this means the valency of 
+ the graph $C$ is infinite. It is this feature of manifold-like causal sets which gives rise to a characteristic  
+``non-locality'',  and   plays a critical  role in the continuum approximation of CST, time and again.
+
+The Poisson distribution is not the only choice for a uniform distribution.
+A pertinent question is whether a different choice of distribution is possible, which would 
+lead to a different manifestation of the continuum approximation.   In \cite{aspoisson}, this question was addressed in
+some detail.  Let $C \sim (M,g)$  at density $\rc$.  Consider $k$ non-overlapping Alexandrov intervals of
+volume $V$ in $(M,g)$. Since $C$ is uniformly  distributed,  $\av{\bn} = \rho_c V$. The most  optimal choice of
+distribution, is also  one in which the fluctuations $\delta \bn/\av{\bn}=\sqrt{\av{(\bn-\av{\bn})^2}}/{\av{\bn}}$ are minimised. This ensures
+that $C$ is as close to the continuum as possible. For the Poisson distribution $\delta \bn/\av{\bn} = 1/\sqrt{\av{\bn}} = 1/\sqrt{\rho_c V}$.  Is this as good as it
+gets? It was shown that for $d>2$,  and under certain further technical assumptions, the Poisson distribution indeed
+does the best job. Strengthening these results is important as it can improve our understanding of  the continuum approximation. 
+
+
+\subsection{The Hauptvermutung or fundamental conjecture of CST} 
+\label{ssec:haupt} 
+
+An important question is the uniqueness of  the continuum approximation associated to  a causal set $C$.  Can a given
+$C$ be faithfully embedded at density $\rho_c$  into two different spacetimes,
+$(M,g)$ and $(M',g')$?  We expect that this is the case  if $(M,g) $ and $ (M',g')$ differ
+on scales  smaller than 
+$\rho_c$, or that they are, in an appropriate sense, ``close'' $(M,g) \sim (M',g')$.   Let us assume that a causal set \emph{can} be identified with two macroscopically distinct spacetimes at the same density
+$\rho_c$.  Should this be interpreted as a hidden duality between these spacetimes, as is the case for example for isospectral manifolds
+or mirror manifolds in string theory \citep{string}?  The answer is clearly in the negative, since the aim of the CST
+continuum approximation is to ensure that $C$ contains \emph{all} the information
+in $(M,g)$ at scales above $\rho_c^{-1}$. Macroscopic non-uniqueness would therefore mean that the intent of
+the CST  continuum approximation is \emph{not}  satisfied. 
+
+We thus state the fundamental conjecture of CST: 
+
+\textit{\textbf{The Hauptvermutung of CST:}  $C$ can  be faithfully embedded at density $\rho_c$  into two distinct spacetimes,
+$(M,g)$ and $(M',g')$  iff  they are approximately isometric.}    
+
+By an \emph{approximate  isometry }, $(M,g) \sim (M',g')$ at density $\rc$, we mean that $(M,g)$ and $ (M',g')$ differ only at scales smaller
+ than $\rho_c$.  Defining such an isometry  rigorously is challenging, but concrete proposals have been made by 
+ \cite{bomclose,noldusone,noldustwo,bomnoldus,bomnoldustwo},  en route to a full proof of the conjecture. Because of the
+ technical nature of these results, we  will discuss it only very briefly in the next
+ section, and  instead use the above intuitive and functional definition of closeness. 
+
+ Condition (\ref{qgcst}) tells us that the kinematic space of Lorentzian geometries must be replaced by a \emph{sample
+   space }  $\Omega$ of causal sets.  Let $\Omega$ be the set of all 
+countable causal sets and $\contg$ the set of all possible Lorentzian geometries,  in all dimensions.  If $\sim$ denotes
+the approximate isometry at a given $\rc$, as  discussed above, the quotient
+space $\contg/\!\!\sim$ corresponds to the set of all continuum-like causal sets $\Omega_{cont}\subset \Omega$ at that $\rc$.  Thus,
+causal sets in 
+$\Omega$  correspond to Lorentzian geometries of  \emph{all} dimensions!  Couched this way, we see that   CST dynamics
+has the daunting task of not only obtaining manifold-like causal sets in the classical limit, but also ones that have dimension $d=4$.  
+
+As mentioned in the  introduction, the sample space of $n$ element causal sets $\Omega_n$ is dominated by the KR posets
+depicted in Fig.~\ref{kr.fig} and are hence very non-manifold-like    \citep{kr}. A KR poset has   three ``layers'' (or abstract ``moments of
+time''),  with roughly $n/4$ elements in the bottom and top layer and such that each  element  in the bottom
+layer is related to roughly half those in the  middle layer, and similarly each element  in the top layer is related to
+roughly half those in the middle layer.  The number of  KR posets grows as $\sim 2^{{n^2}/{4}}$ and hence must play a role in the
+deep quantum regime. Since they are non-manifold-like  they pose  a challenge to the dynamics, which must overcome
+their entropic dominance in the classical  limit of the theory.  Even if the entropy from these KR  posets is
+  suppressed by an appropriate choice of dynamics, however, there is a sub-dominant hierarchy of non-manifold-like posets (also layered)
+  which also need to be 
+  reckoned with  \citep{dharone,dhartwo,pst}. 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{KR}
+\caption{A Kleitman--Rothschild or KR poset.}
+\label{kr.fig}
+\end{figure} 
+
+
+
+Closely tied to the continuum approximation  is  the notion of ``coarse graining''. Given a spacetime $(M,g)$ the
+set $\cC(M,\rc)$ can be obtained for different values of $\rc$.  Given a causal set $C$ which faithfully embeds into $(M,g)$ at $\rc$, 
+one can then \emph{coarse grain} it to a smaller subcausal set  $C' \subset C$  which faithfully embeds into $(M,g)$  at
+$\rc' <\rc$.   A natural coarse graining would be via a random selection of elements in $C$ such that for every $n$ elements
+of $C$ roughly $n'=(\rc'/\rc) n$ elements are chosen. Even if $C$ itself does not faithfully embed into $(M,g)$ at $\rc$, it is
+possible that a coarse graining of $C$ can be   embedded. This would be in keeping with our sense in CST that the deep
+quantum regime need not be manifold-like.   One
+can also envisage manifold-like causal sets with   a regular  fixed lattice-like structure  attached to each element similar to a 
+``fibration'',  in the spirit of Kaluza--Klein theories. Instead of the coarse graining procedure, it would be more
+appropriate to  take the  quotient with respect to this fibre to obtain the continuum like causal
+set. Recently, the implications of coarse graining in CST, both
+dynamically  and
+kinematically, were considered in \cite{astridcg}  based on renormalisation techniques. 
+
+\subsection{Discreteness without Lorentz breaking} 
+
+
+It is often assumed that a fundamental discreteness is incompatible with continuous symmetries.  As was pointed
+out  in \cite{tdlee},  in the Euclidean context, symmetry can be preserved on average in a random lattice.
+In \cite{bomhensor}, it was shown that a causal set in $\cC(\mink^d,\rc)$ not only preserves Lorentz invariance on
+average, but in \emph{every} realisation, with respect to the Poisson distribution.  Thus,  in a very specific sense a manifold-like   causal set does not break Lorentz invariance.  In
+order to see the contrast between the Lorentzian and Euclidean cases we present the arguments of \cite{bomhensor}
+starting with the easier  Euclidean case.
+
+Consider the Euclidean plane $\cP = (\re^2,\delta_{ab})$, and let   $\Phi: \cC(\cP,\rc) \hookrightarrow \cP$ be the
+natural  embedding map, where $\cC(\cP,\rc)$ denotes the ensemble of Poisson sprinklings into $\cP$ at density $\rc$. A rotation $r \in SO(2)$ about a point $p \in \cP$, induces a map
+$r^* : \cC(\cP,\rc) \rightarrow \cC(\cP,\rc)$, where $r^*=\Phi^{-1}\circ r \circ \Phi$ and similarly a 
+translation $t$ in $\cP$ induces the map $t^*: \cC(\cP,\rc)
+\rightarrow \cC(\cP,\rc)$. The action of the  Euclidean group  is clearly not transitive on $\cC(\cP,\rc)$ but has non-trivial orbits which provide a fibration of $\cC(\cP,\rc)$. Thus 
+the ensemble $\cC(\cP,\rc)$ preserves the Euclidean group on average. This is
+the sense in which the discussion of \cite{tdlee} states that the random discretisation preserves the Euclidean group.
+
+The situation is however different for a \emph{given} realisation $ P \in \cC(\cP,\rc)$. Fixing an 
+element $e \in \Phi(P)$,
+we  define a {direction} $\vd \in S^1$, the space of unit vectors in
+$\cP$ centred at $e$.  Under  a rotation $r$ about $e$, $\vd \rightarrow r^*(\vd)\in S^1$.  In general, we want a rule that assigns a
+natural direction to every $P \in \cC(\cP,\rc)$. One simple choice is to find the 
+closest element to $e$  in $\Phi(P)$, which \emph{is}  well defined in this    Euclidean context.  Moreover, this element is almost surely unique, since the probability of  two elements being at the same radius from $e$ is zero in a Poisson distribution.
+Thus we can  define  a  ``direction map''  $\vD_e: \cC(\cP,\rc) \rightarrow S^1$ for a fixed $e \in \Phi(P)$ consistent with the rotation map, i.e.,  $\vD_e$ commutes with any $r\in SO(2)$, or is \emph{equivariant}. 
+
+Associated with  $\cC(\cP,\rc)$, is a probability distribution $\mu$ arising  from the Poisson sprinkling  which associates with
+every measurable set $\alpha$ in $\cC(\cP,\rc)$ a probability $\mu(\alpha) \in [0,1]$. The Poisson distribution being
+volume preserving  
+\citep{stoyan},  the measure on $\cC(\cP,\rc)$  moreover must be independent of the action of the  Euclidean group on $\cC(\cP,\rc)$, i.e.:  $\mu \circ r =\mu$. 
+
+
+In analogy with a continuous map, a measurable map is one whose 
+preimage from  a measurable set is itself a measurable set. The natural map $\vD$ we have defined is a measurable map, and we can use it to define a measure on $S^1$: $\mu_\vD \equiv \mu \circ
+\vD^{-1}$.   
+Using the invariance of $\mu$ under rotations  and the equivariance of $\vD$ under rotations 
+\begin{equation} 
+\mu_\vD=\mu\circ r \circ \vD^{-1} = \mu \circ \vD^{-1} \circ r
+=\mu_\vD \circ r \, \, \, \forall \, \, r \in SO(2),  
+\end{equation} 
+we see that $\mu_\vD$ is also invariant under rotations. Because 
+$S^1$ is compact, this does not lead to a contradiction. In analogy with the construction used in \cite{bomhensor} for the Lorentzian case, we choose a  measurable set  $s\equiv (0,2\pi/n) \in S^1$. A  
+rotation by  $r(2\pi/n)$, takes $s \rightarrow s'$ which is non-overlapping, so that after  $n$ successive rotations,
+$r^n(2\pi/n)\circ s = s$. Since  each rotation does not change
+$\mu_\vD$ and  $\mu_\vD(S^1)=1$, this means that $\mu_\vD(s)=1/n$.   
+Thus,  it \emph{is} possible to assign a consistent direction for a given realisation $P\in \cC(\cP,\rc)$ and hence break
+Euclidean symmetry. 
+
+However, this is not the case for the space of  sprinklings $\cC({\mink^d},\rc)$ into $\mink^d$, where the hyperboloid  $\cH^{d-1}$ now
+denotes  the space of future directed unit vectors and is invariant under the Lorentz group $SO(n-1,1)$ about a fixed
+point $p\in \mink^{d-1}$.  To begin with, there is no  ``natural'' direction map. Let $C \in \cC(\mink^d,\rc)$.  To find an element  which is
+closest to some fixed $e \in \Phi(C)$, one has to take the infimum over $J^+(e)$ , or some suitable Lorentz invariant
+subset of it, which being non-compact, does not exist.  Assume that \emph{some} measurable direction map $D: \Omega_{\mink^d} \rightarrow \cH^{d-1}$,  does exist.  Then the above arguments imply  that $\mu_D$ must be invariant under Lorentz boosts. The
+action of successive Lorentz transformations $\Lambda$ can take a given
+measurable set $h \in \cH^{d-1}$ to an infinite number of copies that are
+non-overlapping, and \emph{of the same measure}. Since $\cH^{d-1}$ is non-compact,  this is not  possible  unless each set is of measure zero, but since this is true for any measurable set $h$ and we require $\mu_D(\cH^{d-1})=1$, this is a contradiction.  This proves the following theorem \citep{bomhensor}:   
+
+\begin{theorem} In dimensions $n>1$ there exists no equivariant
+measurable map $\vD: \cC(\mink^d,\rc) \rightarrow \cH$, i.e., 
+\begin{equation} 
+\vD \circ \Lambda = \Lambda \circ \vD \, \, \forall \, \Lambda \in
+SO(n-1,1).  
+\end{equation}   
+\end{theorem}
+
+\begin{figure}[ht]
+\centering \resizebox{2in}{!}  {\includegraphics[width=\textwidth]{Directions}}
+\caption{The space of unit directions in $\re^d$ is $S^{d-1}$, while the space of unit timelike vectors in $\mink^d
+  $ is $\cH^{d-1}$.}
+\label{Directions.fig}
+\end{figure}
+
+In other words, even for a given sprinkling $\omega \in \Omega_{\mink^d}$ it is not possible to consistently pick a
+direction  in $\cH^{d-1}$. Consistency means that under a boost $\Lambda: \omega \rightarrow \Lambda\circ w$, and
+hence $D(\omega) \rightarrow \Lambda \circ D(\omega) \in \cH^{d-1}$. Crucial to this  argument is the use of the Poisson
+distribution.\footnote{It is interesting to ask if other choices of uniform distribution satisfy the above theorem. If so, then
+our criterion for a uniform distribution could not only include ones that minimise the fluctuations but also those that
+respect Lorentz invariance.}  Thus, an important prediction of CST is local Lorentz invariance.  Tests of Lorentz invariance over the last couple of decades have produced an ever-tightening
+bound, which is therefore consistent with CST \citep{li}. 
+
+
+
+
+\subsection{Forks in the road: What makes CST so ``different''?} 
+\label{ssec:forks}
+
+
+In many ways CST  doesn't  fit  the  standard paradigms adopted by other approaches to quantum
+gravity and it is worthwhile trying to understand the source of this difference.  The program is minimalist but
+also 
+rigidly constrained by its continuum approximation. The ensuing non-locality  means that the apparatus of local
+physics is not readily available to CST. 
+
+
+
+\cite{lambdaone}  describes the route to quantum gravity and the various forks at which one has to make choices.
+Different routes  may lead to the same destination: for example
+(barring interpretational questions),   simple quantum systems  can be
+described equally well by the path integral and the canonical approach. However, this
+need not be the case in gravity: a set of consistent choices may lead  you down a
+unique path, unreachable from another route. Starting from broad principles,  Sorkin argued that  certain
+choices at a  fork are preferable to others for a theory quantum gravity. These include the choice of  Lorentzian over Euclidean,
+the path integral over canonical quantisation and discreteness over the continuum.   This  set of choices leads to a
+CST-like theory, while choosing the Lorentzian-Hamiltonian-continuum route  leads to a canonical approach like Loop
+Quantum Gravity.
+
+Starting with CST as the final destination, we can work backward to retrace our steps to see what forks had
+to be taken and why other routes are impossible to take. The choice  at the discreteness versus continuum fork and the
+Lorentzian versus Euclidean fork are obvious from our earlier discussions. As we  explain below, the other essential fork that \emph{has} to be taken
+in CST is the histories approach to quantisation.
+
+One of the standard routes to quantisation is via  the canonical approach.  Starting with the phase space of a
+classical system, with or without constraints,  quantisation rules  give rise to the 
+familiar apparatus of Hilbert spaces and self adjoint operators.   In quantum gravity,  apart
+from interpretational issues, this route has difficult technical hurdles, some of which have been partially
+overcome \citep{ashtekar}. Essential to the canonical formulation is the $3+1$ split of a spacetime $M=\Sigma \times \re$,
+where $\Sigma$ is a Cauchy hypersurface, on which are defined the canonical phase space variables which capture the intrinsic and
+extrinsic geometry of $\Sigma$. 
+
+The continuum approximation of CST however, does not allow a meaningful definition of a Cauchy hypersurface, because of 
+the `` graphical non-locality'' inherent in a continuum like  causal set,
+as we will now show.  We begin by defining an \emph{antichain} to be a set of unrelated elements in
+  $C$, and an \emph{inextendible antichain} to be an antichain $\cA \subset C$ such that every element $e \in C
+  \backslash \cA$ is related to an element of $\cA$.  The   natural choice for a   discrete analog  of a
+Cauchy  hypersurface is therefore an {inextendible antichain} $\ca$, which separates the \emph{set} $C$ into its future and past, so that we can
+express $C=\fut(\ca) \sqcup
+\past(\ca) \sqcup \ca$,  with  $\sqcup$ denoting disjoint union. However, an element  in $\past(\ca)$ can be related via
+a link to an 
+element in $\fut(\ca)$ thus ``bypassing'' $\ca$. An example of a  ``missing link'' is  depicted in Fig
+\ref{Missinglinks.fig}.   This means that unlike a Cauchy hypersurface, $\ca$ is not a summary of its
+past, and hence a canonical decomposition using Cauchy hypersurfaces is not viable \citep{antichain}.  On the other
+hand, each causal
+set is a  ``history'',  and since the sample space of causal sets is countable, one can construct a path integral or path-sum as
+over causal sets. We will describe the dynamics of causal sets in more detail in Sect.~\ref{sec:dynamics}. 
+\begin{figure}[!htb]
+\centering \resizebox{3in}{!}  {\includegraphics[width=\textwidth]{NewMissinglinks}}
+\caption{A ``missing link'' from $e$ to $e'$ which ``bypasses'' the inextendible antichain $\ca$.}
+\label{Missinglinks.fig}
+\end{figure}
+
+Before moving on, we comment on the condition of local finiteness which, as we have pointed out,   provides an intrinsic
+  definition of spacetime discreteness. This does not need a continuum approximation. An alternative definition would be
+  for the causal set to be  countable, which along with the continuum approximation is sufficient to ensure the number
+  to volume correspondence. This includes causal sets with  order intervals of infinite cardinality. This
+  allows us to extend  causal set discretisation to more general spacetimes, like anti de Sitter spacetimes, where there
+exist  events $p,q$ in the spacetime for which  $\vol(\Alex[p,q])$ is not finite. However, what is ultimately of
+interest is the dynamics and in particular, the sample space $\Omega$ of causal sets. In the growth models we will encounter in 
+Sect.~\ref{ssec:csg},\ref{ssec:beable} and \ref{ssec:qsg} the sample space consists of past finite posets, while in the
+continuum-inspired dynamics of Sect.~\ref{ssec:partn} it consists of finite element posets. Thus, while countable posets may be relevant to a broader
+framework in which to study the  dynamics of causal sets, it suffices for the present to focus on locally finite
+posets. 

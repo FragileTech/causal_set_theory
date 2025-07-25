@@ -1,0 +1,572 @@
+\section{Dynamics} 
+\label{sec:dynamics}        
+
+Until now our focus has been on manifold-like causal sets, since the aim was to find useful manifold-like covariant
+observables as well as to make contact with phenomenology.  However, as discussed in Sect.~\ref{sec:cst}, the arena for CST is a sample space
+$\Omega$ of locally finite posets which replaces the space of $4$-geometries, and contains non-manifold-like causal
+sets.  A CST  dynamics is given by the measure 
+triple $(\Omega, \fA, \mu)$ where $\fA$ is an event algebra and $\mu$ is either a classical or a quantum  measure. 
+ We will define these quantities  later  in this section.
+
+To begin with, $\Omega$ itself can be chosen depending on the particular physical situation in mind.  In the
+context of initial conditions for cosmology, for example,  it is appropriate to  restrict to the sample space of past finite
+countable causal sets $\Omega_{g}$, while for a  unimodular type dynamics using the Einstein--Hilbert action,   the
+natural restriction is to $\Omega_n$  the sample space  of causal sets of fixed cardinality $n$.  We will see that
+dimensional  restrictions on the  sample space are also of interest  and
+can lead to a closer comparison with other approaches to quantum gravity.
+
+As discussed in Sect.~\ref{sec:cst} and \ref{sec:kinematics},  in the asymptotic $n \rightarrow \infty$ limit  the sample space $\Omega_n$ is
+dominated  by the non-manifold-like  KR  causal sets depicted in Fig.~\ref{kr.fig}. This is the ``entropy problem'' of
+CST. 
+These posets have approximately just three ``moments'' of time and hence should not  play a role in the classical or
+continuum approximation of the theory. 
+
+
+For a  quantum dynamics of CST  we would like to start  
+with a few  basic axioms, including discrete general covariance and dynamical causality. A very important step in this
+direction was made by the \emph{classical sequential growth}  models (CSG)\citep{csg} , which are Markovian
+growth models. We will describe these in Sect.~\ref{ssec:csg} and \ref{ssec:beable}. 
+
+One of the main challenges in CST is to build a viable \emph{quantum sequential growth}(QSG) dynamics. The  appropriate
+framework for the dynamics is as a quantum measure space which  is a natural quantum
+generalisation of classical stochastic dynamics \citep{qmeasureone,qmeasuretwo,sorkinqmeasure}. This means replacing the
+classical probability measure $P$ in the
+measure space triple $(\Omega, \cA, \mu_c)$ with a \emph{quantum measure} $\mu$.  The quantum measure is defined via a
+decoherence functional  and can also be defined as a \emph{vector measure}  in a  corresponding \emph{histories Hilbert
+  space}. We will discuss this in Sect.~\ref{ssec:qsg}. 
+
+It is also of interest to construct  an effective   continuum-inspired dynamics, where the discrete
+Einstein--Hilbert or BD action is used to give the measure for the discrete path integral or path sum. The quantum
+partition function can either be evaluated directly or converted into a statistical partition function over causal sets using an analytic
+continuation. This makes it amenable to  Markov Chain Monte Carlo (MCMC) simulations as we  will see below in Sect.~\ref{ssec:partn}. 
+
+
+
+\subsection{Classical sequential growth models}
+\label{ssec:csg}
+
+The \cite{csg} classical sequential growth or CSG models are a class of stochastic dynamics in which causal sets are grown
+element by element, with the dynamics satisfying a few basic principles \citep{csg,csgtwo,csgrg,davidthesis,rv}. The
+stochastic dynamics  finds a natural expression in measure theory and allows for an explicit definition of 
+covariant classical observables \citep{observables,observablesds}. This measure theoretic
+structure provides an important template for the quantum theory, and hence we will first flesh it out in some detail
+before discussing quantum dynamics.      
+
+Let us start with a naive picture. Imagine living on a \emph{classical} causal set
+universe, with our universe represented by a single causal set.  Since causal sets are locally finite,  the ``passage of time'' occurs with the addition of a new
+element. If we are to
+respect causality, this new element cannot be added so as to disturb the past. Instead it can be added to the future of some of the existing events or it can be  unrelated to all of them. Every such
+``atomic change'' in spacetime corresponds to the causal set changing cardinality or ``growing''  by one. Starting with a causal set 
+$\tc_n$ of cardinality $n$, the passage of time means transitioning from  $\tc_n\rightarrow \tc_{n+1}$ where the new
+element in $\tc_{n+1}$ is to the future of some of the elements of $\tc_n$, but never in their past.  In the infinite ``time'' limit,  $n\rightarrow
+\infty$, the dynamics, either deterministic, probabilistic or quantum, will take you from $\tc_n$ to a countable causal
+set. 
+
+Working  \emph{backwards}, on the other hand, leads us  to a ``beginning'', with $n=0$. This gives the most natural
+initial condition\footnote{Of course, we could insist that there is no beginning,  in which case $n$ is never finite.}  for
+causal sets: begin with the empty set $\emptyset$.  The only way to go forward from here, is to
+make $n=1$, i.e., we have  a single element. For $n=2$, the new element could either be to the future of the existing
+element or unrelated to it, as in Fig.~\ref{growthtwo.fig}. 
+
+\begin{figure}[ht]
+  \centering \resizebox{2in}{!} {\includegraphics[width=\textwidth]{growthtwo}} 
+  \caption{The first two stages of a classical sequential growth(CSG)  dynamics. The probability for a single element
+      (red) 
+    to appear at coordinate time $n=1$ is 1. Subsequently, the new element (blue) at $n=2$ is added either to the future of the
+  existing element with probability $p$ or is unrelated to it with probability $1-p$.}
+\label{growthtwo.fig}
+\end{figure}
+
+Thus, one can build up the tree $\csgtree$ of causal sets as $n\rightarrow \infty $ as shown in
+Fig.~\ref{csgtree.fig}. As $n$ increases, the number of possibilities grows superexponentially as expected from the KR
+theorem \citep{kr},  and there is no easy enumeration of this space. 
+The growth process generates a sample space $\tOg$ 
+of countable causal sets which are are all \emph{past finite} and labelled by the ``time'' at which each element is
+added. A causal set $\tc$ in $\tOg$ is said to be \emph{naturally  labelled}, i.e., there exists an injective map   
+$L: \tc \rightarrow \mathbb N$ (the natural numbers) which 
+preserves the order relation in $\tc$, i.e., $e \prec e' \Rightarrow L(e) < L(e')$. In the growth process, this label is the
+coordinate time. 
+%.
+%The growth space is  a poset tree of causal sets $\csgtree$ labelled by the coordinate time $n$,  as shown in Fig.~\ref{csgtree.fig}. 
+
+\begin{figure}[ht]
+  \centering \resizebox{4in}{!} {\includegraphics[width=\textwidth]{growththree}} 
+  \caption{The CSG tree $\csgtree$. There are three ways to get the  3-element unlabelled causal set
+      whose natural labellings are given by the 3rd, 4th and 5th 3-element labelled causal sets in the figure. One path
+      is via the 2-element chain and the other two are from the 2-element antichain. Covariance
+      demands that the probability along each path is the same.}
+    \label{csgtree.fig}
+\end{figure}
+
+In the spirit of covariance,  however, we cannot take  the  time label to be  fundamental; the dynamics and the
+observables cannot depend on the order in which the elements are born. Thus, the probability to get a labelled causal set $\tc_n$
+and any of its relabellings,  $\tc_n'$ must be  the same.  Identifying relabelled causal sets as the same object in the CST tree
+$\csgtree$ gives us a non-trivial poset of causal sets or the ``postcau''  $\postcau$ of \cite{csg}. On $\postcau$, 
+a  covariant dynamics is thus path-independent: if there is more than one path from an unlabelled initial
+causal set $c_{n_{i}}$ to an unlabelled final causal set $c_{n_{f}}$ in $\postcau$, then in order to satisfy covariance,
+the measure on both
+paths should be  the same. 
+
+Apart from covariance, this  dynamics also satisfies an internal causality condition, dubbed  \emph{Bell
+  causality}.   Consider the transition $\tc_n \rightarrow \tc_{n+1}$ with probability $\alpha_n$ where  the new element
+$e_{n+1}$ is added to the future of a
+``precursor''   set $p_n \subset \tc_n$, and is unrelated to a ``spectator set'' $s_n \subset \tc_n$.  Causality suggests
+that the 
+probability for the transition should not depend on the spectator set $s_n$.  For non-empty $s_n$ with
+$|s_n|<n$,  consider
+the causal sets $\tc_m=\tc_n\backslash s_n$
+and $\tc_{m+1}=\tc_{n+1} \backslash s_n$,  
+where $\backslash$ denotes set difference  and $m+|s_n| =n$.  The  transition probability $\alpha_m$ for  $\tc_m\rightarrow
+\tc_{m+1}$   should then be proportional to $\alpha_n$. If $\tc_n \rightarrow \tc_{n+1}'$ is another transition from $\tc_n$, then
+defining $p'_n, s_n'$, $ \alpha_n'$, and $\tc_{m+1}'=\tc_{n+1}'\backslash s_n'$, analogously, the condition of Bell
+causality is 
+\begin{equation}
+\frac{\alpha_n(\tc_n \rightarrow \tc_{n+1})}{\alpha_n'(\tc_n \rightarrow \tc_{n+1}')}= \frac{\alpha_m(\tc_m \rightarrow
+  \tc_{m+1})}{\alpha_m'(\tc_m \rightarrow \tc_{m+1}')} 
+\end{equation}
+Though relatively easy to implement classically, a quantum version of Bell causality has been hard to find 
+\citep{joequantumbell}.    
+
+The triple requirements of (a) covariance, (b) Bell causality and (c) Markovian evolution define the classical
+sequential growth dynamics of \cite{csgone}.  Starting from the empty set, a causal set is thus grown element by
+element, assigning probabilities to each transition $\tc_n$ to a $\tc_{n+1}$, consistent with these requirements. Because of
+it being a Markovian evolution, the probability associated with any finite $c_n$ is given by the product of the
+transition probabilities along a path in $\postcau$.   
+
+The dynamics was shown in \cite{csg} to be  fully determined by the infinite set of coupling constants, $t_n$, one for
+each stage of the growth. If  $q_k$ denotes  the transition probability from  the $k$-element antichain to the $k+1$-element
+antichain, these  coupling constants can be expressed as 
+\begin{equation}
+t_n\equiv  \sum_{k=0}^n (-1)^{n-k} \binom{n}{k}\frac{1}{q_k}.
+  \end{equation}  
+In general, the $t_n$  can be independent of each other. Including relations between the different $t_n$ thus simplifies  the dynamics. The simplest example is that of \emph{transitive percolation}
+determined by the probability  $(1-q) \geq 0$ of adding an element to the immediate future of an existing element,\footnote{By this we mean that the new
+  element is ``linked'' to an existing one, not just related to it.} and $q$ of
+being unrelated to it.  Thus, the
+probability of adding a new element to the immediate future of $m$ elements of   $c_n$ and of being  unrelated to  $m'$ others
+is $(1-q)^mq^{m'}$.  In terms of the general coupling constants,  $t_n=t^n\equiv \left(\frac{1-q}{q}\right)^n$.
+
+In \cite{rv} and \cite{observablesds},
+a generalisation of the dynamics was explored,  where some of the transition probabilities were allowed to vanish, consistent with
+(a) (b) and (c). This requires  a  generalisation of the Bell causality condition. The resulting dynamics exhibits a
+certain ``forgetfulness'' when these transition probabilities vanish, but are otherwise very similar to the CSG
+models.
+
+Since the generic dynamics  consistent with  (a), (b) and (c) does not by itself lead to constraints on the 
+ $t_n$,  this is an embarrassment of riches. Does nature pick out one set over another? 
+In \cite{csgrg}, an evolutionary mechanism for doing so was suggested using cosmological bounces  which
+give rise to new epochs which ``renormalise'' the coupling constants towards fixed points.  
+A cosmological bounce in a causal set is naturally described by the appearance of a \emph{post} 
+which is an inextendible antichain of cardinality 1.
+
+\begin{figure}[ht]
+  \centering \resizebox{3in}{!} {\includegraphics[width=\textwidth]{Post}} 
+  \caption{A post is an analogue of a bounce in causal set cosmology.}
+\label{post.fig}
+\end{figure}
+
+Thus, every element in $c$ either lies to its past or to its
+future. Moreover, because it is a single element maximal antichain, there are no ``missing links'' (see
+Fig.~\ref{Missinglinks.fig}), and the post is indeed a
+summary of its past. The post is  the causal set equivalent  to a ``bounce'' but is non-singular in the  causal set.  We
+define the causal set between two posts as an ``epoch'',  with the
+last epoch being the one after the last post. Let  $e$ be a post in $c$ and let  $r=|\past(e)|$. Then a 
+set of ``effective''  coupling constants in the epoch after $e$ can be defined as \citep{csgrg} 
+\begin{equation}
+\tilde t_n^{(r)}=\sum_{k=0}^r \binom{r}{k} t_{n+k}.
+  \end{equation} 
+Thus, the memory of the past of the post, which is common to all the elements to the future of the post is 
+``washed'' out, but not without ``dressing'' up the new effective coupling constants. Denoting the set of effective couplings by $\cT^{(i)}\equiv \{t_0^{(i)}, t_1^{(i)}, \ldots  \} $ with $i=0$ being the original set of couplings,  this    corresponds to applying
+$r$ copies of  the transform $M: \cT^{(i)} \rightarrow \cT^{(i+1)}$ where $t_n^{(i+1)}=t_n^{(i)} + t_{n+1}^{(i)}$, $i=0,
+\ldots r-1$. In \cite{csgrg}, it was shown that the fixed points of the map $M$  give $t_n=t^n$ (transitive percolation) for some $t \geq 0$ and
+moreover  $M$ does not have any other cycles.  Starting from any set  $\cT^{(0)}$ for which
+$\lim_{n\rightarrow \infty} (t_n^{(0)})^{{1}/{n}}$ is finite, $M^r: \cT^{(0)} \rightarrow \cT^{(r)}$, is such that
+$\cT^{(r)}$ converges pointwise to $t^{(r)}_n=t^n$ for $t=\lim_{n\rightarrow \infty} (t_n^{(0)})^{{1}/{n}}$. While
+this result does not guarantee that every $\cT^{(0)}$ will converge to transitive percolation,
+\cite{csgrg} examined several cases, and conjectured that the deviation from percolation-like values are ``rare'' and
+that typically,  $\cT^{(r)}$  will be nearly like transitive percolation.
+
+Such an evolutionary renormalisation thus brings  the infinite dimensional coupling constant space to a one dimensional
+space, which is remarkable. Assuming that this is indeed the case in general,  a sufficiently late epoch will likely
+have a transitive
+percolation dynamics.
+
+
+What can one say about the causal sets generated from this dynamics?  A very important result from
+transitive percolation is that the typical causal sets obtained are not 
+KR like posets and hence the dynamics beats their entropic dominance. The question of whether there is a
+continuum-like limit for transitive percolation dynamics was explored in \cite{csgtwo}, using a comparison
+criterion. The abundance of fixed small subcausal sets was examined as a function of the coupling, by fixing the
+density relations. Comparisons with Poisson sprinklings in flat spacetime showed a convergence, suggestive of  a continuum
+limit. In \cite{davidmaqbool}, it was shown that the dynamics typically yields an exponentially expanding
+universe. Moreover, for $(1-q) \ll 1 $ and $n \gg \frac{1}{1-q}$, after a post the universe enters a tree like phase and then
+a de Sitter-like phase, in which the cardinality of large causal diamonds are de Sitter like functions of the discrete
+proper time.  In \cite{intervals}, it was shown that despite this, the abundance of causal intervals is not de~Sitter
+like, and thus, this is not strictly a manifold-like phase. In \cite{grnick} and \cite{grahammalwina}, moreover, it was shown
+explicitly that in the asymptotic limit $n \rightarrow \infty$ the causal sets limit to ``semi-orders'' which,  though temporally
+ordered,  have no spatial structure at all,  and are hence non-manifold-like. Nevertheless, the dominance of measure
+over entropy is important and the hope is that it will be reflected in the right quantum version of the dynamics. 
+
+
+
+Recently, \cite{faystav} proposed a method for  dealing with black hole singularities in CSG models. As in the case of cosmological
+bounces a  new epoch is  created beyond the singularity. Using ``breaks'' which are multi-element versions of a post,
+they demonstrated that a renormalisation of the coupling constants occurs in the new epoch. 
+
+\subsection{Observables as beables}
+\label{ssec:beable}
+
+As mentioned in the introduction to this section, a dynamics for CST is given by the triple $(\Omega, \fA, \mu)$.  In
+CSG this is  a probability measure space, where the sample space $\tOg$ is the set of all past finite naturally labelled
+causal sets.
+
+The event algebra $\fA$ can be constructed from the sequential growth process as follows.  
+ We define  a \emph{cylinder set}  $\cyl(\tc_n) \subset \tOg$ as
+the set of all labelled causal sets in $\tOg$ whose first $n$ elements are the causal set
+$\tc_n$. Figure~\ref{cylinder.fig} depicts an example of a cylinder set.\footnote{A useful example to keep in mind is the 1-d random walk. Let $\gamma^T$ be a finite element path in the $t-x$ plane from $t=0$
+to $t=T$.  A cylinder set $\cyl(\gamma^T)$ is then the set of all infinite time paths, which coincide with $\gamma^T$
+from $t=0$ to $t=T$.}   For every finite
+element causal set $\tc_n$,  $\cyl(\tc_n) \subseteq  \tOg$, and in the trivial $n=1$ case, $\cyl(\tc_1)=\tOg$.   The cylinder
+sets in CSG satisfy a nesting property. Namely, if $n'>n$ and $\cyl(\tc_{n'})\cap \cyl(\tc_n)
+\neq \emptyset$, then $\cyl(\tc_{n'})\subset  \cyl(\tc_n)$. Thus, a non-trivial intersection of two different cylinder sets is 
+possible only if one is strictly a subset of the other.
+
+\begin{figure}[ht]
+  \centering \resizebox{4in}{!} {\includegraphics[width=\textwidth]{cylinderset}} 
+  \caption{The cylinder set for the ``{\bf V}'' poset consists of all countable causal sets
+      in $\tOg$ whose first three elements are the labelled ``{\bf V}'' poset. Examples of causal sets that lie in $\cyl(\mathbf{V})$
+      are depicted in the boxes.}
+\label{cylinder.fig}
+\end{figure}
+
+
+The \emph{event algebra $\tfA$} is generated from the cylinder  sets via
+finite unions,  intersections and set differences. It is closed under finite set operations and
+contains the null set $\emptyset$ as well as $\tOg$. In the growth process we assign a probability $\mu(\tc_n)$ to every finite
+labelled causal set $\tc_n$. By identifying $\tc_n$ with its cylinder set $\cyl(\tc_n)$, we define the measure 
+$\mu(\cyl(\tc_n))\equiv \mu(\tc_n)$ and hence on all elements of $\tfA$, since $\mu$ is finitely additive.   This makes 
+$(\tOg, \tfA, \tmu')$ a ``pre-measure''  space.  
+
+An \emph{event}  $\alpha$ is  an element of $\fA$ deemed to be  \emph{covariant}  as  a measurable subset $\alpha
+\subset \tOg$ if for every $\tc \in \alpha$,  its relabelling $\tc'$ also
+belongs to $\alpha$. Since a relabelling can happen arbitrarily far into the future,  no event in $\fA$
+is covariant, since  $\fA$ is closed only  under finite set operations. Take for example the covariant \emph{post event}
+which is the set of all  causal sets which  have a post. This is a covariant event, and is the equivalent of the return event in the random walk. In both cases, the event cannot be defined using
+only countable set operations, and hence the post event does not belong to $\fA$.
+
+One route to obtaining  covariant events is to pass
+to the full sigma algebra $\tfS$  generated  by $\tfA$, which  is closed under countable set operations.
+For classical measure spaces, the  Kolmogorov--Caratheodory--Hahn extension theorem allows us to extend  $\tmu'$ to $\tfS$
+and hence pass  with ease to a full measure space $(\tOg, \tfS, \tmu)$, where $\tmu|_{\tfA} = \tmu'$.  Not every event
+in $\fS$ is covariant, but we  can restrict our attention to covariant events, i.e., sets that are invariant under
+relabellings. If  $\sim$ denotes the equivalence up to relabellings one can define the quotient algebra $\fS=\tfS/\sim$
+of covariant events. An element of $\fS$ is measurable covariant set, or a \emph{covariant observable (or beable)}. Our
+example of the  post event belongs to $\fS$.  Another example of a covariant event is the set of \emph{originary} causal
+sets, i.e.,  causal sets with a
+single initial element  to the past of all other elements.  Constructing  more physically interesting covariant
+observables in $\fS$  is important, since it tells us what covariant questions we can ask of causal set quantum gravity. 
+
+A more covariant way to proceed is to generate the event algebra not via the cylinder sets in
+$\tOg$ but by using covariantly defined sets in $\Og$, the sample space of unlabelled causal sets. Because causal sets are past finite we can use the analogue of past sets
+$J^-(X)$ to characterise causal sets in a covariant way.   A finite unlabelled
+sub-causal set $c_n$ of $ c \in \Og $ is said to be a \emph{partial stem}  if it
+contains its own past. A
+\emph{stem set}  $\stem(c_n)$ is then a subset of $\Og$ such that every $c \in \stem(c_n)$ contains the partial stem
+$\tilde{c_n}$. Let $\mathcal S$ be the sigma algebra generated by the stem sets. Although $\mathcal S $ is a strictly
+smaller subalgebra of $\fS$, it differs on sets of measure zero for the CSG and extended CSG models as shown by 
+\cite{observables} and \cite{observablesds}.  Thus, one can characterise all the observables of CSG in terms of stem sets. This is
+a non-trivial result and the hope is that some version of it will carry over to the quantum case.    
+
+
+\subsection{A route to quantisation: The quantum measure} 
+\label{ssec:qsg} 
+
+The generalisation of CSG to QSG  is,  at least formally, very  straightforward. One ``quantises'' 
+the  classical covariant probability space $(\Og, \fS, \mu_c)$, by simply replacing the classical probability $\mu_c$
+with a \emph{quantum measure}  $\mu: \fS \rightarrow \re^+$, where $\mu$ satisfies the quantum sum rule \citep{qmeasureone,qmeasuretwo,salgadoqm,sorkinqmeasure}\footnote{We will not discuss the very rich and interesting literature on the co-event interpretation of  the quantum measure, which though incomplete, contains essential features that one would seek for a theory of quantum
+  gravity \citep{coevents}.}  
+\begin{equation}
+\mu(\alpha \cup \beta \cup \gamma) = \mu(\alpha \cup \beta) + \mu(\alpha \cup \gamma) + \mu(\beta \cup \gamma) - \mu(\alpha) -\mu(\beta) -\mu(\gamma),   
+\end{equation}
+for the mutually disjoint sets $\alpha,\beta,\gamma \in \fS$. $\mu(.)$ is not in general a probability measure since it
+does not satisfy additivity $ \mu(\alpha \cup \beta) \neq \mu(\alpha) + \mu(\beta)$ for  $\alpha \cap \beta =\emptyset$.
+As in the classical case, observables in this theory are simply the quantum measurable sets in
+$\fS$.  
+The quantum measure $\mu(.)$  can be obtained from  a  decoherence  functional $D: \fS \times \fS \rightarrow \complex$ of quantum theory
+with 
+\begin{equation}
+\mu(\alpha) = D(\alpha,\alpha), 
+\end{equation} 
+where $D$ satisfies 
+\begin{itemize}
+\item Hermiticity:  $D(\alpha,\beta)=D^*(\beta,\alpha)$ 
+\item  Countable  biadditivity: $D(\alpha, \sqcup_i \beta_i)=\sum_i D(\alpha, \beta_i)$ and $D(\sqcup_i\alpha_i,
+  \beta)=\sum_i D(\alpha_i, \beta)$  
+\item Normalisation: $D(\Omega,\Omega)=1$ 
+\item Strong
+  positivity: $M_{ij}\equiv D(\alpha_i, \alpha_j)$ for any finite collection $\{\alpha_i\} $ is positive semi-definite
+\end{itemize}
+In a QSG model the transition probabilities of CSG are replaced by the decoherence functional
+  $D$ or quantum measure.  Leaving aside Bell causality, the other principle of the growth dynamics are easy to
+  implement.  In \cite{djs}, a simple complex percolation dynamics was studied, given by a product decoherence function
+  $\tD(\alpha, \beta) =A^*(\alpha) A(\beta)$ on $\fA\times \fA$, where $A(\alpha)$ is obtained from the transition
+  amplitudes $q \in \mathbb C$, similar to transitive percolation.  Thus, as in the case of CSG models, one starts with
+  the labelled event algebra $\fA$ generated by the cylinder sets, and a quantum pre-measure $\tD'$.  Again, in order to
+  obtain covariant observables one has to pass to the full sigma algebra $\fS$ associated with $\fA$.  However, unlike a
+  classical measure $\tD$ need not extend to a full sigma algebra.  In \cite{djs}, the quantum pre-measure was shown to
+  be a \emph{vector pre-measure} $\hmu'$ in the associated histories Hilbert space \citep{hhh}. Extension of $\hmu'$ to $\fS$ is then
+  possible provided certain convergence conditions are satisfied.\footnote{In general, these are given by  the conditions
+    in the 
+    Kolmogorov--Caratheodory--Hahn--Kluvanek theorem \citep{du}.} 
+
+Although the vector measure is 1-dimensional in   complex percolation dynamics, it  was shown in \cite{djs}  not to
+satisfy this  convergence condition and hence one cannot pass to $\fS$ to construct  covariant observables.
+However a
+smaller algebra may be sufficient for answering physically interesting questions, which require far weaker 
+convergence condition as suggested by \cite{ec}. This relaxation of conditions means that some simple measurable covariant
+observables can be constructed in complex percolation, including for the originary event ({\it Sorkin and Surya, work in progress}).  Whether these
+results on extension are shared by  all QSG models  or not is of course an interesting question. Another possibility is
+that an extension of the
+measure in QSG could,   for example,  be a criterion for limiting the parameter space of QSG. Very recently a class of
+QSG 
+dynamics that does admit an extension  has been found ({\it Surya and Zalel, work in progress}). 
+
+ The space of QSG models is largely unexplored. It is however critical to study it extensively in order to find the
+ right CST  quantum dynamics based on first principles. 
+
+
+
+
+
+
+\subsection{A continuum-inspired dynamics} 
+\label{ssec:partn}
+
+As we have seen, at  a fundamental level the quantum dynamics of causal sets looks very different
+from that of a continuum theory of quantum gravity, even if the latter is formulated as a path integral.  However, as
+one approaches the continuum approximation of the theory, it is possible that the effective  quantum dynamics begins to resemble  the
+continuum path integral.  In CST,  the quantum partition function is 
+\begin{equation} 
+  Z_\Omega \equiv  \sum_{c\in \Omega} e^{\frac{i S(c)}{\hbar} }
+  \label{eq:pathsum} 
+\end{equation}
+where  $S(c)$ is an action for causal sets, and the choice of sample space $\Omega$ is determined by the
+problem at hand. One might also consider more generally a  decoherence functional $D(c_1,c_2) $ on causal sets, inspired
+by the continuum, where $D(c_1,c_2) =e^{-i \frac{1}{\hbar}
+  (S(c_1)-S(c_2))}f(c_1,c_2)$ with $f(c_1,c_2)$  a causal set analog of the delta
+  function associated with 
+  unitarity quantum theories. This is currently an unexplored direction and we will not discuss it further in this
+  work. 
+
+
+The natural  choice for  $S(c)$ is the $d$ dimensional BD action $S_{BD}^{(d)}(c)$ which limits to the Einstein--Hilbert
+action in the continuum. As discussed in Sect.~\ref{sec:cst}, the sample space $\Omega_n$ of causal sets  of
+cardinality $n$ is dominated by KR type causal sets.  An important question is whether the  action $S_{BD}^{(d)}(c)$ can
+overcome the KR entropy  in the large $n$ limit.
+
+Indeed, there is a hierarchy of sub-dominant causal sets which are  non manifold-like \citep{dharone,dhartwo,kr,pst}, with the
+set of bilayer posets $\cB$ being the next  subdominant class.
+A recent  calculation  by  \cite{carliploomis} shows that $\cB$  is suppressed by the
+BD action when the mesoscale and dimension satisfy certain conditions. The only relations  in a bilayer poset are
+links. Given that the maximum number of relations is $\binom{n}{2}$ the causal sets in $\cB$ can be   classified  by the
+linking fraction $p$ given by the ratio of the total number of  links $N_0$ to the maximal possible number of links
+$\binom{n}{2}$. Moreover, the action itself reduces to a simple sum over $n$ and $N_0$.  
+In the limit of large $n$, \cite{carliploomis} consider $p$ to be a continuous variable using which the partition
+function $Z_{\cB}$ can be expressed as an integral over $p$ 
+\begin{equation} 
+Z_{\cB}= \int d p|\cB_{p,n}|e^{iS(p)/\hbar}  = e^{i\mu n} \int dp|\cB_{p,n}| e^{\frac{1}{2}i \mu \lambda_0 p n^2 +o(n^2)}  
+\end{equation} 
+where  $\cB_{p,n}$ denotes the  class of $n$-element  causal sets in $\cB$ with linking fraction $p$ and $\mu,
+\lambda_0$ are related to the mesoscale $\epsilon$ and  function $f_d(n,\epsilon)$ that appears in $S_{BD}^{(d)}(c)$. The
+challenge is then shifted to  calculating  $|\cB_{p,n}|$. Using another parameter $q$ which gives the cardinality of the upper layer as a further subclassification of $\cB_{p,n}$, the leading order contribution to $|\cB_{p,n}|$ was found. The resulting partition function was then shown to be strictly suppressed when $\mu \lambda_0$  satisfy the condition
+\begin{equation}
+\tan(-\mu\lambda_0/2) > \left(\frac{27}{4} e^{-\frac{1}{2}} -1 \right).  
+\end{equation} 
+This is an important analytic calculation and paves the way for a more rigorous understanding of the CST partition
+function. 
+
+More than the partition function, however,  it is the expectation value of observables or order invariants   
+\begin{equation}
+\av{\cO} = \frac{1}{Z_c} \sum_{c \in \Omega} \cO[c] e^{i \frac{1}{h} S[c]} 
+\end{equation}
+that is of physical significance.\footnote{We leave out interpretational questions!}  Evaluating this for larger values of $n$  is however a big challenge and we turn to numerical simulations to help us.
+
+One route could be to simply ``perform''  the sum above. However, given that $|\Omega_n|$ grows superexponentially (to  leading order it is  $\sim 2^{\frac{n^2}{4}}$), this is computationally challenging even for relatively small values of $n$. On the other hand, Markov Chain Monte Carlo (MCMC)  methods for sampling the space $\Omega$ can be used if we can convert $Z_{\Omega}$ into a statistical partition function.
+
+In CST, there is no analogue of a Wick rotation: since the order relation derives from the causal structure, it cannot
+be ``Euclideanised''. On the other hand, there are other ways to analytically  continue $Z_{\Omega}$ (see
+\citealt{sorkinlouko} for a continuum example). One option, first explored in \cite{2dqg} is to introduce a new parameter
+$\beta$ such that  
+\begin{equation} 
+Z_{\Omega,\beta} \equiv  \sum_{c \in \Omega} e^{i  \frac{\beta}{\hbar} S(c)}. 
+ \end{equation}  
+This allows us to analytically continue $Z_{\Omega,\beta}$ from real to imaginary values of $\beta$, thus rendering the
+quantum partition function into a statistical partition function. We can then  use  standard tools in statistical
+physics, including MCMC methods,  to find the expectation values of suitable observables \citep{2dqg,2dhh,fss,ising}.  
+
+
+In \cite{onset}, MCMC methods were used to examine the sample space of {naturally labelled} posets $\tilde{\Omega}_n$
+to determine the onset of the KR regime, using the uniform measure ($\beta=0$).
+The Markov Chain was  generated via a set of moves that sample  $\Omega_n$. A  mixture of two
+moves,  the \emph{link move} and the \emph{relation move},  was used to obtain  the quickest thermalisation.
+
+To illustrate the complexity of these  moves we describe in detail the 
+\emph{link move}.  A  pair of elements $e,e'$ are picked randomly and independently from the causal set $c$, and retained
+if  $L(e) < L(e')$, where $L$ is the natural labelling defined in Sect.~\ref{ssec:csg}. If $e \prec
+e'$ and moreover the relation is a  link, then the move is to ``unlink'' them. Those relations implied by this link via
+transitivity also need to be removed. These are  relations between elements in $\ipast(e)$  and those in $\ifut(e')$
+which are ``mediated'' solely either by $e$ or $e'$. On the other hand if $e$ and $e'$ are not related, then one adds in a
+link between $e$ and $e'$, \emph{provided} that there are no existing  links between elements in $ \ipast(e)$ and $\ifut(e')$,
+after which the transitive closure is taken.  In the relation move, although the existence or non-existence  of a link from $e$ to
+$e'$ is also required, the move doesn't care about the sanctity of links, but is in other ways more restrictive.  Thus,
+for both moves, picking of a pair of elements at random in $c$ does not always lead to a possible move, let alone a probable
+one, and hence this  MCMC model is slow to thermalise. Trying to find a more efficient move is however non-trivial
+precisely because of transitivity. 
+
+The simulations of \cite{onset} suggest that the onset of the asymptotic  KR regime occurs for $n$ as small as $n
+\approx 90$.  $\Omega_n$ is very large even for $n=90$ ($\sim 2^{90^2}$ !) and hence thermalisation  becomes  a problem
+very quickly. 
+Recently, steps have been taken to incorporate the action ($\beta \neq 0$)  into the measure, but again, because of
+thermalisation issues, the size of the posets are fairly small. 
+
+Instead of taking the full sample space, one can restrict $\Omega_n$ to causal sets that capture some gross features of
+a class of spacetimes. As discussed above, for large enough $n$,  $\Omega_n$ contains causal sets that are approximated
+by spacetimes of arbitrary dimensions. It is thus of interest to restrict the sample space so that those causal sets
+that are  manifold-like in the sample space are approximated only by spacetime regions of a given dimension. Such a
+restriction is typically hard to find, since it requires ``tailoring'' $\Omega$ using non-trivial order theoretic
+constraints determined by dimension estimators of the kind we have encountered in Sect.~\ref{sec:kinematics}.  
+
+Somewhat fortuitously, this restriction is very natural in $d=2$. Here, the sample space of  ``{2-orders}''
+$\Omega_{\twod}$  is one in which the continuum dimension and a particular  order
+theoretic dimension coincide \citep{2dorders,es,winkler}. The latter is defined only for a certain class of posets,
+namely those obtained by the ``intersection''  of  $d$ totally ordered sets. For example,  an  $n$ element   \emph{2-order} is the
+intersection of two linear orders $U=(u_1, u_2, \ldots u_n)$ and $V= (v_1, v_2, \ldots v_n)$ where each $u_i$ and $ v_i$
+are valued on a set $S_n$ of $n$ non-overlapping points in $\re$. 
+$U$ and $V$ are  therefore ``totally  ordered''  by the relation $<$ in $\re$. Their  intersection is the poset 
+\begin{equation}
+  U\cap V \equiv \{(u_i,v_i) \in U \times V |  (u_i,v_i)\prec (u_j,v_j)  \Leftrightarrow u_i < u_j \, \, \& \, \, v_i<v_j\}.
+\end{equation} 
+Similarly, one can define a \emph{$d$-order} as the intersection of $d$ linear orders. This is the  \emph{order theoretic
+  dimension} referred to above.
+
+For $d=2$, the total orders $U$, $V$ can be thought of as the set of light-cone coordinates of
+a causal set obtained from an embedding (not necessarily faithful)  into a causal diamond in $\mink^2$.  Of special
+interest is the 2-order obtained from a Poisson sprinkling,   an example of which is
+shown in Fig.~\ref{2drandom.fig}.   As shown in \cite{2dorders} this is equivalent to choosing the entries of  $U$ and $V$ from a fixed $S_n$ at
+random and independently. Importantly, this \emph{random order}  dominates $\Omega_{\twod}$ in the large $n$ limit as shown in
+\cite{es,winkler}, and grows as {$|\Omega_{\twod}| \sim n!/2 $}. Thus, unlike $\Omega_n$,  the sample space is dominated
+by manifold-like causal sets, though it also contains causal sets that are distinctly non-manifold-like. This makes
+it an ideal starting point to study the non-perturbative  quantum dynamics of causal sets. Moreover, as shown in
+\cite{2dorders}, 2-orders also have trivial spatial homology in the sense of \cite{homology}  (see Sect.~\ref{sec:kinematics})  
+and hence $\Omega_{\twod}$ is the sample space of topologically trivial $\twod$ causal set quantum gravity. 
+
+The continuum-inspired partition function for 2-orders or topologically trivial \emph{2d CST}  is 
+\begin{equation}
+Z_{\twod}(\beta, n)=\sum_{c \in \Omega_{\twod}} \exp^{\frac{i}{\hbar} S_{\twod}(c,\epsilon)} \,,
+  \end{equation} 
+where $S_{\twod}(c,\epsilon)$ is the BD action for $d=2$ with the non-locality parameter $\epsilon=l_p^2/l_c^2 \in (0,1]$
+(see Eq.~(\ref{eq:bkoperator})).   Taking  $\beta
+\rightarrow i \beta$ allows one to obtain the expectation values of order invariants using  MCMC techniques as was done
+by \cite{2dqg}.  The  MCMC move  in $\Omega_{\twod}$ is very straightforward,  unlike that in $\Omega_n$: a pair of elements is picked independently and at random in either $U$
+or $V$, and swapped.  For example, if $u_i \leftrightarrow u_j$, then the elements 
+$(u_i,v_i)$ and $(u_j,v_j)$ in $U\cap V$ are replaced by $(u_i'=u_j,v_i'=v_i)$  and $(u_j'=u_i,v_j'=v_j)$, hence
+changing the poset. \emph{Every} move is possible, and hence one saves considerably on efficiency and thermalisation times.
+
+Importantly, the  MCMC simulations of \cite{2dqg}  give rise to a phase transition  from a continuum phase at low $\beta$ to a non-manifold-like phase at high
+$\beta$.  This is very similar to the disordered to ordered phase transition in an Ising model.  The 
+$\beta^2$ versus $\epsilon$    phase diagram moreover indicates that the continuum phase survives the analytic
+continuation for any value of $\epsilon$.   
+
+It was  recently  demonstrated by \cite{fss}
+using finite size scaling  arguments that that this is a first order phase
+transition.  The analysis moreover suggests that the continuum phase
+corresponds to a spacetime with negative cosmological constant. This is an explicit example of a non-perturbative theory
+of quantum gravity in which the cosmological constant is generated via
+the dynamics. 
+
+This simple system also allows us to examine other physically relevant questions. Of particular interest is the
+Hartle--Hawking wave function using the no-boundary proposal. In $2d$ CST, this was constructed by \cite{2dhh} using a 
+natural no-boundary condition for causal sets, namely requiring the existence of an ``initial'' element $e_0$ to the past of all the other
+elements. $\psi_{\rm HH} (\cA_f)$ is the wave function for a final antichain of cardinality $|\cA_f|$, where one is summing
+over all causal sets that have an initial element $e_0$ and final boundary $\cA_f$.
+
+The MCMC simulations give the expectation value of the action $S_{\twod}$ from which the partition
+function can be calculated by numerical integration, up to normalisation. The normalisation itself was determined in \cite{2dhh} 
+using a combination of analytic and numerical calculations.  The results of the extensive analysis was that the
+Hartle--Hawking wave function $\psi_{\rm HH}(\cA_f)$ peaks at low $\beta $
+on antichains of small cardinality,  with the  peak jumping  at higher $\beta$ to  antichains with cardinality $\sim n/2$.
+Interestingly, in 
+the latter, high $\beta$ (low temperature) phase,  the dominant causal sets satisfy some of the rudimentary features of early universe cosmology: 
+(a) the growth from a single element to a large antichain takes place rapidly and (b) each element in
+$\cA_f$ is causally related to all the elements in its immediate past which makes $\cA_f$ ``homogeneous''. However, this is a non manifold-like phase,
+and it is an open question how one exits this phase into a manifold-like phase.  If there is a dynamical mechanism that
+makes $\beta$ small, then this would be a promising new mechanism for generating cosmologically relevant initial
+conditions for the universe. 
+
+Will this analysis survive higher dimensions? One of the issues at hand is that even for 2-orders the cardinality of $\Omega_{2d}$ grows rapidly
+with $n$ and hence thermalisation can become a major stumbling block. However, the  finite sized scaling analysis of \cite{fss}
+and the techniques used therein, tell us that it suffices to be in the asymptotic regime. For 2-orders, this is
+already true around $n \sim 80 $ and hence the results of \cite{2dqg} and \cite{2dhh} are at least qualitatively
+robust. Nevertheless, to get to the asymptotic regime in $d=4$  will require far more extensive computational
+power. Recently, using new sophisticated computational techniques \citep{willthesis},  the algorithms of
+\cite{2dqg} have been updated, so that $n \sim 300 $ simulations can be done in a reasonable time. 
+
+An important question, however is how to obtain a dimensionally restricted $\Omega_n$ more generally. While  2-orders
+are a good representation of $\twod$ (topologically trivial) causal set quantum gravity,  this is not true for
+ higher order theoretic dimension.   For $d>2$ a   $d$-order is an embedding into a space with ``light-cubes'' rather
+ than lightcones. Though potentially interesting, this does not serve our more narrowly defined goal of obtaining a
+ continuum-inspired dimensionally reduced sample space.
+
+ Recently,  a   lattice inspired method  has been
+ investigated to generate sample spaces which are both dimensionally and topologically restricted. These are obtained as
+ embeddings (not necessarily faithful) into a fixed spacetime, and thus include manifold-like causal sets. In
+$d=2$, the simplest example comes from causal sets obtained from sprinkling into the flat cylinder spacetime
+$ds^2= - dt^2+d\theta^2$, $\theta \in [0,2\pi]$.  Recent  simulations ({\it Cunningham and Surya, work in progress}) suggest that the results of
+the topologically trivial case are largely unchanged. The next step is to include a wider class of embeddings as well as
+topology change into the model, and hence bring it closer to a full 2d theory of quantum gravity.  
+
+Of course, 2d causal set quantum gravity without matter does not have a continuum counterpart, since 2d continuum quantum gravity 
+is coupled to a
+scalar field (for example,   Liouville gravity).  Studying 2d CST with matter is therefore an open interesting question.  In \cite{ising}, Ising
+spins were coupled to the causal set by placing a spin $s_i=\pm 1 $ at every element $e_i$ and coupling spins along the links, i.e.,
+\begin{equation}
+S_{I}(j)\equiv j \sum_{i k} s_i s_k L_{ik} \,,
+  \end{equation}  
+where $L_{ik}$ is the link matrix and $j$ the spin coupling constant.  The phase structure of this model coupled to the
+BD action is substantially richer. In particular, the hope is that some of the resulting phase transitions are of higher
+order and hence comparisons with conformal field theories might be possible. Further analysis of this model would
+definitely be useful and interesting. 
+
+In the MCMC simulations discussed above,  labelled posets are used for practical reasons, since this is how they are stored on the computer. A single  unlabelled poset admits many relabellings  or ``automorphisms'', but the 
+number of relabellings varies from poset to poset even  for the same cardinality.
+{For example, in the list of coloured or labelled 3-element causal sets in } 
+Fig.~\ref{csgtree.fig}, we see that there is only one  3-element causal set with
+three distinct natural labellings, while 
+all {the} others admit only one {natural labelling}. Enumerating the
+number of automorphisms {for a given causal set} quickly becomes {very difficult}  as $n$ increases.
+
+{In the
+continuum path integral, the ``correct'' measure in a gauge theory {involves} the volume of the gauge orbits. In this discrete setting, as we have
+discussed above, the analogous gauge  orbits corresponding to 
+to the automorphisms, are not of the same cardinality for each $c\in \tilde{\Omega}_n$. }
+
+{Indeed, the choice of measure is not obvious in CST since it is not merely a discretisation of the continuum
+  theory, with the  path sum Eq.~(\ref{eq:pathsum})  including  causal sets that are non-manifold-like. There  is no underlying order theoretic
+  reason to pick the specific BD action; we have done so, ``inspired'' by the continuum.  For continuum like causal
+  sets of a fixed dimension the number of relabellings is approximately  the same, so that they appear
+  roughly with the same weight in the path integral. However, it is the relative weight compared the non-continuum-like
+  causal sets that depends on the relabellings. In the classical sequential growth model described above, the
+  labelling is related to temporality and hence   
+  the choice of a uniform measure on the set of labelled causal sets $\tOg$ is a natural one.
+In the MCMC simulations,
+therefore we pick  a measure }  that is uniform on $\tilde{\Omega}_n$, rather than on the unlabelled sample space $\Omega_n$. Causal
+sets that admit more relabellings come with a higher natural weight than those that admit fewer relabellings.  However,
+{discrete} 
+covariance {or label invariance} is not compromised since the observables themselves are label independent. 
+
+While these numerical simulations have uncovered a wealth of information about the statistical thermodynamics of causal
+sets, one must pause to ask how this is related to the quantum dynamics, as $\beta \rightarrow -i \beta$.  
+There is for example no analogue of the Osterwalder--Schrader theorems to protect the results we have obtained in the
+MCMC simulations.  Pursuing
+these questions further is important, though finding definitive and rigorous answers is perhaps beyond the scope of our
+present understanding of CST. 

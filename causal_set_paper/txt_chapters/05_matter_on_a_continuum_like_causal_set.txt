@@ -1,0 +1,344 @@
+\section{Matter on a continuum-like causal set}
+\label{sec:matter}
+
+
+Before passing on to the dynamics of CST, we look at a phenomenologically important question, namely how quantum fields
+behave on a fixed manifold-like causal set.   The simplest matter field  is the free scalar field on a
+causal set in $\mink^d$.  As we noted in the previous Section, this is the only class of matter fields that
+we know how to study, since at present no well defined representation of non-trivial tensorial fields on causal sets is
+known. However, as we will see, even this very simple class of matter fields  brings with it both exciting new insights and
+interesting conundrums.  
+
+\subsection{Causal set Green functions for a free scalar field } 
+\label{ssec:Green} 
+Consider the real scalar field $\phi: \mink^d \rightarrow \re$ and its CST counterpart,    $\phi:C \rightarrow
+\re$  where $C \in \cC(\mink^d,\rc)$. The Klein Gordon  operator of the continuum is replaced on the causal set by the $B_\kappa$ operator
+of Sect.~\ref{sec:kinematics}, Eq.~(\ref{eq:bkoperator}).   In the continuum $\Box^{-1}$ gives the Green function, and we can do
+the same with $B_\kappa$ to obtain the discrete Green function $B_\kappa^{-1}$.
+
+However, there are more direct ways of obtaining the Green function
+as was shown in \cite{daughton,salgado,johnston,dsx}.  The \emph{causal matrix} 
+\begin{equation}
+C_0(e,e') \equiv
+\left\{
+        \begin{array}{ll}
+                1  & \mbox{if } e' \prec e \\
+                0 & \mbox{} \mathrm{otherwise}
+        \end{array}
+\right.
+\end{equation}
+on a causal set $C$.    For $C \in \cC(\mink^d,\rc)$,  $C_0(e,.)$ is therefore zero everywhere except within  the past light cone of $e$ at
+which it is $1$.  In $d=2$, this is just half the massless retarded Green's function $G^{(2)}_0(x,x') =\frac{1}{2}
+\theta(t-t') \theta(\tau^2(x,x'))$.  Hence, we find the almost trivial relation  
+\begin{equation} 
+\bC_0(x,x') = 2 G^{(2)}_0(x,x'), 
+\end{equation} 
+without having to take an expectation value, so that  the  dimensionless  massless causal set retarded Green
+function is  \citep{daughton}  
+\begin{equation}
+\label{massless2d}
+K^{(2)}_0(x,x')\equiv  \frac{1}{2}C_0(x,x').
+\end{equation}
+
+To obtain the $d=4$ massless causal set Green function we use the \emph{link matrix}
+\begin{equation}
+L_0(x,x'):=
+\left\{
+        \begin{array}{ll}
+                1  & \mbox{if } x' \prec x {\mathrm \ is \ a \ link}\\
+                0 & \mbox{} \mathrm{otherwise}
+        \end{array}
+      \right. 
+      \label{eq:linkm}
+    \end{equation}
+  For $C \in \cC(\mink^4,\rc)$ the expectation value of the associated random variable is 
+\begin{equation}
+\label{linkexp}
+\av{\bL_0(x,x')}=\theta(x_0-x'_0) \theta( \tau^2(x,x'))\exp(-\rc V(x,x')),
+\end{equation}
+where $V(x,x') = \vol(J^-(x) \cap J^+(x')) = \frac{\pi}{24}\tau^4(x,x')$. Since the exponential in the above expression
+is a Gaussian which, in the $\rc \rightarrow \infty $ limit  is proportional to $\delta(\tau^2)$, we see that it resembles the
+massless retarded Green function in $\mink^4$, 
+\begin{equation} 
+\label{linklim}
+\lim_{\rc \rightarrow \infty} {\sqrt{\frac{\rc}{6}}\av{\bL_0(x,x')}} =  \theta(x_0-x_0') \delta(\tau^2) =2 \pi
+G^{(4)}_0(x,x'). 
+\end{equation} 
+Hence we can write the  dimensionless massless causal set scalar retarded Green function as \citep{johnston,johnstonthesis} 
+\begin{equation}
+\label{eq:massless4d}
+K^{(4)}_0(x,x')= \frac{1}{2 \pi} \sqrt{\frac{1}{6}} L_0(x,x')\,. 
+\end{equation} 
+
+In the continuum the massive Green function can be
+obtained from the massless Green function in $\mink^d$ via the formal expression \citep{dsx} 
+\begin{equation} 
+\label{eq:conv} 
+G_m=G_0 - m^2\,G_0*G_0 + m^4 \,G_0*G_0*G_0+ \ldots = \sum_{k=0}^\infty(-m^2)^k \underbrace{G_0 * G_0* \ldots G_0}_{k+1}
+\end{equation}
+where 
+\begin{equation}
+(A\ast B)(x,x')\equiv \int d^dx_1 \sqrt{-g(x_1)} A(x,x_1)
+B(x_1,x')\,.
+\label{eq:conv}
+\end{equation}  
+Using this as a template, with the discrete convolution operation given by  matrix multiplication,  
+\begin{equation}
+(A \ast B)(e,e')\equiv  \sum_{e''} A(e,e'') B(e'',e)\, , 
+\end{equation}  
+a candidate for the  $d=2$ dimensionless massive causal set Green function is 
+\begin{equation}
+\label{eq:2dGf} 
+K^{(2)}_M(x,x') =  \frac{1}{2} \sum\limits_{k=0}^\infty (-1)^k \, \frac{M^{2k} }{2^k}  C_k(x,x').   
+\end{equation} 
+Here $M$ is dimensionless and  we have used the relation $C_k(x,x')=C_0^k(x,x')$, where the product is defined by the
+convolution operation Eq.~\ref{eq:conv} and, $C_k(x,x')$ counts the number of
+$k$-element chains from $x$ to $x'$.  For $C \in \cC(\mink^2, \rc)$  it can  be shown
+that \citep{johnston,johnstonthesis}  
+\begin{equation} 
+\av{\bK^{(2)}_M(x,x')} = G^{(2)}_m(x,x') \label{proof3}\,, 
+\end{equation} 
+when $M^2=\frac{m^2}{\rc}$.  
+Similarly, a candidate for the $d=4$ massive causal set Green function is 
+\begin{equation}
+\label{eq:4dGF}
+K^{(4)}_M(x,x') =  \frac{1}{2\pi\sqrt{6}} \sum\limits_{k=0}^\infty
+(-1)^k \, \left(\frac{M^2}{2\pi\sqrt{6}}\right)^{k} L_k(x,x')\, ,
+\end{equation} 
+where we have used the fact that the number of $k$-element linked paths $L_k(x,x')=L_0^k(x,x')$. For  $C \in \cC(\mink^4,\rc)$, 
+\begin{equation} 
+\lim_{\rc \rightarrow \infty} \sqrt{\rc} \av{\bK^{(4)}_M(x,x')} = G^{(4)}_m(x,x')\,, 
+\end{equation} 
+when  $M^2=\frac{m^2}{\sqrt{\rc}}$. 
+
+These  massive causal set Green function were  first obtained by \cite{johnston,johnstonthesis} using an evocative  analogy between Feynman paths
+and the $k$-chains or  $k$-linked paths (see Fig.~\ref{hopstop.fig}). ``Amplitudes'' $a$ and $b$ are  assigned to a  ``hop'' between two
+elements in the Feynman path, and to a ``stop'' at an 
+intervening element, respectively. This gives a total ``amplitude'' $a^{k+1}b^k$ for each
+chain or linked path, so that the massive Green functions can be expressed as  
+\begin{equation} 
+K_m^{(2)}(e,e') \equiv \sum_{k=0} a_2^{k+1} b_2^{k} C_k(e,e'), \quad K_m^{(4)}(e,e') \equiv \sum_{k=0} a_4^{k+1} b_4^{k}
+L_k(e,e'), 
+\end{equation}   
+where the coefficients $a_d,b_d$ are set by comparing with the continuum.
+\begin{figure}[ht]
+  \centering \resizebox{0.75in}{!} {\includegraphics[width=\textwidth]{Hopstop}} 
+  \caption{The hop and stop amplitudes $a$ and $b$ on a 2-element chain from $e$ to $e'$ for a massive scalar field on a causal set.}
+\label{hopstop.fig} 
+\end{figure}
+
+Finding causal set Green functions for other spacetimes is more challenging, but there have been some recent results \citep{dsx}
+which show that the flat spacetime form  of \cite{johnston, johnstonthesis} can be used in a wider context. These
+include (a) a causal diamond in an RNN of a $d=2$ spacetime with $M^2={\rc}^{-1}({m^2+\xi R(0)})$, where $R(0)$  is the
+Ricci scalar at the centre of the diamond and $\xi$ is the non-minimal
+coupling,  (b)  a causal diamond in an RNN of a $d=4$ spacetime with $R_{ab}(0)
+\propto g_{ab}(0)$ and  $M^2={\rc}^{-1}({m^2+\xi R(0)})$  when (c) $d=4$ de Sitter and anti de Sitter spacetimes with $M^2={\rc}^{-1}({m^2+\xi })$. 
+
+The de Sitter causal set Green function in particular  allows us to  explore cosmological consequences  of  discreteness, one of which
+we will describe below.  It would be useful to extend this construction to other conformally flat spacetimes of cosmological relevance like the flat FRW
+spacetimes.  Candidates for causal set Green functions in $\mink^3$ have also  been obtained using both the volume of the causal interval and the
+length of the longest chain \citep{johnstonthesis,dsx}, but the comparisons with the continuum need
+further study. 
+
+% In the continuum, the massless and massive Green functions are related via a curved
+% spacetime generalisation of Eq.~(\ref{eq:conv}), which relates the massive scalar Green functions with non-minimal
+% coupling $\xi$ with their massless counterparts. In particular, for constant Ricci curvature, the relation extends
+% between any two Green functions with $\mu^2$, and we can use this fact in an RNN since $R(x')$ is approximately
+% constant to leading order.  Assuming this is also the case for  causal set Green functions,  the massless conformally
+% coupled causal set Green function for $d=4$ can be used to construct that for any
+% $M^2=\frac{\mu^2}{\sqrt{\rc}}$.    
+
+
+% For  conformally related spacetimes $g_{ab}=\Omega^2g_{ab}'$,  the  conformally coupled $\xi_c=\frac{d-2}{4(d-1)}$  massless scalar Green
+% functions are proportional to each other  
+% \begin{equation} 
+% G_{0,\xi_c}(x,x') =\Omega(x)^{\frac{2-d}{2}} G_{0,\xi_c}'(x,x')\Omega(x')^{\frac{2-d}{2}}. 
+% \end{equation}  
+% Since the massless causal set Green function in $\mink^2$ and $\mink^4$ are known, this suggests  a way of obtaining the
+% $K^{(2,4)}_{0,\xi}(e,e')$ for a causal set obtained from a  conformally flat spacetime.  The most interesting
+% examples of this  are conformally flat  patches of both $d=4$ de Sitter and $d=4$ anti de Sitter  spacetime for which the massless
+% conformally coupled massless causal set Green function continues to have the form Eq.~(\ref{eq:massless4d}) and in the
+% limit  it can be shown that 
+% \begin{equation} 
+% \lim_{\rc \rightarrow \infty} \sqrt{\rc} \av{\bK_0(x,x')} = G_{0,\xi_c}^{dS/adS} 
+% \end{equation} 
+% An ansatz for the non-conformally coupled
+% massive causal set Green functions $K_M(e,e')$ can be obtained in analogy with the curved spacetime generalisation of
+% Eq.~(\ref{eq:conv}), where $M^2=\frac{\mu^2}{\sqrt{\rc}}$.
+
+
+
+
+As the attentive reader would have noticed, in $d=4$ the causal set Green function matches the continuum only for $\rc
+\rightarrow \infty$, unlike in $d=2$. At finite $\rc$,  there  can be potentially observable
+differences with the continuum. Comparisons with observation can therefore  put constraints on CST. \cite{dhstwo}  examined
+a model for the propagation of a classical massless scalar field from a source to a
+detector on a background causal set. In $\mink^d$, an oscillating point source 
+with scalar charge $q$, frequency $\omega$ and amplitude $a$, and a ``head-on'' rectangular shaped detector  
+was considered, so that the  field produced by the source is 
+\begin{equation} 
+\phi(y)=\int_P G(y,x(s)) q ds
+\end{equation} 
+where $\mathcal P$ is the world line of the source and $s$ the proper time along this world line. If $\mathcal{D}$ represents the
+spacetime volume swept out  by the detector during its detection time $T$ then the output of the detector is 
+\begin{equation} 
+F= \int_{\mathcal{D}} \phi(y) d^4y= q\int_{\mathcal P} ds \int_{\mathcal{D}} d^4y  G(y,x(s)) \approx \sqrt{\frac{1+\nu}{1-\nu}}
+\frac{q}{4 \pi R} v_{\mathcal{D}}
+\label{eq:detres}
+\end{equation}  
+where $R$ is the distance between the source and detector,  $\nu$ is the component of the velocity along the
+displacement vector between the source and detector and $v_{\mathcal{D}}$ is the spacetime volume of the detector region
+$\mathcal D$. Here, $R>>a$ and  $R >> \omega^{-1}$ which in turn is much larger than  the spatial and temporal extent of the detector region
+$\mathcal D$. The causal set detector output can then be defined as 
+\begin{equation} 
+\tF = q\frac{1}{2\pi \sqrt{6}}\sum_{e \in \tilde{\mathcal P} }\sum_{e' \in \tilde{\mathcal D}}L_0(e',e)
+\end{equation}   
+where $\tilde{\mathcal D} $ and $\tilde{\mathcal P}$ correspond to the detector and source subregions in the causal set
+and the causal set function $L(e,e')$ is equal to some normalisation constant $\kappa$ when $e$ and $e' $ are linked and
+is zero otherwise. For $C \in
+\cC(\mink^4,\rc) $ it was shown that,  with the above constraints on $R, \omega, a$ and the dimensions of the detector,
+that $\av{\btF}$  approximates to  same continuum expression
+Eq.~(\ref{eq:detres}) when $R>> \rc^{-\frac{1}{4}}$. A detailed calculation gives an  upper bound  on the
+fluctuations, which,  for a particular AGN model is one  part in $10^{12}$ for $\rc=\rp$. Hence the discreteness does not seem to mess
+with the coherence of waves from distant sources. As we will see in Sect.~\ref{sec:phen}  there are other potential signatures of the
+discreteness that may have phenomenological consequences \citep{swerves,lambdaone,lambdatwo,lambdathree}. 
+
+
+\subsection{The Sorkin--Johnston (SJ) vacuum} 
+\label{ssec:SJ} 
+ 
+Having obtained the classical Green function and the d'Alembertian operator in $\mink^2$ and $\mink^4$, the obvious next step
+is to build a full quantum scalar field theory on the causal set. As we have mentioned earlier, the
+canonical route to quantisation is not an option for causal sets nor for fields on causal sets and hence there is a need to look at more covariant
+quantisation procedures. 
+
+\cite{johnstontwo,johnstonthesis}  used the the covariantly defined {Peierls'}   bracket 
+\begin{equation} 
+[\hP(x),\hP(y)] = i\Delta(x,y) 
+\end{equation} 
+as the starting
+point for quantisation, where 
+\begin{equation} 
+\Delta(x,y) \equiv G^R(x,x')-G^A(x,x') 
+\end{equation}
+is the Pauli Jordan function, and $G^{R,A}(x,x')$ are the retarded and advanced Green's
+functions, respectively.  As we have seen,  these Green functions  can be defined on certain manifold-like causal sets and
+hence provide a 
+natural starting point for quantisation. 
+
+However, even  here, the standard route to quantisation involves the
+mode decomposition of the space of solutions of the Klein Gordan operator,  $\ker(\Box-m^2)$.  In $\mink^d$ the space of
+solutions has a unique  split  into positive
+and negative frequency classes of modes  with respect to which a vacuum can be defined.  
+In his quest for a Feynman propagator, \cite{johnstontwo} made a bold proposal, which as we
+will describe below,  has led  to a very interesting new direction in quantum field theory  even in the
+continuum. This is  the  \emph{Sorkin--Johnston or SJ vacuum} for a free quantum scalar field theory. 
+
+Noticing that the  Pauli--Jordan function on a {finite}  causal set $C$ is a Hermitian operator, and that
+$\Delta(e,e')$ itself is antisymmetric,  Johnston used the fact that the eigenspectrum of $i\Delta$ 
+\begin{equation}
+i \hD \circ \vkpj(e) \equiv \sum_{e'\in C} \,i\Delta(e,e')\vkpj(e')=\lk \vkpj(e)
+\end{equation} 
+splits into  pairs $(\lk, -\lk)$, with  eigenfunctions $(\vkpjp, \vkpjm)$, $\vkpjm={\vkpjp}^\ast$.  
+This provides a natural  split  into a positive part and a negative part, without explicit reference to $\ker(\Box
+-m^2)$.\footnote{The identification of $\ker(\Box -m^2)$ with $Im(i\Delta)$ is in fact well known \citep{waldqft} when the latter is
+restricted to functions of compact support.} A spectral decomposition of $i\hD$ then gives 
+\begin{equation} 
+i \Delta(e,e')=\lk\sum_{\mathbf{k}}\vkpjp(e){\vkpjp}^*(e')-\vkpjp(e)^*{\vkpjp}(e').
+\label{modeexp} 
+\end{equation}
+This decomposition is used to define the SJ Wightmann function as the positive part of $i \Delta$ 
+\begin{equation} 
+W_{SJ}(e,e') \equiv \lk\sum_{\mathbf{k}}\vkpjp(e){\vkpjp}^*(e'). 
+\end{equation} 
+Importantly, for a non-interacting theory with a  Gaussian state, the Wightmann function is sufficient to describe
+the full theory and thus the vacuum state. Simulations in $\mink^d$ for $d=2,4$  give a  good agreement with the
+continuum \citep{johnstontwo,johnstonthesis}.     
+
+\cite{sorkinsj}  noticed  that the construction on the causal set, which was born out of necessity, provides a
+new way of thinking of the quantum field theory vacuum.  
+A well known feature of quantum field theory in a general curved spacetime is that the vacuum obtained from mode decomposition
+in  $\ker(\hB-m^2)$ is observer dependent and hence not unique.  Since the  SJ vacuum is intrinsically defined, at least in finite spacetime
+regions, one has a uniquely defined vacuum.   As a result, the SJ state has generated some interest in the broader algebraic field theory community
+\citep{fv12,bf14,fewsterart}.  For example, while not in itself Hadamard in general, the SJ vacuum  can be used to generate a new class of Hadamard
+states \citep{bf14}.
+
+In the  continuum,  the SJ  vacuum was constructed for the  massless scalar field in the $d=2$ causal
+diamond \citep{sj2ddiamond} and recently extended to the small mass case \citep{mathursurya}.  It has also been obtained  for the trousers topology and shown to produce a divergent
+energy along both the future and the past light cones associated with the Morse point singularity \citep{sjtrousers}.
+Numerical simulations of the SJ vacuum on causal sets are are approximated by 
+de Sitter spacetime suggest that the
+causal set SJ state differs significantly from the Mottola--Allen $\alpha$ vacuua \citep{sxy}.  This has potentially far
+reaching observational consequences which need further investigation.  
+
+\subsection{Entanglement entropy} 
+\label{ssec:SSEE}
+ 
+ Using
+the Pauli Jordan operator $i\hD$ and the associated Wightman  $\hW$, \cite{sorkinEE} defined a spacetime entanglement entropy, \emph{Sorkins' Spacetime Entanglement Entropy (SSEE)} 
+\begin{equation} 
+S = \sum_{i} \lambda_i \ln|\lambda_i|
+\end{equation} 
+where $\lambda_i$ are the  generalised eigenvalues satisfying 
+\begin{equation} 
+\hW\circ v_i = i \lambda_i \hD \circ  v_i. 
+\label{eq:genev} 
+\end{equation} 
+It was shown by \cite{yasamaneecont} that for a  causal diamond  sitting at  the centre of a larger
+one  in $\mink^2$, $S$ has the expected
+behaviour in the limit that the size of the smaller diamond $l$ is much smaller than that of the larger diamond,    
+\begin{equation} 
+S=b \ln \left(\frac{l}{l_{uv}}\right) +c, 
+\end{equation} 
+where $l_{uv}$ is the UV cut-off and $b,c$ are constants that can be determined.  
+
+ 
+One of the promises that discretisation holds is of curing the UV divergences of quantum field theory and in particular
+those coming from  the calculation of the entanglement entropy of \cite{bklsEE}.  As shown by \cite{causetee} the
+causal set version of the above calculation is proportional to the volume rather than
+the above ``area'', thus differing from the continuum. This can be traced to the fact that the 
+continuum spectrum of eigenvalues (Eq.~\ref{eq:genev})  agrees with the discrete eigenvalues only up to a 
+``knee'', beyond  which the effects of discreteness become important, as shown in Fig.~\ref{spectrum.fig}.
+Using a double truncation of the spectrum -- once in the larger diamond and once in the smaller one, \cite{causetee}
+obtained the requisite area law. This raises
+very interesting and as yet unanswered puzzles about the nature of SSEE in the causal set. It is for example possible that in a
+fundamentally non-local theory like CST an area law is less natural than a volume law. Such a radical understanding could
+force us to rethink continuum inspired ideas about Black Hole entropy. 
+
+\begin{figure}[ht]
+  \centering \resizebox{3in}{!}{\includegraphics{eigenvalues_2dcd}} 
+  \caption{A log-log plot depicting the SJ spectra  for causal sets in a causal diamond in $\mink^2$. A comparison with the
+      continuum (the straight black line) shows that the causal set SJ spectrum matches the continuum in the IR but has
+      a characteristic ``knee'' in the UV after which it deviates significantly from the continuum. As the density of the
+      causal set increases, this knee shifts to the UV.}
+\label{spectrum.fig} 
+\end{figure}
+
+
+
+Extending the above calculation to actual black hole spacetimes is an important open problem. Ongoing simulations for
+causal sets obtained from sprinklings into 4d de
+Sitter spacetime show that this double truncation  procedure gives the right de Sitter horizon entropy ({\it Dowker, Surya,
+Sumati, X  and Yazdi, work in progress}),
+but one first needs to make an ansatz for 
+locating  the knee in the causal set $i \Delta$ spectrum. 
+ 
+
+\subsection{Spectral dimensions}
+\label{ssec:specdim}
+
+An interesting direction in causal set theory has been to calculate the spectral dimension of the causal set
+\citep{em,diondr,carlipdr}. \cite{carlipdr} has argued that $d=2$ is special in the UV limit, and that several theories of quantum
+gravity lead to such a dimensional reduction. In light of how we have presented CST, it seems that
+this continuum inspired description must be limited. It is nevertheless interesting to ask if causal sets that
+are manifold-like might exhibit such a behaviour around the discreteness scales at which the continuum approximation is
+known to break down. As we have seen earlier (Sect.~\ref{ssec:distance}), one such behaviour is discrete asymptotic silence \citep{ems}.
+
+\cite{em} calculated the spectral dimension on a causal set using  a random walk on a finite element causal
+set. It was found that in contrast, the dimension at small scales goes up rather than down.
+On the other hand, \cite{diondr} showed  that  causal set inspired  non-local d'Alembertians do give a spectral
+dimension of $2$ in all dimensions. As we noted in  Sect.~\ref{sec:kinematics},  \cite{carlipdrone}  showed that  dimensional reduction
+of causal sets occurs for the Myrheim--Meyer dimension as one goes to smaller scales.  Recently \citep{esvsd}, the spectral dimension
+was calculated on a maximal antichain for a causal set obtained from sprinklings into $\mink^d$, $d=2,3$ using the
+induced distance function of \cite{esv}. It was seen to decrease at small scales, thus bringing the results closer to
+those from other approaches.   

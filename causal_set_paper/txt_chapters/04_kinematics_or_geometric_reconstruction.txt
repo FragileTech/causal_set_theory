@@ -1,0 +1,841 @@
+\section{Kinematics or geometric reconstruction}
+\label{sec:kinematics} 
+
+In this section we discuss the program of geometric reconstruction in which topological and geometric
+invariants of a continuum spacetime $(M,g)$ are ``reconstructed'' from the  underlying ensemble of causal sets. The assumption that such a reconstruction
+exists for any covariant observable in $(M,g)$ comes from the Hauptvermutung of CST discussed in Sect.~\ref{sec:cst}.
+
+
+In the statement of the Hauptvermutung,  we used the phrase ``approximately
+isometric'', with the promise of an explanation in this section.  A rigorous definition  requires the
+notion of  closeness of two Lorentzian spacetimes. In Riemannian geometry, one has the Gromov--Hausdorff distance \citep{petersen}, but there is no simple extension to
+Lorentzian geometry, in part because of the indefinite signature. In  \cite{bommeyer}  a measure of closeness of two Lorentzian manifolds was  given in terms of a pseudo distance
+function, which however is neither symmetric nor satisfies the triangle inequality. 
+Subsequently, in a series of papers,  a true distance function was defined on the space of Lorentzian
+geometries, dubbed the Lorentzian Gromov--Hausdorff distance \citep{bomclose,noldusone,noldustwo,bomnoldus,bomnoldustwo}.  While this makes
+the statement of the Hauptvermutung precise, there is as yet no complete proof. Recently, 
+a purely order theoretic criterion has been used to determine the closeness of causal sets and  prove a version  of the
+Hauptvermutung ({\it Sorkin and Zwane, work in progress}).   
+
+
+Apart from these more formal constructions, as we will describe below, a large body of evidence has accumulated in
+favour of the Hauptvermutung.  In the program of geometric reconstruction, we look for order invariants in continuum
+like causal sets which correspond to manifold (either topological or geometric) invariants of the spacetime.  These
+\emph{manifold invariants} include dimension, spatial topology, distance functions between fixed elements in the spacetime,
+scalar curvature, the discrete Einstein--Hilbert action, the Gibbons-Hawking-York boundary terms, Green functions for
+scalar fields, and the d'Alembertian operator for scalar fields. The identification of the order invariant $\cO$ with
+the manifold invariant $\cG$ then ensures that a causal set $C$ that faithfully embeds into $(M,g)$ cannot faithfully
+embed into a spacetime with a different manifold invariant $\cG'$.\footnote{This is in the sense of an ensemble,
+  since the faithful embedding is defined statistically.}  Thus, in this sense two manifolds can be defined to be  close with respect to
+their specific manifold invariants. We can then state the  limited,  order-invariant version of the Hauptvermutung: 
+
+% for each manifold invariant $\cO$:
+\textit{\textbf{$\cO$-Hauptvermutung:}  If $C$ faithfully
+  embeds into $(M,g)$ and $(M',g')$ then $(M,g)$ and $(M',g')$ have the same manifold invariant $\cG$ associated with 
+  $\cO$.}
+
+The longer our list of correspondences between order invariants and manifold invariants, the closer we are
+to proving the full Hauptvermutung.
+
+
+In order to correlate a manifold invariant $\cG$ with an order invariant  $\cO$, we must   recast geometry in purely
+order theoretic terms.  Note that since locally finite posets appear in a wide range of
+contexts,  the poset literature contains several order invariants, but these are typically not related to  the manifold
+invariants of interest to us.  The challenge is to choose the appropriate invariants that  correspond to manifold  invariants. Guessing and verifying this using
+both analytic and numerical tools is the art of geometric
+reconstruction. 
+
+A \emph{labelling} of a causal set $C$ is an injective map: $C \rightarrow \mathbb N$, which is the 
+analogue of a choice of coordinate system in the continuum.  By an \emph{order invariant} in a finite causal set $C$ we mean a function $\cO: C \rightarrow \re$ such that $\cO$ is
+independent of the {labelling} of $C$. For a manifold-like causal set\footnote{We remind the reader
+  that the ensemble depends on the spacetime $(M,g)$ but we suppress the dependence on $g$ for the sake of brevity.} $C \in \cC(M,\rc)$, associated to every order
+invariant $\cO$ is the random variable $\bO$ whose expectation value $\av{\bO} $ in the ensemble $\cC(M,\rc)$ is either equal to or limits (in
+the large $\rc$ limit) to a manifold invariant $\cG$ of $(M,g)$.  We will typically  restrict to compact regions of $(M,g)$ in order to deal
+with finite values of $\bO$.
+
+The first candidates for geometric order invariants were defined for $\cC(\Alex[p,q],\rc)$ where  $\Alex[p,q]$
+is an  Alexandrov interval in $\mink^d$. Some of these have 
+been later generalised to Alexandrov intervals (or causal diamonds)  in \emph{Riemann Normal Neighbourhoods (RNN)} in
+curved spacetime. These manifold invariants are in this sense ``local''. 
+In order to find \emph{spatial}  global invariants, the relevant spacetime region is  
+a \emph{Gaussian Normal Neighbourhood (GNN)} of a compact Cauchy hypersurface in a globally hyperbolic spacetime. As
+discussed in Sect.~\ref{sec:cst}  compactness is
+necessary for manifold-likeness since otherwise  there is a finite probability for there to be  arbitrarily large voids which negates the
+discrete-continuum correspondence.   
+
+%Causal set non-locality, from which local geometric invariants must be computed.  
+
+Before proceeding, we remind the reader that we are restricting ourselves to  manifold-like causal sets in this section
+only because of the focus on  CST kinematics and the continuum approximation. All the order invariants, however, can be calculated
+for \emph{any}  causal set, manifold-like  or not. These order invariants give us an important class of covariant
+observables,  essential to constructing a 
+quantum theory of causal sets. As we will see in Sect.~\ref{sec:dynamics} they play an important role in the
+quantum dynamics. 
+
+The analytic results in this section are typically found in the continuum limit,  $\rc \rightarrow \infty$.  Strictly
+speaking, this limit is unphysical in CST because of the assumption of a fundamental discreteness. There are 
+fluctuations at  finite $\rc $ which give important deviations from the continuum with potential phenomenological consequences. These are 
+however  not always easy to calculate analytically and hence require simulations 
+to assess  the size of fluctuations at finite $\rc$. As we will see below, CST kinematics therefore needs a combination
+of analytical and numerical tools. 
+
+
+\subsection{Spacetime dimension estimators} 
+\label{ssec:dimn} 
+
+The earliest result in CST is a dimension estimator for Minkowski spacetime due to \cite{myrheim}\footnote{This remarkable preprint also
+  contains the first expression, again without  detailed proof, of the volume of a small causal diamond in an arbitrary
+  spacetime.} and predates BLMS \citep{blms}.  A closely related dimension estimator 
+was given by \cite{meyer}, which is now collectively known as the \emph{Myrheim--Meyer}
+dimension estimator.  
+
+The {number of relations}  $R$ in a finite $n$ element causal set $C$ is the number
+of ordered 
+pairs $e_i, e_j \in C$ such that $e_i \prec e_j$.  Since the maximum number of possible  relations on $n$ elements  is
+$\binom{n}{2}$,  the  {ordering fraction} is defined as 
+\begin{equation} 
+r =\frac{2R}{n(n-1)}. 
+\end{equation}
+It was shown by \cite{myrheim}  that $r$ is dependent only on the dimension
+when $C$ faithfully embeds into $\mink^d$.    
+
+We now describe the construction of a closely related dimension estimator by \cite{meyer}. Consider an Alexandrov interval $\Alex_d[p,q] \subset \mink^d$ of volume $V>> \rc^{-1}$.   
+We are interested in calculating the expectation value of the random variable $\bR$ associated with $R$ for the ensemble
+$\cC(\Alex_d,\rc)$.  This is the probability that a pair of elements $e_1,e_2 \in \Alex_d[p,q]$ are related.    Given $e_1$, the
+probability of  there being an $e_2$ in its future is given by the volume of the region $J^+(e_1) \cap J^-(p)$
+%\mnote{Definitions of  $I^\pm,J^\pm$}
+in units of the discreteness scale, while the probability to pick $e_1$  is
+given by the volume of $\Alex_d[p,q]$. This joint probability can be calculated as follows. 
+
+
+Without loss of generality, choose  $p=(-T/2,0,\ldots, 0)$ and
+$q=(T/2, 0, \ldots, 0)$, so that the total volume
+\begin{equation}
+  V = \zeta_d T^d,  \quad  \zeta_d \equiv \frac{\vs_{d-2}}{2^{d-1} d(d-1)}
+  \label{eq:zetad} 
+\end{equation} 
+ with  $\vs_{d-2}$  the volume of the unit ${d-2}$ sphere. 
+For this choice,  
+ \begin{equation} 
+   \av{\bR} = \rc^2 \int\limits_{\Alex_d}\,\,\,  dx_1 \negs \negs\int\limits_{J^+(x_1) \cap J^-(q)}\negs\negs dx_2  =\,
+   \rc^2 \, \,  \zeta_d \,  \int\limits_{\Alex_d}\,\,dx_1 T_1^d \,,
+\end{equation} 
+where $T_1$ is the proper time from $x_1$ to $q$, and $\Alex_d \equiv\Alex_d[p,q]$. Evaluating the integral, one finds 
+\begin{equation} 
+\label{ctwoflat} 
+ \av{\bR} = \rc^2 V^2 \frac{\Gamma(d+1) \Gamma(\frac{d}{2})}{4 \Gamma(\frac{3d}{2})}. 
+\end{equation}
+Using $\av{\bbn} = \rc V$,  \cite{meyer} obtained a dimension estimator from $\av{\bR}$ by noting that the ratio
+\begin{equation} 
+\label{eq:dimension} 
+\frac{\av{\bR}}{\av{\bbn}^2} = \frac{\Gamma(d+1) \Gamma(\frac{d}{2})}{4 \Gamma(\frac{3d}{2})} \equiv \ff(d) 
+\end{equation} 
+is a function only of $d$. In  the large $n$ limit 
+this is is half of Myrheim's ordering fraction $r$. 
+
+
+However, the fluctuations in $\av{\bR}$ are
+large and hence the right dimension cannot be obtained from  a single realisation $C \in \cC(\Alex_d,\rc)$, but rather
+by  averaging over the ensemble.  
+For large enough $\rc$, however, the relative
+fluctuations should become smaller, and allow one to distinguish causal sets obtained from sprinkling into different
+dimensional Alexandrov intervals. Such systematic tests have been carried out numerically using sprinklings into
+different spacetimes by \cite{reid} and show a general convergence as $\rc$ is taken to be large, or
+equivalently the interval size is taken to be large. 
+
+
+ How can we use this dimension estimator in practice?  Let $C$ be a causal set of sufficiently large cardinality
+ $n$. If the dimension obtained from Eq.~(\ref{eq:dimension})  is approximately  an integer $d$, this means that $C$ cannot be distinguished
+ from a causal set that  belongs to $\cC(\Alex_d,\rc)$ using {just} the dimension estimator, for $n \sim \rc \vol(\Alex_d)$. We denote this by   $C \sim_d
+\Alex_d$. This also means that $C$ cannot be a typical member of $\cC(\Alex_{d'},1)$ for dimension $d'\neq
+d$, so that $C \not\sim_{d'} \Alex_{d'}$. The equivalence $C\sim_d \Alex_d$ itself does not of course imply that   $C \sim \Alex_d$ or  even  that $C$ is manifold-like. Rather, it is the limited
+statement that its dimension estimator is the same as that of a typical causal set in $ \cC(\Alex_d,\rc)$ for  $n \sim
+\rc \vol(\Alex_d)$.
+
+This is our first example of a $\cO$-Hauptvermutung, where the order invariant $\cO$ is
+the  ordering fraction $r$ and the spacetime  dimension $d$  is the corresponding manifold invariant $\cG$. This example
+provides a useful  template in the search for manifold-like order
+  invariants some of which we will describe in the next few subsections. 
+
+
+
+Using simulations \cite{carlipdrone} recently obtained the Myrheim--Meyer
+dimension  as function of interval size for nested intervals in a causal set in $\cC(\Alex_d,\rc)$ for
+$d=3,4,5$. As the interval size decreases, they found that the resulting causal sets are likely to
+be disconnected due to the large fluctuations at  small volumes. In the extreme case, there
+is a single point with
+no relations and hence the Myrheim--Meyer dimension goes to $\infty$ rather than $0$. Using a criterion to discard such
+disconnected regions, it was shown that this dimension estimator gives a value of $2$ at small volumes, 
+even when $d=3,4,5$, in support of the dimensional reduction conjecture in quantum gravity \citep{carlipdr} which we 
+discuss briefly in Sect.~\ref{sec:matter}. 
+
+Meyer's construction is in fact
+more general and yields a whole family of dimension estimators.  If we think of the relation  $e_1\prec e_2$ as a \emph{chain} $c_2$ of two elements, then a \emph{$k$-chain} $c_k$ is the causal sequence $e_1 \prec e_2 \ldots \prec e_{k-1} \prec
+e_k$ (see Fig.~\ref{chain.fig}), where the \emph{length} of $c_k$ is defined as $k-2$.
+\begin{figure}[ht]
+\centering \resizebox{3in}{!}  {\includegraphics[width=\textwidth]{chains}}
+\caption{Two different chains between $x$ and $x'$. One is a $k=4$ chain and the other is a $k=7$ chain.}
+\label{chain.fig}
+\end{figure}
+We denote the \emph{abundance}, or number  of the $c_k$'s contained  in $C$, by $C_k$. Its expectation value in
+$\cC(\Alex_d[p,q],\rc)$ is therefore  given by a sequence of $k$ nested integrals over a sequence of nested Alexandrov
+intervals,  $\Alex_d[p,q] \supset  I(x_1,q) \supset I(x_2,q) \ldots I(x_k, q) $ which, as was shown by \cite{meyer},  can be
+calculated inductively to give 
+\begin{equation} \label{eq:ckflat}  
+\av{\bCk} =\rc^k\chi_k V^k, \qquad 
+\chi_k\equiv \frac{1}{k} \biggl(\frac{\Gamma(d+1)}{2}\biggr)^{k-1}
+\frac{\Gamma(\frac{d}{2})\Gamma(d)}{\Gamma(\frac{kd}{2})\Gamma(\frac{(k+1)d}{2})}.
+\end{equation} 
+Thus for any $k,k'$, the ratio of $\av{\bC_k}^{1/k}$ to ${\av{\bC_{k'}}^{1/k'}}$ only depends on the dimension. This
+gives a multitude of dimension estimators. 
+
+
+Meyer's calculation of $\av{\bC_k}$ was   generalised to a small causal diamond $\Alex_d[p,q]$ that lies in an  RNN of a general 
+spacetime, i.e., one for which $RT^2 << 1$, where  $T$ is the proper time from $p$ to $q$ and $R$ denotes components of
+the curvature  at the centre of the
+diamond  \citep{rss}. In such a region the dimension  satisfies the more complicated equation 
+\begin{eqnarray} 
+\ff^2(d) \biggl( -\frac{1}{3} \frac{(d+2)}{(3d+2)} -
+\frac{(4d+2)}{(2d+2)}\biggl(\frac{\av{\bC_3}}{\chi_3}\biggr) ^{\frac{4}{3}} \frac{1}{\av{\bC_1}^4}  &&  \nn \\ 
++ \frac{1}{3} \frac{(4d+2)(5d+2)}{(2d+2)(3d+2)} \frac{\av{\bC_4}}{\chi_4} \frac{1}{\av{\bC_1}^4} \biggr)
+&=&- \frac{\av{\bC_2}^2}{\av{\bC_1}^4} \,,
+\end{eqnarray} 
+where $\ff(d)$ is given by Eq.~(\ref{eq:dimension}). It is straightforward to show that the expression above reduces to the Myrheim--Meyer dimension
+estimator in $\mink^d$.  The calculation of \cite{rss} uses a  result of \cite{ks}, which makes explicit
+earlier calculations of the volume of a causal diamond in an RNN \citep{myrheim,gs}. 
+The $C_k$ themselves
+are order invariants and hence are covariant observables for finite element causal sets.
+
+
+This class of dimension estimators is just one among several that have appeared in the literature, including the {mid-point scaling estimator} \citep{bomthesis,reid}, and more
+recent ones \citep{intervals,bomemad}. We refer the reader to the literature for more details. 
+
+\subsection{Topological invariants}
+\label{ssec:topology} 
+ 
+The next step in our reconstruction is that of topology.  There are several poset topologies described in the
+literature (see \citealt{stanley} as well as  \citealt{suryatop} for a review). However, our interest is in finding one that most closely resembles the ``coarse'' continuum topology. It is clear that the full manifold topology cannot be reproduced in a causal set since it
+requires arbitrarily small open sets. However, according to the Hauptvermutung,  topological invariants like the homology groups and the fundamental
+groups of $(M,g)$ should be encoded in the causal set. 
+
+ A natural  choice for a topology in $C$ based on the order relation  is one generated by the order
+intervals  $\cAlex[e_i,e_j] \equiv \fut(e_i) \cap \past(e_j)$. Indeed, in the continuum the topology generated by their
+analogs, the Alexandrov intervals,  can be shown to be  equivalent to the manifold topology  in strongly causal
+spacetimes \citep{penrose}.   However, even for a causal set approximated by
+ a finite region of $\mink^d$,  this order-interval topology is roughly discrete or
+ trivial.  This is because the intersection of any two intervals in the continuum can be  of order the discreteness scale
+and hence  contain  just  a  single element of the causal set, thus trivialising the topology.  
+A way forward is to use the causal structure to obtain a locally finite open covering of $C$ and construct the
+  associated  ``nerve simplicial complex'' (see \citealt{munkres}). 
+
+In \cite{homology,stablehomology},  a ``spatial'' homology of $C$ was obtained in this manner by considering an inextendible 
+ antichain $\cA \subset C$ (see Sect.~\ref{ssec:forks}),    which is an (imperfect) analog of a Cauchy hypersurface.
+ The natural topology on $\cA$ is the discrete topology since
+there are no causal relations amongst the elements. In order to
+provide a topology on $\cA$, one needs to ``borrow'' information from a neighbourhood of
+$\cA$. The method devised was to consider
+elements to the future of $\cA$ and ``thicken'' by a parameter $v$  to some collar
+neighbourhood  $\cT_v(\cA) \equiv\{e | \, |\ifut(\cA)\cap \ipast(e)| \leq v \}$. Here $\ifut$ and $\ipast$ denote the \emph{inclusive future and
+  past} respectively, where for any $S \subset C$, $\ifut(S)=\fut(S) \cup S$ and  $\ipast(S)=\past(S) \cup S$.
+
+
+
+A topology can then be induced on $\cA$ from $\cT_v(\cA)$ by considering the open cover $\{\cO_v \equiv\past(e) \cap
+\cA\}$ of $\cA$, for  $e \in {\cM}_v(\cA)$, the  set of future most elements of  $\cT_v(\cA)$.  The 
+``nerve''  simplicial complex $\cN_v(\cA)$ can be constructed 
+from $\{\cO_v\}$ for  every $v$.   For a spacetime $(M,g)$  with compact Cauchy hypersurface $\Sigma$, and for  $C \in \cC(M,\rc)$ 
+it was shown in \cite{homology,stablehomology}  that there exists a range of
+values of  $v$ such that  $\cN_v(\cA)$ is  homological to $\Sigma$ (up to the discreteness scale)  as long as there is a sufficient
+separation  between the discreteness  scale $\ell_c\equiv V_c^{{1}/{d}}$ and $\ell_K$ the scale of extrinsic curvature of
+$\Sigma$.  
+
+One might also imagine a similar construction on $C$ using  the nerve simplicial complex  of 
+  causal intervals of a given minimal cardinality  $v$ which cover $C$. However, in the continuum the intersection of such intervals may not
+  only  be of order the discreteness scale, but also such that they ``straddle'' each other. As an example consider the
+  equal volume intervals  $\Alex[p_1,q_1], \Alex[p_2,q_2]$ in $\mink^2$  where $p_1,q_1$ are at $x=0$ in a  frame
+  $(x,t)$, with the $x$-coordinate of
+$p_2$ being  $<0$ and that of $q_2$ being $>0$.  These two intervals not only intersect, but  straddle each other, i.e.,
+the set difference 
+$\Alex[p_1,q_1] \backslash \Alex[p_2,q_2]$ is disconnected as is  $\Alex[p_2,q_2]\backslash \Alex[p_1,q_1]$. By choosing $p_2,q_2$
+appropriately, the intersection  region can be made very ``thin'', pushing most of the volume of $\Alex[p_2,q_2]$ out of
+$\Alex[p_1,q_1]$. Thus, while they intersect in $\mink^2$ these intervals  would not intersect in the corresponding causal set
+$C$. This results in a non-trivial cycle in the associated nerve simplicial complex for $C$, which is absent  in the
+continuum. Such a  construction can be therefore made to work only in a sufficiently localised region within $C$.
+
+An example of  a localised of subset of $C$ is the region   sandwiched between two inextendible and
+non-overlapping antichains $\cA_1$ and $\cA_2$. The resulting homology constructed from the nerve
+simplicial complex {of the order intervals of volume $\sim v$} is then is associated with 
+a spacetime region rather than just space, and hence includes topology change. While preliminary investigations
+  along these lines have been started, there is much that remains to be understood.  Another possibility for
+characterising the spatial homology uses  chain complexes but this has only been partially
+investigated.  A further open direction is to obtain  the causal set analogues of {other} topological invariants. 
+
+
+\subsection{Geodesic distance: timelike, spacelike and spatial} 
+\label{ssec:distance}
+
+In Minkowski spacetime, the proper time between two events is the 
+\emph{longest} path between them; the shortest 
+path between two time-like separated events  is of course any  zig-zag null path, which has zero length. In a causal set
+$C$, if  $e_i \prec e_f$, one can construct different  chains from $e_i$ to $e_f$, of varying lengths. A  natural choice
+for the discrete timelike geodesic
+distance between $e_i$ and $e_f$ is  the length of the longest chain, which we denote by  $l(e_i,e_j)$, as was suggested
+by \cite{myrheim}.  
+It was shown  in  \cite{bg} that the expectation value of the associated random variable $\bl$  in the ensemble $\cC(\Alex_d,\rc)$  limits to a dimension dependent constant 
+\begin{equation} 
+\lim_{\rho_c \rightarrow \infty} \frac{\av{\mathbf{l}(x,x')}} {(\rc  V(x,x'))^{1/d}} =   m_d  
+\end{equation} 
+where 
+\begin{equation} 
+1.77\leq\frac{2^{1-\frac{1}{d}}}{\Gamma(1+\frac{1}{d})}\leq
+m_d\leq \frac{2^{1-\frac{1}{d}}e\,(\Gamma(1+d))^{\frac{1}{d}}}{d}\leq
+         2.62 
+\end{equation} 
+For a finite  $\rc$, the fluctuations in $l(e_i,e_j)$ are  very  large \citep{meyer,bachmat} and hence the correspondence
+becomes meaningful only when averaged over a large ensemble. 
+
+In \cite{rss}, an expression for the proper time $T$ of 
+a small causal diamond $\Alex_d$ in an RNN of a  $d$ dimensional spacetime was obtained to leading order correction in terms of the random
+variables $\bC_k$ associated to the abundance of $k$-chains,    
+\begin{equation} 
+\label{T}
+T^{3d}=\frac{1}{2d^2 \rc^3}\biggl(J_1-2J_2+J_3 \biggr).   
+\end{equation} 
+where 
+\begin{equation} 
+\label{moreidentities}
+J_k \equiv  (kd +2)  ((k+1)d+2) \frac{1}{\zeta_d^3}\biggl(\frac{\av{\bC_k}}{\chi_k }\biggr)^{3/k},  
+\end{equation}
+with $\av{\bC_k}$  the ensemble average in  $\cC(\Alex_d,\rc)$ and $\zeta_d, \chi_k$ defined in Eqs.~(\ref{eq:zetad}) and
+(\ref{eq:ckflat}). This definition is not intrinsic to a single causal set
+but requires the full ensemble. Nevertheless, it is of interest to study the intrinsic version of the expression by
+replacing  $\av{\bC_k}$ by   $C_k$ for each causal set and then taking the  ensemble average to check for
+convergence.   Recent simulations suggest that these expressions converge fairly rapidly to their continuum values. 
+
+Spacelike distance is far less straightforward to compute from the
+poset, because events that are spacelike to each other have no natural
+relationship to each other. We saw this already in trying to find a topology on the inextendible
+antichain. Thus, the relationship must be ``borrowed'' from the
+elements in the causal past and future of the spacelike events.  \cite{bg} defined the following,  naive spatial distance function in
+$\mink^d$. For a given spacelike pair $p,q \in \mink^d$, the 
+{common future and past} are defined as 
+$ J^+(p,q)\equiv J^+(p) \cap J^+(q)$ and  $ J^-(p,q)\equiv J^-(p) \cap J^-(q)$ respectively. For  every $r \in  J^+(p,q) $ and
+$ s  \in J^-(p,q) $ let $\tau(s,r)$ be the timelike distance. Then the  naive distance function is given by 
+\begin{equation} 
+\label{eq:sdist} 
+\dns(p,q) \equiv min_ {r,s} \tau(r,s). 
+\end{equation} 
+While this is a perfectly good continuum definition of the distance in $\mink^d$, it fails for the causal set when $d>2$
+since the number of pairs $(r,s)$ which minimise $\tau(r,s)$ lies  in the region between a co-dimension $2$ hyperboloid
+and the light cone $\tau=0$.  In the causal set we
+can use the length of the maximal chain $\bl(r,s)$ to obtain $\tau(r,s)$, but in $d>2$ since there are an infinite
+number of proper time minimising pairs $(r,s)$, there will almost surely be those for which $\bl(r,s)$ is drastically
+underestimated. The minimisation in Eq.~(\ref{eq:sdist}) will then always give $2$ as the spatial distance!
+
+\cite{rw}  generalised  the naive distance function using minimising pairs $(r,s)$ such that either $r$ or $s$ is
+linked to both $p$ and $q$.  Instead of minimising over these pairs (again infinite), the \emph{2-link} distance can be 
+calculated by averaging over the pairs. Numerical simulations for the naive distance and the 2-link distance for sprinklings
+into a finite region of $\mink^3$ show that the latter stabilises as a function of $\rc$. The former underestimates the
+spatial distance compared to the continuum, and the latter overestimates it. The spatial distance functions of both \cite{bg}
+and \cite{rw} are however strictly
+``predistance'' functions since they do not satisfy the triangle inequality.  
+
+
+Recently a one-parameter family of discrete  induced spatial distance functions was proposed for an inextendible antichain
+in a causal set by \cite{esv}.   To begin with, a  one parameter family of continuum  induced distance functions
+$d_\epsilon$ was constructed for a globally hyperbolic region $(M,g) $  of spacetime with Cauchy hypersurface
+$\Sigma$ using  only the causal structure and the volume element. In  $\mink^d$ with $\Sigma$ a constant time slice in
+an inertial reference frame, 
+the volume of a past causal cone from $p \succ \Sigma$ has a simple relation to the diameter $D$ of the base of the
+cone $J^-(p)\cap \Sigma$
+\begin{equation}
+  \label{zetadef} 
+\vol(J^-(p)\cap J^+(\Sigma))=\zeta_d \biggl(\frac{D}{2}\biggr)^d. 
+\end{equation}
+Since $D$ is the distance between any two antipodal points on the $S^{d-2}\subset \Sigma$,  this simple
+formula defines the induced distance on $\Sigma$. In a general spacetime this
+formula can be used to extract an approximate induced distance function in a sufficiently
+small region of $\Sigma$.  In order to define the distance function on all of $\Sigma$, a meso-scale $\epsilon$
+must be introduced, and the full distance function  can then be obtained by minimising over all segmented paths, such that each
+segment is bounded from above by $\epsilon$.   For  $\epsilon
+<<  \ell_K$, the scale of the extrinsic curvature of $\Sigma$,   $d_\epsilon$  was shown in \cite{esv} to converge to 
+the induced spatial distance function $d_h$ on  $(\Sigma,h)$.
+
+Since the $d_\epsilon$ are constructed from the causal
+structure and volume element they are readily defined on  an inextendible antichain on a causal set.  For causal sets
+in $\cC(M,\rc)$ with $\Sigma \subset M$ the discrete distance function $d_\epsilon$ was shown to significantly overestimate the
+continuum induced distance on $\Sigma$ when the latter is close to the  
+discreteness scale $(V_c)^{{1}/{d}}$. This  discrete \emph{``asymptotic silence''} of \cite{ems} mimics the narrowing of
+light cones in the UV, and can be traced to the large fluctuations expected around the discreteness scale.  At larger
+distances, on the other hand,  $d_\epsilon$ is a good approximation of the continuum induced
+distance when $(V_c)^{{1}/{d}}<< \epsilon << \ell_K$.  It was
+shown moreover that the  continuum induced distance is slightly underestimated for positive curvature and slightly overestimated  for negative curvature, when restricted
+to small regions of $\Sigma$. This was confirmed by extensive  numerical
+simulations in $\mink^d$ for $d=2,3$ (see Fig.~\ref{distance.fig}).  This works paves the way to
+recovering more spatial geometric invariants from the causal set, and is currently in progress (Eichhorn, Surya and Versteegen).  
+\begin{figure}[ht]
+  \includegraphics[width=0.5\linewidth, keepaspectratio]{Hnegl66}\quad\quad \includegraphics[width=0.5\linewidth, keepaspectratio]{Hposl66}
+\caption{The error in the discrete spatial distance is plotted as a function of the continuum induced distance
+    on $\Sigma$ for causal
+    sets in $\mink^2$ for  $\Sigma$ of both constant negative and constant positive  extrinsic curvature. The discrete spatial distance always overestimates the continuum distance around the discreteness
+    scale giving rise to ``discrete asymptotic silence''. For larger distances, when there is a good separation of
+    scales, the discrete distance gives a good approximation to the continuum induced distance.}
+\label{distance.fig}
+\end{figure}
+
+
+\subsection{The d'Alembertian  for a scalar field } 
+\label{ssec:dalem}
+
+One of the very first questions that comes to mind in the continuum approximation of CST is whether a tangent space  can
+be defined naturally on a causal set. To answer this (unfortunately in the negative), we need to examine  the non-local nature of a
+manifold-like causal set in more detail. 
+The nearest neighbours of an element $e$ are
+those that it is linked to, both in its future and its past. In a causal set approximated by Minkowski spacetime for
+example, and  as discussed in Sect.~\ref{sec:cst}, every element has an infinite number of nearest neighbours (see Fig.~\ref{valency.fig}).  Similarly, the 
+``next nearest'' neighbours  to $e$ are those for which the interval $|\cAlex[e,e']| =1$ or $| \cAlex[e',e]|=1$.\footnote{Note that this is the \emph{exclusive} interval and hence there exists exactly
+  one element $e''$ such that $e\prec e'' \prec e'$.} 
+Thus, in keeping with the covariance of the causal set, we say
+that if $e\prec e' $ and $|\cAlex[e,e']|=k$ (or $e'\prec e$ and $|\cAlex[e',e]|=k$),  then    
+$e'$ is the $k$-nearest neighbour of
+$e$.  Examples of past $k$-nearest
+neighbours of an element in a Minkowski-like causal set are shown in Fig.~\ref{nn.fig}.
+\begin{figure}[!htb]
+  \centering \resizebox{3.0in}{!}  {\includegraphics[width=\textwidth]{Intervals}}
+\caption{The layered structure of neighbourhoods. The nearest neighbours are the links or zero intervals, the
+    next to nearest neighbours are the 1-element intervals, the etc. Here we depict the types of $0,1,2$ element
+    intervals. In the figure two examples of  $3$ element intervals are also shown.}
+\label{nn.fig}
+\end{figure}
+
+
+It is already clear from the picture that emerges in $\mink^d$ that,  unlike a regular lattice,  a simple construction of  a locally defined tangent space
+from the set of links or next to nearest neighbours to $e$ is not possible, since the valency of
+the graph is infinite. This means in particular that derivative
+operators cannot also be simply defined. 
+How then can we look for the effect of discreteness on  the propagation of fields?  We will discuss this in more detail in Sect.~\ref{sec:matter} but for now we
+notice that the best way forward is to look for scalar quantities, rather than more general tensorial ones,  in making the
+discrete-continuum correspondence.  
+
+A scalar field d'Alembertian is a good first step. In \cite{sorkinnonlocal,joereviewtwo}, a proposal was given for a discrete
+d'Alembertian of a free
+scalar field on a causal set approximated by $\mink^2$, and extended in \cite{bd,dionthesis,dg} to higher
+dimensions. For a real scalar field on  a causal set $\phi: C \rightarrow \re$ define the  $d=4$ dimensionless
+discrete operator
+\begin{equation} 
+B\phi(e) \equiv \frac{4}{\sqrt{6}}\biggl[-\phi(e)  + \biggl( \sum_{e'\in L_0(e)}  - \, \,  9\!\!\!\!\sum_{e' \in L_1(e)}  + \, \, 16
+\!\!\!\!\sum_{e'\in L_2(e)}   - \, \, 8 \!\!\!\!\sum_{e' \in L_3(e)} \biggr) \phi(e')\biggr],
+\label{eq:disbk} 
+\end{equation} 
+where $L_k(e)$ denotes the set of $k$-nearest neighbours to the past  of $e \in C$. This is a highly non-local
+operator since it depends on the number of all the (possibly infinite) nearest $k=0,1,2,3$ neighbours. Notice  
+the alternating sum whose precise coefficients turn out to be very important to the continuum limit.  The expectation value of the  random variable $\bB\phi(x)$  associated with $\cC(\mink^4,\rc)$ 
+at  $x\in \mink^4$ is  
+\begin{eqnarray} 
+  \!\!\!\!\!\frac{1}{\sqrt{\rc }}\av{\bB\phi(x)}\! &=& \!  \frac{4 \sqrt{\rc}}{\sqrt{6}}\biggl[-\phi(x)  + \nn \\
+  && \!\! \rc \!\! \int_{y \in J^-(x)}\!\!\!\!\! \!\!\!\!\! \!\!\!\!\! d^4 y \, \phi(y) \, e^{-\rc
+                                         v} \biggl(1-9\rc v + 8 (\rc v)^2 -\frac{4}{3} (\rc v)^3\biggr) \biggr],   
+\end{eqnarray} 
+where  $v\equiv \vol(\Alex(y,x))$ and we have used the probability $P_n(v) $ for $v$ to contain $n$ elements,
+Eq.~(\ref{eq:poisson}). We have also made the expression dimensionful, in order to be able to make a direct comparison with the continuum. 
+ Let us consider
+the past of $x$ in $\mink^2$ and choose a frame $\cF_\phi$  such that $\phi(y)$ varies slowly in  the immediate past of  $x$
+with respect to $\cF_\phi$. 
+As   was
+shown in $\mink^2$ by \cite{sorkinnonlocal} and in $\mink^4$ by \cite{bd} (see also \citealt{dionthesis}),
+for   $\phi$ of  compact
+support  there are miraculous cancellations that make the contributions far down the light cone negligible, thus
+making the operator effectively local. 
+
+In order to evaluate this integral, we first note that since $\phi$ is of compact support, the region of integration
+is compact.  In $\cF_\phi$, a
+small $|y-x|$ expansion of  $\phi(y)$ around $\phi(x)$ can be done.  Following \cite{sorkinnonlocal,bd,dionthesis},  the non-compact region
+of integration $J^-(x)$ can be  split into 3 non-overlapping regions,
+$\cW_1,\cW_2,\cW_3$ in $\cF_\phi$:  $\cW_1$ is  a neighbourhood of $x$,  $\cW_2$ is a neighbourhood of $\partial J^-(x)$ but
+bounded away from the origin and $\cW_3$ is bounded away from $\partial J^-(x)$.  The integral over  $\cW_3$ was shown
+in \cite{dionthesis} to be bounded from above by an integral that  tends to zero faster than any power of $\rc^{-1}$, while
+the integral over $\cW_2$ was shown to go to zero faster than $\rc^{-3/2}$.  The local contribution from $\cW_1$  
+dominates so that 
+\begin{equation} 
+\lim_{\rc \rightarrow \infty} \frac{1}{\sqrt{\rc }}\av{\bB\phi(x)} = \Box \phi(x). 
+\end{equation}  
+Thus, $B(\phi)$ is  ``effectively local'' since its dominant contribution comes from $\cW_1$ which is a local
+neighbourhood of $x$ defined by the frame $\cF_\phi$.  In \emph{this}  frame, the contribution to $\bB\phi(x)$ is
+dominated by the restrictions of $L_k$ to $\Alex(p,q)\cap J^-(x)$. Thus,   while $\bB\phi(x)$ is not determined just by
+the value of $\phi$ at $x$, it depends on $\phi$ only in  an appropriately defined compact neighbourhood of $x$,
+rather than all of $J^-(x)$.  This ``restoration of locality'' is an important subtlety in CST kinematics.
+
+How does a scalar field on a causal set evolve under this non-local d'Alembertian?  There are indications that while the
+evolution in $d=2$ is stable, it is  unstable in $d=4$ as suggested by \cite{gendalem}. Hence it is  desirable to look for
+generalisations  of the $B_\kappa$ operator.  An infinite family of  non-local d'Alembertians has been constructed by 
+\cite{gendalem} and shown to give the right continuum limit. It is still an open question whether there is a subfamily of
+these operators that lead to a  stable evolution.
+
+An interesting direction that has been explored by \cite{yasamanspectral} is to use the spectral information of the
+d'Alembertian operator to obtain all the information about the causal set. This was explored for $\Alex_2[p,q] \subset
+\mink^2$ and it  was shown that the spectrum of the d'Alembertian (or Feynman propagator) gives the link matrix (see
+Eq.~(\ref{eq:linkm}) below), i.e., the matrix of all linked pairs using which the  entire causal set can be reconstructed
+via transitivity. Extending these results to higher dimensions is an interesting open question.   
+
+\subsection{The Ricci scalar and the Benincasa--Dowker action} 
+\label{ssec:bdaction}
+
+Next we describe a very important development in CST : the construction of the discrete Einstein--Hilbert action or the
+\emph{Benincasa--Dowker (BD) action}  for a causal set \citep{bd,dg}. The approach of \cite{bd} was to generalise
+  $\bB\phi(x)$ to an RNN in curved spacetime in $d=2,d=4$. Again, the region of integration can be split into three
+  parts as was done for  flat spacetime. The
+contribution from $\cW_3$ i.e., away from a neighbourhood of $\partial J^-(x)$ can again be shown to be 
+bounded from above by an integral that  tends to zero faster than any power of $\rc^{-1}$.   In the limit, the contribution from the
+near region $\cW_1 $ contained in an RNN  is such that 
+\begin{equation} 
+\lim_{\rc \rightarrow \infty} \frac{1}{\sqrt{\rc }}\av{\bB\phi(x)} \lvert_{\cW_1}  = \Box \phi(x) -\frac{1}{2} \cR(x)\phi(x).
+\end{equation} 
+where $\cR(x)$ is the Ricci scalar \citep{bd,dionthesis}. However, the calculation in region $\cW_2$ which is in the neighbourhood of
+$\partial J^-(x)$ but bounded away from the origin,  is non-trivial, and needs a further set of assumptions to show
+that it does not contribute in the $\rc \rightarrow \infty$ limit.  A painstaking calculation in \cite{bbd} using Fermi Normal Coordinates shows that
+this is indeed the case  in an approximately flat region of a four dimensional spacetime.  Generalising this calculation
+to arbitrary spacetimes is
+highly non-trivial but is an important open question in CST.   
+
+
+What is of course exciting about this form for the d'Alembertian Eq.~\ref{eq:disbk} is that it can be used to find the discrete Ricci
+curvature and hence the action. Assuming that 
+\begin{equation} 
+\lim_{\rc \rightarrow \infty} \frac{1}{\sqrt{\rc }}\av{\bB\phi(x)}|_{\cW_2}  = 0 
+\label{eq:assumptionbd} 
+\end{equation} 
+holds in all spacetimes, and  putting\footnote{By doing so, we violate the condition that $\phi$ is of
+  compact support. However, given that the regions $\cW_3$ and by assumption $\cW_2$  contribute  negligibly, we can
+  always ensure this by only requiring constancy of $\phi$ in a neighbourhood of   $\cW_1$.}   $\phi(x)=1$    
+\begin{equation} 
+\lim_{\rc \rightarrow \infty} \frac{1}{\sqrt{\rc }}\av{\bB\phi(x)} = -\frac{1}{2} \cR(x).
+\end{equation} 
+Thus we can write the dimensionless discrete Ricci curvature at an element $e \in  C$ \citep{dionthesis} as   
+\begin{equation} 
+R(e) =  \frac{4}{\sqrt{6}}\biggl[ 1 - N_0(e) + 9N_1(e) -16 N_2(e) +8N_3(e)\biggr], 
+\end{equation}  
+where $N_k(e)\equiv|L_k(e)|$.  Summing over the $n$ elements of a finite element causal set gives the dimensionless discrete action  
+\begin{equation} 
+\label{BD} 
+%\frac{1}{\hbar} S^{(2)} [C]&=& N - 2 N_1 + 4N_2-2N_3 \\  
+S^{(4)} (C)= \sum_{e\in C} R(e)=\frac{4}{\sqrt{6}} \biggl[ n-  N_0 + 9N_1-16N_2+8N_3\biggl],      
+\end{equation}  
+where $N_k$ is the total number of $k$-element order intervals in $C$.  
+
+\cite{bd} (see also \citealt{dionthesis}) showed  that (under the assumption Eq.~(\ref{eq:assumptionbd})) the random
+variable $\bS^{(4)}$ associated with $\cC(M,g)$  gives the Einstein--Hilbert action in the continuum limit  
+\begin{equation} 
+\lim_{\rc \rightarrow \infty} \hbar \frac{\lc^2}{\lp^2} \av{\bS^{(4)}(C)} = \cS_{EH}(g),   
+\label{eq:bdehlimit} 
+\end{equation} 
+up to (as yet unknown)  boundary  terms.  
+
+Equation~(\ref{eq:bdehlimit})  is exactly true in an approximately flat  region of a four dimensional spacetime  as
+shown in  \cite{bbd}.  Proving Eq.~(\ref{eq:assumptionbd})  in general is however non-trivial since there are caustics
+in a generic spacetime which complicate the calculation. On the other hand, numerical
+simulations suggest that again, up to boundary terms,  the Benincasa--Dowker action $S$ \emph{is} the Einstein--Hilbert
+action \citep{dionthesis,willthesis}. We will discuss these boundary terms below. 
+
+Before doing so, we note that crucial to the validity of the causal set action are its fluctuations in a given causal
+set. These were shown in \cite{sorkinnonlocal} to be large for the operator $B$ in $\mink^2$ . This can be traced to the
+fact that the elements in $L_k(e)$ for $k=0,1,2,3$ are very close to the discreteness scale and hence the d'Alembertian
+is susceptible to  large Poisson fluctuations at small volumes. In order to ``shield'' the continuum from these
+fluctuations, a new \emph{mesoscale} $\llk > \lc$ and its associated density $\rk$ %\mnote{All new terms in bold}
+was introduced in \cite{sorkinnonlocal}. 
+Thus instead of a single discrete operator $B$, we have a one parameter family of
+operators:
+\begin{equation} 
+B_\kappa\phi(e) \equiv \frac{4}{\sqrt{6}}\biggl[-\phi(e)  + \epsilon \sum_{e'\prec e} f(n(e',e), \epsilon) \phi(e')\biggr],  
+\label{eq:bkoperator}
+\end{equation} 
+where $\epsilon \equiv {\rk}/{\rc}$  is a \emph{non-locality parameter},\footnote{$\epsilon$ is a new free parameter in the theory, whose 
+value should  ultimately be decided by the fundamental dynamics.} $n(e,e')=|I(e,e')| $ and 
+\begin{equation} 
+f(n,\epsilon) = (1-\epsilon)^n\biggl[1-\frac{9\epsilon n}{1-\epsilon} +  \frac{8\epsilon^2 n(n-1)}{(1-\epsilon)^2} -
+\frac{4\epsilon^3 n(n-1)(n-2)}{3(1-\epsilon)^3} \biggr]. 
+\end{equation}   
+This function ``smears out'' the contributions of the $N_k$ into four ``layers'' which appear with alternating
+sign, as shown in  Fig.~\ref{fne4d.fig}. Each layer is thus thickened from a single value of $k$ to a range of $k$
+values depending on $\epsilon$. When this mesoscale matches the discreteness scale, i.e., $\epsilon=1$, each layer
+collapses to a single value of $k$.  
+\begin{figure}[ht]
+  \centering \resizebox{3in}{!}{\includegraphics[width=\textwidth]{fne4d}} \hskip 0.1cm 
+ %\includegraphics[width=\textwidth]{Layers4d}}
+  \caption{The function $f(n,0.05)$. There are 4 regions of alternating sign corresponding to 4
+  ``smeared out'' layers.}
+\label{fne4d.fig}
+\end{figure}
+This then gives us a one-parameter family of actions $S_\kappa(C,\epsilon)$, where  $\epsilon$ can be viewed as a tunable
+coupling constant.  As we will see in  Sect.~\ref{sec:dynamics}, this gives rise to an interesting phase structure in 2d CST. 
+
+
+The  result  for $d=2,4$  are due to   \cite{bd,dionthesis} and  were generalised to arbitrary dimensions by \cite{dg,glaser},
+using   a dimension dependent smearing function $f_d(n,\epsilon)$.  
+ 
+There have been other attempts to obtain the action of a causal set. In \cite{bomsver}, the curvature at the centre of an
+Alexandrov interval $\Alex_d[p,q]$ in a RNN was obtained using the leading order corrections to the volume of a small
+causal diamond \citep{gs} 
+\begin{equation} 
+V=V_0\left(1-\frac{d}{24(d+1)(d+2)} R(0) T^2 + \frac{d}{24(d+1)} R_{00}T^2\right), 
+\end{equation} 
+where $T$ is the proper time from $p$ to $q$ and $V_0$ is the flat spacetime volume. 
+The expression obtained is in terms of the discrete volume and the length of the longest chain from $p$ to $q$.  Since
+$R$ is approximately a constant in $\Alex_d[p,q]$,  this also gives the
+approximate action.  Extending it to an action on the full spacetime is however quite tricky since it is unclear
+how to localise the calculation. 
+
+The calculation for  the abundance of $k$-chains $C_k$ in an RNN  in \cite{rss} also gives an expression for the curvature   
+\begin{equation} 
+\label{R}
+R(0)= 
+-{2(n+2)(2n+2)(3n+2)} 2^{\frac{3n+2}{3n}} n^{\frac{4}{3n}-1} \frac{(K_1-2K_2+K_3)}{\,\,\,\,\,(J_1 - 2J_2 +
+  J_3)^{\frac{3n+2}{3n}}}.
+\end{equation} 
+ where 
+\begin{eqnarray} 
+\label{moreidentitiestwo}
+J_k &\equiv& (kn+2) K_k \nno \\ 
+K_k &\equiv& ((k+1)n+2)Q_k, 
+\end{eqnarray} and 
+\begin{equation} 
+Q_k  \equiv  \biggl(\frac{\av{\bC_k}}{\rho^k\zeta_k }\biggr)^{3/k}
+=\frac{1}{\wzeta^3}\biggl(\frac{\av{\bC_k}}{\rho^k\chi_k }\biggr)^{3/k}. 
+\end{equation} 
+While this expression is compact, it is not  defined on a single causal set, but rather, over the ensemble.  Whether this
+can be expressed as a function on a single  causal set or not is an interesting open  question and under current
+investigation. As in the previous case, having obtained $R(0)$, however, it is non-trivial to construct the action,
+without a localisation requirement as was done for the BD action.  
+
+
+
+\subsection{Boundary terms for the causal set action} 
+\label{ssec:ghy}
+
+Although the BD action gives the bulk Einstein--Hilbert action in the
+continuum approximation, the role of boundary terms is less clear. As shown by 
+\cite{gaussbonnet} the expectation value for the BD action does not vanish for  $\cC(\Alex_2,\rc)$, where $\Alex_2[p,q]
+\subset \mink^2$ as one might expect,
+but instead converges to a constant
+as $\rc \rightarrow \infty$ and is independent of $\vol(\Alex_2)$.   
+\cite{bdjs} showed more generally that  for $\cC(\Alex_d,\rc)$ with   $d \geq 2$ that 
+\begin{equation} 
+\lim_{N \rightarrow \infty} \frac{1}{\hbar}\left\langle \tbS_{BDG}^d \right\rangle=  \frac{1}{l_p^{d-2}} \vol
+(\mathcal{J}^{(d-2)}) \,,  
+\label{result} 
+\end{equation} 
+where $\mathcal{J}^{(d-2)} \equiv \partial J^+(p) \cap \partial J^-(q)$ is the co-dimension 2 ``joint'' of the causal
+diamond $\Alex_d$, which is a round sphere $S^{d-2}$.  In  $d=2$ this is the volume of a  zero sphere $S^0$ which is the
+constant found in 
+\citep{gaussbonnet}.  This in turn corresponds to the Gibbons--Hawking--York (GHY) null   boundary term of \citep{jsss,lmps} for a
+particular choice of the null affine parameter.\footnote{It is an interesting question whether the choice of affine
+  parameter along ``almost''  null directions can be obtained from the causal set.} Extending this calculation to curved spacetime  is 
+challenging but would provide additional evidence that the BD action contains the null GHY term ({\it Dhingra, Glaser and
+S. Surya, work in progress}).      
+
+Simulations of causal sets corresponding to different regions of $\mink^2$  moreover suggest that while the  BD action contains timelike boundary terms, it does not  contain spacelike boundary terms.  Recent  efforts by \cite{tlbdry}  have been made to obtain 
+time like boundaries  in a causal set using numerical methods for $d=2$, but it is an open question whether they admit a simple
+characterisation in arbitrary dimensions. 
+ 
+Unlike timelike boundaries, spacelike boundaries are naturally defined in a finite element causal set: a future/past spatial
+boundary is the future-most/past-most inextendible antichain in the causal set, which we denote as $\cF_0,\cP_0$
+respectively.  GHY terms for spacelike boundaries play an important role in the additivity of the action in the
+continuum path integral (though  such an additivity is far from guaranteed in a causal set because of non-locality).
+
+The spatial causal set GHY  terms were found by \cite{bdjs}, and we will describe that construction here briefly. Let
+$(M,g)$ be a spacetime with initial and final spatial boundaries $(\Sigma^\pm,h^\pm)$ .  The GHY term on $(\Sigma^\pm,h^\pm)$ can be re-expressed as
+\begin{equation} 
+\int_{\Sigma^\pm} d^{d-1}x\: \sqrt{h^\pm}\, K^\pm= \frac{\partial}{\partial n}\int_{\Sigma^\pm} d^{d-1}x\: \sqrt{h^\pm}
+=\frac{\partial}{\partial n} A_{\Sigma^\pm},
+\label{eq:GHYterm}
+\end{equation} 
+where $\frac{\partial}{\partial n}$ is the normal derivative, and $A_{\Sigma^\pm}$ is the co-dimension $1$ volume of $\Sigma^\pm$. 
+Using  the $n\sim \rc v$ correspondence, this suggests that $A_{\Sigma^\pm}$ should be  given by the cardinality 
+$\F{0}\equiv |\cF_0|$ or $\P{0}\equiv |\cP_0|$ with the normal gradient represented by the  change in the
+cardinality.  But of course this is subtle, 
+since  apart from the future most $\cF_0$ or pastmost $\cP_0$ antichains, one needs  another ``close by'' antichain.
+Let us focus on $(\Sigma^+,h^+)$ without loss of generality. There are two  ways of finding
+this nearby antichain. To begin with if $(M,g) \subset (M',g')$ such that $(\Sigma^+,h^+)$ is not
+a boundary in $(M',g')$, then we can use this embedding  to define the two antichains, in any $C \in \cC(N,\rc)$: one to
+its immediate past $\cF_0(\Sigma^+)$ and one
+to its immediate future $\cP_0(\Sigma^+)$. Thus the GHY term should be proportional to the difference in the cardinality of these two
+antichains.  
+
+However, this partitioning is not intrinsic to the causal set. Instead consider a partition  $C = C^-\cup C^+$, such that $C^+\cap C^-=\emptyset$, and $\fut(C^-)=C^+$, $\past(C^+)=C^-$. 
+Let $\cF_0^-$ and $\cP_0^+$, be the
+future-most and past-most antichains of $C^-$ and $C^+$ respectively.  We can then define the  
+dimensionless causal set ``boundary term'' \citep{bdjs}
+\begin{equation} 
+S_{\rm CBT}^d[C,C^-,C^+] \equiv \frac{a_d}{2 \Gamma\left(\frac{2}{d}\right)}\biggl( \F{0}[C^-]-\P{0}[C^+]\biggr),  
+\label{eq:cbt} 
+\end{equation} 
+where
+\begin{equation} 
+\label{eq:Cn}
+a_{d}=\frac{d (d+1)}{(d+2)}\left(\frac{\vs_{d-2}}{d(d-1)}\right)^{\frac{2}{d}},
+\end{equation} 
+and $\vs_d=(d+1)\pi^{\frac{d+1}{2}}/\Gamma\left (\frac{d+1}{2}+1\right)$ is the volume of the unit $d$-sphere.
+
+
+To make
+contact with the continuum, let $(M,g)$ be a spacetime with compact Cauchy hypersurfaces. For a given Cauchy
+hypersurface $(\Sigma,h)$ let $M^\pm=J^\pm(\Sigma)$ and let $C^\pm \in \cC(M^\pm,\rc)$.  It was shown by \cite{bdjs} that in
+the limit $\rc \rightarrow \infty$ %\mnote{\red{FLAG:whats the limit here?!}}
+\begin{equation} 
+\negs\negs \lim_{\rc\rightarrow \infty}\left (\frac{\lc}{\lp}\right)^{\! \! d-2}\negs \left\langle\textbf{S}^{
+    (d)}_{\rm CBT}[M, \Sigma,\rc]\right\rangle= \frac{1}{l_p^{d-2}}\int_{\Sigma} d^{d-1}x\: \sqrt{h}\: K = {S}_{GHY}(\Sigma,
+M^-), \label{eq:ghyresult} 
+\end{equation}
+where $\textbf{S}^{(d)}_{\rm CBT}$ is the associated random variable in $(M,g)$.  To obtain this expression, the volume  of a
+half
+cone $J^+(p) \cap J^-(\Sigma)$ was calculated using a combination of RNN coordinates 
+and GNN coordinates\footnote{This calculation has later been extended by \cite{jubb} to higher orders to
+  obtain more information about the spatial geometry.}
+\begin{equation} 
+V_\blacktriangle (T,\mathbf x)
+=\frac{S_{d-2}}{d(d-1)}T^d\left (1+\frac{d}{2 (d+1)}K (0,\mathbf{x})T\right)
++O (T^{d+2}),   \label{eq:TopVolumeWithK} 
+\end{equation}
+for $p \in J^+(\Sigma)$  sufficiently close to $\Sigma$, where $T$ is the proper time from $p$ to $\Sigma$. 
+As might be expected from dimensional considerations, the leading order correction to the flat spacetime volume of the
+half cone comes  from the trace of the extrinsic curvature of $\Sigma$ from which the GHY contribution can be obtained.   
+   
+
+If on the other hand, $(\Sigma,h)$ is a future boundary of $(M,g)$, then we require a second
+antichain in $\past(\cF_0)$  for $C \in \cC(M,\rc)$,. Define the antichain $\cF_1$ in $C^-$ to
+be the set of elements in $C^-$ such that $\forall e \in \cF_1$, $|\fut(e) \cap C^-|=1$ (where $\fut(e)$ excludes the
+element $e$).\footnote{Note that while  $\cF_1\cap \cF_0=\emptyset$,  $\cF_1$ is not necessarily an inextendible
+  antichain.}  The boundary  term can then be expressed as 
+\begin{equation} 
+S_{\rm CBT}^d[C,C^-,C^+] \equiv \frac{a_d}{\Gamma\left(\frac{2}{d}\right)}\biggl( d\F{1}[C^-]-\F{0}[C^+]\biggr),  
+\label{eq:cbttwo} 
+\end{equation} 
+which again yields the GHY term Eq.~(\ref{eq:ghyresult})  in the limit. Indeed, a whole  family of  of boundary terms was
+obtained using the antichains $\cF_k[C^-] = \{e \in C^-|  |\fut(e)|=k\}$, $\cP_k[C^+]= \{e \in C^+ |
+|\past(e)|=k\}$ each of which gives the GHY term in the limit Eq.~(\ref{eq:ghyresult}).\footnote{The expression in \cite{bdjs} holds for \emph{any} two subsets of $C$ not just those we
+  consider here.}
+
+A by-product of the analysis of \cite{bdjs} is that for the partitioned causal set $C=C^-\cup C^+$ described above, the quantities 
+\begin{equation} 
+A_+^d[C^-]\equiv \frac{b_d}{\Gamma(\frac{1}{d})}\F{0}[C^-], \quad A_-^d[C^+]\equiv \frac{b_d}{\Gamma(\frac{1}{d})}\P{0}[C^+]
+\end{equation} 
+for $a_d=\frac{d+1}{d(d+2)} b_d^2$ limit to the spatial volume of $\Sigma$
+\begin{equation} 
+\lim_{\rc \rightarrow \infty} \left(\frac{\lp}{\lc}\right)^{d-2} \av{A_\pm^d[C^\mp]} = \frac{1}{\lp^{d-1}}\int_\Sigma
+  d^{d-1} x \sqrt{h} = A_\Sigma. 
+\end{equation} 
+Again, as for the boundary terms, one can construct a  whole family of functions $A^d[C]$ each of 
+which limit to the spatial volume of $\Sigma$ as $\rc \rightarrow \infty$.  
+ 
+
+
+
+
+
+
+\subsection{Localisation in a causal set} 
+\label{ssec:localisation} 
+
+In these calculations generalisations are made to curved
+spacetime using an RNN which represent a local region of a spacetime.  How are we to find such local regions in a
+causal set using a purely order theoretic quantities?  For a causal set  a natural  definition of  a local region
+is given by  the size of an interval, but for a manifold-like causal set, this will not necessarily correspond  to regions in
+which the curvature is small. On the other hand, many of the order invariants we have obtained so far correspond to
+geometric invariants only in such RNN-type regions.
+
+A characterisation of intrinsic localisation was obtained by \cite{intervals}  using the abundance $N_m^d$ of $m$ element order
+intervals for $C\in\cC(\Alex_d,\rc)$.  They  found the following closed form expression for the associated
+expectation value 
+\begin{align}
+	\av{\bN_m^d(\rho,V)}=& \frac{(\rho V)^{m+2}}{(m+2)!} \frac{\G{d}^{2}}{\Poch{\frac{d}{2} (m + 1) + 1}{d - 1}} \frac{1}{\Poch{\frac{d}{2} m + 1}{d - 1}} \nonumber \\
+	& \mFm{d}{1+m,\frac{2 }
+	{d}+m,\frac{4}{d}+m, \dots ,\frac{2 (d-1)}{d}+m)}
+	{3+m,\frac{2 }{d}+m+2,\frac{4}{d}+m+2, \dots ,\frac{2 (d-1)}{d}+m+2}
+	{- \rho V} \;,
+\label{eq:flatclosedform} 
+\end{align} 
+The distribution of $\av{\bN_m^d}$ with $m$ therefore has a characteristic form which depends on dimension, and as a by-product,
+can be used as a  dimension estimator. However, it can also be used look for intervals in a manifold-like causal set
+which are approximately flat by comparing the interval abundances $N_m^d$ to the above expression for $\av{\bN_m^d}$.  While one might expect  the fluctuations for a given causal
+set $C$ to be  large,  numerical simulations show that there is typically a ``self averaging'' which results in 
+ relatively small fluctuations even for a given realisation. This makes it an ideal
+diagnostic tool for checking whether a neighbourhood in a manifold-like causal set is approximately flat or not. Once such local
+neighbourhoods have  been found, a local check of geometric estimators can be made.
+
+In \cite{intervals}, the analytic curves
+were compared  against simulations for a range of different causal sets including those that are not manifold-like . While
+curvature affects the abundance of the intervals, the distribution retains its characteristic form. Hence
+the dependence of the abundance of intervals with size  also becomes a test for manifold-likeness.
+\begin{figure}[ht]
+  \centering \resizebox{4in}{!} {\includegraphics[width=\textwidth]{Mod-2d100}} 
+  \caption{{The expectation value of interval abundances in a 100 element causal set $\sim \mink^2$ as a function of
+      interval size $m$. The red dots depict the average value obtained from simulations with  1000 realisations,  along with error
+  bars. The solid blue line depicts the analytic expectation value for $n=100$ and the blue dotted lines for $n\pm
+  \sqrt{n}$. } 
+  }
+\label{intabund.fig}
+\end{figure}
+
+There are other ways of testing for manifold-likeness.  In a similar approach, the distribution of the longest  chains or linked paths of length $k$ in a finite element causal set $C$ has been
+studied in $\mink^d$, $d=2,3,4$ and shown to have a dimension-dependent peak \citep{bomemad}. 
+ In \cite{nodedegree},  a novel way to test for manifold-likeness was given, using the order invariant obtained from counting
+ the number of elements with a fixed valency  in a finite
+element causal set. In   \cite{joeinterval},  an  algorithm for  determining  the  embeddability of a causal set in
+$\mink^2$ was given,  which
+again gives an intrinsic characterisation of manifold-likeness in $d=2$. Extending and expanding on these studies using
+causal sets obtained from sprinklings into different types of spacetimes would be a straightforward but useful exercise.      
+
+\subsection{Kinematical entropy} 
+\label{ssec:kinent}
+
+Since the classical continuum geometry itself is fundamentally statistical in CST, it is interesting to ask if a
+kinematic 
+entropy can be assigned even classically to the continuum. In \cite{dousorkin},  a kinematic entropy was associated
+with a horizon $H$ and a  spatial or null hypersurface $\Sigma$ in a  dimensionally reduced $d=2$ black hole spacetime by counting links between 
+elements in $J^-(\Sigma) \cap J^-(H)$ and those in $J^+(\Sigma) \cap J^+(H)$, with the additional requirement that the
+former is future-most and the latter past-most in their respective regions. A dimensionally reduced calculation showed that the number of
+links is proportional to the horizon area. Importantly, the  calculation yields the same
+constant for a dimensionally reduced dynamical spacetime where  a collapsing shell of null matter eventually forms a
+black hole. However, extending this calculation  to higher dimensions proves to be  tricky.  In \cite{sarahthesis}, an entropy
+formula was proposed for higher dimensions by replacing links with other sub-causal sets. While these ideas  hold
+promise, they  have not as yet been fully explored. 
+
+In analogy with Susskind's entropy bound,  the
+maximum causal set entropy  associated with a finite
+spherically symmetric spatial hypersurface $\Sigma$  was defined by \cite{rz} as the number of maximal or future most elements
+in its future domain of dependence $D^+(\Sigma)$. It was shown  that for several such examples this bound
+limits to the Susskind entropy bound in the continuum approximation. Again, extending this discussion to more general
+spacetimes is an interesting open question. 
+
+In \cite{dionthesis},  the  mutual information between  different regions of a causal set was defined  using the
+BD action. The source of this entropy is non-locality which implies that $S_{BD}$ is not in general additive.  Dividing
+a causal set $C$ into two (set-wise) disjoint regions $C_1$ and $C_2$, so that $C=C_1 \sqcup C_2$,  we see that in
+general $S_{BD}(C) \neq S_{BD}(C_1) + S_{BD}(C_2)$.  This is because 
+there can be order intervals between elements in $C_1$
+and in $C_2$ that are not counted by either $S_{BD}(C_1)$ or $S_{BD}(C_2)$. The  mutual information is thus 
+defined as
+\begin{equation}
+  MI[C_,C_2]\equiv S_{BD}(C_1) +S_{BD}(C_2)-S_{BD}(C). 
+\end{equation}
+In  \citep{dionthesis}  a spacetime region with a horizon $\cH$ and a  spacelike or
+null hypersurface $\Sigma$ was considered. Defining $X=J^+(\cH) \cap J^-(\Sigma)$ and $Y=J^-(\cH) \cap J^-(\Sigma)$ the mutual
+information between $X$ and $Y$ was calculated from  a causal set obtained from sprinkling  into $X\cup Y$.  Under
+certain assumptions, this equal to the area of $\cH\cap \Sigma$. These results are suggestive, but currently incomplete.
+
+As we will see in the next section, the {Sorkin spacetime  entanglement entropy (SSEE)} for a free scalar field provides a
+different avenue for exploring entropy.
+
+%{\bf The $\cO$-Hauptvermutung}  
+
+\subsection{Remarks} 
+
+To conclude this section  we note that several order invariants have been constructed on manifold-like causal sets  whose expectation
+values limit to manifold  invariants  as $\rc \rightarrow \infty$. At finite $\rc$ there are  
+fluctuations that serve to distinguish the fundamental discreteness of causal sets from the continuum, and these have potential
+phenomenological consequences.  Numerical simulations are often important in 
+assessing the relative importance of these fluctuations. 
+
+For each of these invariants, one has therefore proved an  \emph{$\cO$-Hauptvermutung}.  While this collection of
+order invariants is not sufficient to prove   the full Hauptvermutung, they lend it strong support. These order
+invariants are moreover important observables for the full theory.   In addition to these
+manifold-like order invariants, there are several other order invariants that can be constructed, 
+some of which may be important to the deep quantum regime but by themselves hold no direct continuum interpretation.

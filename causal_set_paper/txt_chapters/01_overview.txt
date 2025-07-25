@@ -1,0 +1,175 @@
+\section{Overview} 
+
+In this review,  causal set theory (CST) refers to the
+specific proposal made by
+Bombelli, Lee, Meyer and Sorkin (BLMS) in their 1987 paper
+\citep{blms}.  In CST, the space of Lorentzian geometries is  replaced by the set of  locally finite posets, or
+\emph{causal sets}.   These causal sets encode  the
+twin principles of causality and discreteness. In the continuum approximation 
+of CST, where elements of the causal set 
+set represent spacetime events, the order relation on the
+causal set   corresponds to the spacetime causal order and the  cardinality of an ``order interval''  to the spacetime volume 
+of the associated causal interval.  
+
+
+This review is intended as a semi-pedagogical 
+introduction to CST. The aim  is to give a broad survey of the
+main results and open questions and  to direct the reader
+to some of the many interesting open research problems in CST, some of which are
+accessible even to the beginner.
+
+We begin in
+Sect.~\ref{sec:history} with a historical perspective 
+on the ideas behind  CST. The
+twin principles of discreteness and causality at the heart of
+CST have both been proposed -- sometimes independently and sometimes together -- starting with
+\cite{Riemann} and \cite{robbone,robbtwo},  and somewhat later by \cite{zeeman,kp,finkelstein,hemion} and \cite{myrheim}, 
+culminating in the CST proposal of BLMS \citep{blms}. 
+ The continuum approximation of CST is an implementation of a deep
+result in Lorentzian geometry due to \cite{hkm}
+and its generalisation by \cite{malament}, which states that the causal structure determines the conformal geometry of a future and past distinguishing
+causal spacetime. In following this
+history, the discussion will be necessarily somewhat technical. For those unfamiliar with the terminology of causal
+structure we point to standard texts \citep{HE,BE,Wald,penrose}.
+
+In Sect.~\ref{sec:cst}, we state the 
+ CST proposal and describe its continuum approximation, in which spacetime causality is equivalent to the order relation
+ and finite spacetime volumes to cardinality. Not all causal sets have a continuum approximation -- in fact we will see
+ that most do not. Those that do are referred to as  \emph{manifold-like}. Important to CST is its
+ ``Hauptvermutung'' or fundamental conjecture, which roughly states that a 
+ manifold-like causal set is equivalent to the  continuum spacetime, modulo differences up to the discreteness scale. Much of the discussion on the Hauptvermutung is centered on
+ the question of how to estimate the 
+ closeness of Lorentzian manifolds or more generally,  causal sets. While there is no full proof of the  conjecture, there
+ is growing body of  evidence in its favour as we will see in Sect.~\ref{sec:kinematics}. An important outcome of CST
+ discreteness in the continuum approximation 
+ is that it does not violate Lorentz invariance as shown in an elegant theorem by \cite{bomhensor}. Because of the centrality of this result we review this construction in some
+ detail. The combination of discreteness and Lorentz invariance moreover gives rise to an inherent and characteristic
+ non-locality, which distinguishes CST from other discrete approaches. Following \cite{lambdatwo}, we then discuss
+ how the twin principles behind CST force us to take  certain ``forks in the road'' to quantum gravity.  
+
+
+We present some of the key developments in  CST in Sects.~\ref{sec:kinematics}, \ref{sec:matter} and \ref{sec:dynamics}. We
+begin with the kinematical structure of theory and the program of ``geometric reconstruction'' in Sect.~\ref{sec:kinematics}. Here, the aim
+is to reconstruct manifold invariants from  \emph{order invariants}  in a manifold-like causal set. These are functions on
+the causal set that are independent of the labelling or ordering of the elements in the causal set.    
+Finding the appropriate order invariants that correspond to manifold invariants can be challenging, since there is little in the mathematics
+literature which correlates  order theory to  Lorentzian geometry via the CST continuum approximation. 
+Extracting such invariants requires new technical tools and insights sometimes requiring a rethink of familiar aspects
+of continuum Lorentzian geometry. We  will describe some of the progress made in this direction over the years 
+\citep{myrheim,bg,meyer,bommeyer,bomthesis,reid,homology,rw,sorkinnonlocal,bd,dionthesis,gaussbonnet,intervals,rss,bdjs,tlbdry,bomemad,esv}. The 
+correlation between order invariants and manifold invariants  in the continuum approximation lends support for the
+Hauptvermutung and simultaneously establishes weaker, observable-dependent versions of the conjecture.
+
+Somewhere between dynamics and kinematics is the study of quantum fields on
+manifold-like causal sets, which we describe in Sect.~\ref{sec:matter}. The simplest system is free
+scalar field theory on a causal set approximated by $d$-dimensional Minkowski spacetime $\mink^d$. Because causal sets do not admit a natural Hamiltonian
+framework, a fully covariant construction is required to obtain the quantum field theory vacuum. A natural starting
+point is the advanced and retarded Green functions
+for a free scalar field theory since  it is defined using the causal structure of the spacetime. The explicit form for
+these Green functions were found for causal sets approximated by $\mink^d$ for $d=2,4$ 
+\citep{daughton,johnston,johnstonthesis} as well as  de~Sitter spacetime \citep{dsx}.  In trying to find a quantisation scheme on the causal
+set without reference to the continuum, 
+\cite{johnstontwo} found a novel covariant definition of the discrete scalar field vacuum, starting from the covariantly
+defined Peierls' bracket formulation of quantum field theory. Subsequently 
+\cite{sorkinsj} showed that the construction is also valid in the continuum, and can be used to give an alternative
+definition of the quantum field theory vacuum. This  \emph{Sorkin--Johnston (SJ) vacuum} provides a new 
+insight into quantum field theory and  has stimulated the interest
+of the algebraic field theory community \citep{fv12,bf14,fewsterart}. The SJ vacuum has also been used to calculate Sorkin's spacetime
+entanglement entropy (SSEE) \citep{bklsEE,sorkinEE} in a causal set \citep{yasamaneecont,causetee}. The calculation in $d=2$ is 
+surprising since it gives rise to a volume law rather than an area law. What this means for causal set entanglement
+entropy is still an open question. 
+
+In Sect.~\ref{sec:dynamics}, we describe the CST approach to quantum
+dynamics, which roughly follows two directions.
+The first, is based on ``first principles'', where one starts with a general set of
+axioms which respect microscopic covariance and causality. An important
+class of such theories is the set of Markovian \emph{classical sequential growth} (CSG)  models of Rideout and Sorkin
+\citep{csg,csgtwo,csgrg,davidthesis,rv}, which we will describe in some detail. The dynamical framework finds a natural
+expression in terms of measure theory,
+with the classical covariant observables represented by a covariant event algebra $\fA$ over the sample space $\Omega_g$ of past finite
+causal sets \citep{observables,observablesds}. One of the main questions in CST dynamics is whether the overwhelming entropic
+presence of the \emph{Kleitman--Rothschild (KR)} posets in $\Omega_g$ can be overcome by the dynamics \citep{kr}. These KR posets are
+highly  non-manifold-like and ``static'', with just three ``moments of time''. Hence, if the continuum approximation is
+to emerge in the classical limit of the theory, then the entropic contribution  from the KR posets should be suppressed
+by the dynamics in this limit.  In the CSG models, 
+the typical causal sets generated are  very ``tall'' with countable rather than finite moments  of time and, though not
+quite manifold-like, are very
+unlike the KR posets or even the subleading entropic contributions from non-manifold-like causal sets
+\cite{dharone,dhartwo}.
+The CSG models have generated some interest in the mathematics community, and new mathematical tools are now being used
+to study the asymptotic structure of the theory \citep{grnick,gmone,gmtwo,grahammalwina}. 
+
+
+In CST, the appropriate route to quantisation is via the quantum measure or decoherence functional defined
+in the double-path integral formulation \citep{qmeasureone,qmeasuretwo,sorkinqmeasure}. In the quantum versions of the
+CSG (\emph{quantum sequential growth} or QSG) models the transition probabilities of CSG are replaced
+by the decoherence functional. While
+covariance can be easily imposed, a quantum version of microscopic causality is still missing \citep{joecausality}.
+Another indication of the non-triviality of quantisation comes from a prosaic 
+generalisation of transitive percolation, which is the simplest of the CSG models. In this ``complex percolation''  
+dynamics the quantum measure does not
+extend to the full algebra of observables which is an impediment to the construction of 
+covariant quantum observables \citep{djs}. This can  be somewhat alleviated by taking a physically motivated approach to
+measure theory \citep{ec}. An important future direction is to
+construct  covariant observables in a wider class of quantum dynamics and look for a quantum version of coupling
+constant renormalisation.   
+
+Whatever the ultimate quantum dynamics  however, little sense can be
+made of the theory without a fully developed quantum interpretation for closed systems, essential to quantum gravity. Sorkin's co-event interpretation
+\citep{sorkinalogic,kochenspecker} provides a promising avenue based on the quantum measure approach. While a discussion
+of this is outside of the scope of the present work, one can use the broader ``principle of preclusion'', i.e., that sets of zero quantum measure do not
+occur\citep{sorkinalogic,kochenspecker}, to make a limited set of  predictions in complex percolation ({\it Sorkin and Surya, work in progress}).  
+
+
+
+The second approach to quantisation is more pragmatic, and uses the continuum inspired path integral formulation of
+quantum gravity for causal sets. 
+Here, the path integral is replaced by a sum over the sample space $\Omega$ of causal sets, using the \emph{Benincasa--Dowker} (BD) action, which limits to  the  Einstein--Hilbert action \citep{bd}. This can be viewed as an
+effective, continuum-like dynamics, arising from the more fundamental dynamics described above. A recent
+analytic calculation in \cite{carliploomis} showed that a sub-dominant 
+class of non-manifold-like causal sets, the bilayer posets, are suppressed in the path integral when using the BD
+action, under certain dimension dependent conditions satisfied by the parameter space. This gives hope that an 
+effective dynamics might be able to overcome the entropy of the non-manifold-like causal sets. 
+
+ 
+In \cite{2dqg}, \cite{2dhh}, and \cite{fss}, Markov Chain Monte Carlo (MCMC) methods were used for a dimensionally restricted sample space
+$\Omega_{2d}$ of 2-orders, which corresponds to topologically trivial $d=2$ causal set quantum gravity. 
+The quantum partition function over causal sets can be rendered into a statistical partition function via an analytic
+continuation of a  ``temperature'' parameter, while retaining  the Lorentzian character of the theory. This theory
+exhibits a first order phase transition \citep{2dqg,fss} between a manifold-like phase and a layered, non-manifold-like
+one. MCMC methods have also been used to examine the sample space $\Omega_n$ of $n$-element causal sets and to estimate the
+onset of asymptotia, characterised by 
+the dominance of the KR posets \citep{onset}. These techniques have recently  been extended to topologically non-trivial
+$d=2$ and $d=3$ CST ({\it Cunningham and Surya, work in progress}). While this approach gives us expectation values of covariant observables
+which allows for a straightforward interpretation, relating it to the complex or quantum partition function is
+non-trivial and an open problem. 
+
+In Sect.~\ref{sec:phen}, we describe in brief some of the exciting
+phenomenology that comes out of the \emph{kinematical} structure of
+causal sets. This includes the momentum space diffusion coming from CST
+discreteness (``swerves'') \citep{swerves} and the effects of non-locality on quantum field theory \citep{sorkinnonlocal}, which includes a 
+recent proposal for dark matter \citep{darkmatter}. Of these, the most striking is the 1987 prediction of
+Sorkin for the value of the cosmological constant
+$\Lambda$ \citep{lambdaone,lambdatwo}. While the original argument was a kinematic estimate, subsequently dynamical
+models of fluctuating $\Lambda$ were examined \citep{lambdathree,eptwo,recentlambda} and have been compared with recent observations
+\citep{recentlambda}. This is an exciting future direction of research in CST which interfaces intimately with
+observation. We conclude with a brief outlook for CST in Sect.~\ref{sec:outlook}.
+
+Finally, since this is an extensive review, to assist the reader  we have made a  list of some of the key definitions,
+as well as the abbreviations  in Appendix \ref{sec:aone}.  
+
+As is true of all other approaches to quantum gravity, CST
+is not as yet a complete theory. Some of the challenges faced are universal to quantum gravity as a whole, while
+others are specific to the approach. Although we have developed a reasonably good grasp of the 
+kinematical structure of CST and some progress has been made in the construction of effective quantum dynamics, CST still lacks a
+satisfactory quantum dynamics built from first principles. Progress in this direction is therefore very important for
+the future of the program.  From a broader perspective, it is the opinion of this author that a deeper understanding of CST will help provide key insights into the nature of quantum
+gravity from a fully Lorentzian, causal perspective, whatever ultimate shape the final theory takes. 
+
+It is not possible for this review to be truly complete. The hope is that the interested reader will use it 
+as a springboard to the existing literature. Several older reviews  exist with differing emphasis  
+\citep{lambdaone,valdivia,joereviewone,fayreview, lightlinks, fayreview, joereviewtwo,walldenreview}, some of which 
+have an in depth discussion of the conceptual underpinnings of CST.  The
+focus of the current review is to provide as cohesive an account of the program as possible, so as to be
+useful to a starting researcher in the field. For more technical details, the reader is urged to look at the original
+references. 

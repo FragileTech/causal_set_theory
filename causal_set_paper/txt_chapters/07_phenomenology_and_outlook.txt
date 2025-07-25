@@ -1,0 +1,185 @@
+\section{Phenomenology} 
+\label{sec:phen} 
+
+
+While the deep realm of quantum gravity is extremely well shielded from experimental probes in the foreseeable future, it is possible that certain
+{properties}  of quantum gravity  can ``leak'' into observationally accessible regimes. This is the reason for the push, in the last
+couple of decades, for exploring quantum gravity phenomenology. Without a full theory of quantum gravity, of course
+there is little hope that any phenomenology is entirely believable, since it requires assumptions about an
+incomplete theory. Nevertheless, quantum gravity phenomenology can be  useful  in setting realistic bounds on
+these leaked out properties, and hence constrain theories of quantum gravity, albeit weakly.  Models of quantum gravity
+phenomenlogy moreover use distilled properties of the underlying theory to build reasonable
+models that can be tested. Some of these properties are unique to a given approach.
+
+In CST spacetime discreteness takes
+a special form and brings with it a special type of  non-locality that can  affect observable physics. We have already
+encountered the possibility of voids in Sect.~\ref{sec:cst} as well as the propagation of scalar fields from distance
+sources in Sect.~\ref{sec:matter}. 
+The continuum approximation of CST  is Lorentz invariant and consistent with stringent observational bounds as
+summarised in \cite{li}.
+In
+addition, as suggested by \cite{swerves}, there is the possibility of generating very high energies particles through long time diffusion in
+momentum space. This arises  from the randomness of CST  discreteness, which cause particles to ``swerve'',  or suddenly
+change their momentum, 
+as they traverse the causal set underlying our universe \citep{swervestwo,faypolarisation}.
+This spacetime
+Brownian motion was calculated in $\mink^d$ and  can be constrained by observations \citep{swerveconstraint}, but an
+open question is how to extend the calculation  to our FRW universe. 
+
+There have been some very interesting recent ideas by \cite{nonlocalqftfour} for testing CST type  non-locality  via its
+effect on propagation in the continuum using the d'Alembertian operator. \cite{nonlocalfive}  have looked at the
+associated quantum field theory which contain critical instabilities. These can be removed by modifying the
+d'Alembertian, but the relationship to CST is unclear.  \cite{darkmatter}  have proposed a candidate for dark
+matter as off-shell modes of the non-local CST  d'Alembertian. This is an exciting proposal and should be investigated
+in more detail. 
+
+We will not review these very interesting ideas on CST phenomenology here, except one, namely the prediction of
+$\Lambda$.
+
+\subsection{The 1987 prediction for $\Lambda$} 
+\label{ssec:lambda}
+
+One of the most outstanding questions in theoretical physics is understanding the origin of ``dark energy''  which
+observationally has been seen to make up $\sim 70\%$ of the total energy of the universe. The current observational value
+is  $\sim 2.888 \times 10^{-122}$ in Planck units. Quantum field theory predictions for dark energy interpreted as the
+energy of vacuum fluctuations of quantum fields on the other hand gives a huge value, perhaps as large as  $\sim 1$ in Planck units.  The gross
+conflict with observation obviously implies that this cannot be the source of $\Lambda$.\footnote{On the other hand, it
+  would be interesting to understand \emph{why} the back of the envelope quantum field theory calculation is not
+  observationally relevant. Interesting insights into this question could come
+  from a better understanding of the SJ vacuum in de~Sitter spacetime.}
+
+
+In light of this conundrum, the CST prediction  for $\Lambda$  due to \cite{lambdaone} is startling in its simplicity and
+accuracy, especially since it was made several years before the  {1998} observation.
+One begins with the framework of unimodular gravity \citep{lambdatwo,unruhwald} in which the spacetime
+volume element is fixed. 
+$\Lambda$ then appears as a Lagrange multiplier in the action, with $\Lambda \int dV= \Lambda V ={\mathrm{constant}}$, for any finite spacetime region of volume $V$. In a canonical formulation of the
+theory, therefore $\Lambda$ and $V$ are conjugate to each other, so that on quantisation there is an uncertainty relation 
+\begin{equation}
+\Delta V \Delta \Lambda \sim 1.
+  \end{equation} 
+Using the fact that $\Delta V $ is generated from Poisson fluctuations of the underlying causal set ensemble 
+\begin{equation} 
+  \Delta V \sim \sqrt{V}. 
+\end{equation}
+{ Assuming}  $\av{\Lambda}=0$, moreover, we see that 
+\begin{equation}
+  \Lambda \sim \frac{1}{\sqrt{V}}\sim H^2 =\frac{1}{3}\rho_{\mathrm{critical}}
+\end{equation}
+where $H$ is the Hubble constant. If  $V$ is taken to be the  volume  of the visible universe, 
+\begin{equation}
+  \Lambda=\Delta \Lambda \sim 10^{-120}, 
+\end{equation}
+in Planck units. This is very close to the subsequently observed value of $\Lambda$! Importantly, the prediction also states that
+that under these assumptions, $\Lambda$ always tracks the critical density and is hence ``everpresent''. 
+
+This argument is general and requires three 
+important ingredients: (i)  the assumption of unimodularity and hence the  conjugacy between $\Lambda$ and $V$, (ii) the
+number to volume correspondence $V \sim n$ and (iii)  that there \emph{are}  fluctuations in $V$ which are  Poisson, with
+$\delta V = \sqrt{V} \sim \sqrt{n}$. While (i) can be
+motivated by a wide range of theories of quantum gravity, (ii) and (iii)  are both  \emph{distinctive} to causal set theory.  No other discrete approach to quantum gravity makes
+the $n \sim V$ correspondence at a fundamental level and also  incorporates  Poisson
+fluctuations kinematically in the continuum approximation. Quoting from \cite{lambdaone}, {``Fluctuations in $\Lambda$  arise as residual nonlocal quantum effects of
+spacetime discreteness''}.   Interestingly, as shown by \cite{sorkinledl},  if spacetime admits large extra directions, then the contribution to $V$ is
+very different and gives the wrong answer for $\Delta \Lambda$.   
+
+Of course, an important question that arises in this quick calculation is  why we should assume that $\av{\Lambda}=0$.\footnote{In
+  \cite{samsupurna}, a very striking analogy was made between   a fluctuating $\Lambda$ and the surface tension $T$ of  a
+  fluid
+  membrane. In addition, using the atomicity of the model, the mean value of $T$ was shown to be zero, with a suggestion
+of how this might extend to  CST.} The answer to
+this may well lie in the  full and as yet unknown quantum dynamics. Nevertheless, phenomenologically  this assumption leads to further predictions that can
+already be tested. The first conclusion is that a fluctuating $\Lambda$ must violate conservation of the stress energy
+tensor, and hence the Einstein field equations. 
+
+In \cite{lambdathree}, a dynamical model for generating fluctuations of $\Lambda$ was constructed, starting with the flat
+$k=0$ FRW spacetime. In order to accommodate a fluctuating $\Lambda$, one of the two Friedmann equations   
+must be dropped.  In \cite{lambdathree}, the Friedmann equation
+\begin{equation} 
+3\biggl(\frac{\dot{a}}{a}\biggr)^2= \rho + \rho_\Lambda 
+\end{equation}
+was retained,\footnote{Subsequently, more general ``mixed equation'' models were examined in \cite{eptwo}, which
+  indicate that the results of \cite{lambdathree} are robust to these modifications.}  with  
+\begin{equation}
+  \rho_\Lambda =\Lambda, \qquad p_\Lambda= -\Lambda -\dot{\Lambda}/3H, 
+ \end{equation} 
+and  $\Lambda$ modelled as a stochastic function of $V$, such that
+ \begin{equation}
+   \Delta \Lambda \sim \frac{1}{\sqrt{V}}.
+   \end{equation} 
+
+More generally, $\Lambda$ can be thought of as the action $S$  per unit volume, which for causal sets  means that $\Lambda \sim S/V$.  A  very
+   simple  stochastic dynamics is then generated by assuming that every element contributes $\pm \hbar$ to $S$, so that 
+   \begin{equation}
+     S=\sum_{\mathrm{elements}} \pm \hbar \Rightarrow S/\hbar \sim \pm \sqrt{N} \sim \pm \sqrt{V/l_p^4} \Rightarrow \Lambda\sim
+     \pm \frac{\hbar /l_p^2}{\sqrt{V}} \,,  
+\end{equation} 
+ where we have equated the discreteness scale $l_c$ with the Planck length $l_p$. One then gets the integro-differential equations  
+\begin{eqnarray} 
+\frac{da}{a} &=&\sqrt{\frac{\rho+\Lambda}{3}}d\tau \nonumber \\ 
+V d\Lambda &=& Vd(S/V)=dS-\Lambda \dot{V} d\tau \,, \nonumber 
+\end{eqnarray} 
+where
+\begin{equation}
+  V(\tau) = \frac{4\pi}{3} \int_0^t dt' a(t')^3 \biggl( \int_0^{t'} dt" \frac{1}{a(t")}\biggr)^3
+  \end{equation} 
+is the volume of the entire causal past of an event in the FRW spacetime.  
+The stochastic equation is then generated as follows. At the $i^{\tth}$ step 
+one has the variables $a_i$ (scale factor), $N_i,V_i,S_i $ and $ \Lambda_i$. The scale factor is updated using the
+discrete  Friedmann equation  
+$a_{i+1}=a_i+a_i\sqrt{\frac{\rho+\Lambda}{3}}(\tau_{i+1}-\tau_i)$, from which $V_i=V(\tau)$ can be calculated and thence 
+$N_{i+1}=V_{i+1}/\ell^4$. The  action is then updated  via $S_{i+1}=S_i+ \alpha \, \, \xi\sqrt{N_{i+1}-N_i}$, where
+$\quad\xi$ is a Gaussian random variable, with $\quad\Delta \xi = 1$, and $\alpha$ is a tunable free parameter which
+controls the magnitude of the fluctuations.   Finally, $\Lambda_{i+1}=S_{i+1}/V_{i+1}$, with   $S_0=0$.  It was shown in
+\cite{lambdathree} that in order to be consistent with astrophysical observations,  $0.01 < \alpha < 0.02$. The results of
+simulations moreover suggest  that $\Lambda$ is \emph{``everpresent''} and tracks the energy density of the universe.
+
+This model assumes spatial homogeneity and it is important to check how inhomogeneities affect these results.  In
+\cite{barrow} and \cite{zuntz},  inhomogeneities were modelled by taking $\Lambda(x^\mu)$, such that $\Delta \Lambda(x)$ is
+dependent only on $\Lambda(y)$ for $y \in J^-(x)$.  This would mean that well separated patches in the CMB sky would
+contain uncorrelated fluctuations in $\Omega_\Lambda$, which in turn are strongly constrained to $< 10^{-6}$ by 
+observations and hence insufficient to account for $\Lambda$.  In \cite{lambdathree} and \cite{recentlambda}, it was suggested that  quantum Bell
+correlations may be a possible way to induce correlations in the CMB sky. However, incorporating inhomogeneities into the
+dynamics in a systematic way remains  an
+important open question. 
+
+In \cite{recentlambda}, a phenomenological model was adopted which uses the homogeneous temporal fluctuations in $\Lambda$ to model a  quintessence type spatially inhomogeneous scalar field with a potential term
+that varies   from realisation to realisation. Using MCMC methods to sample  the cosmological parameter space, and
+generate different stochastic realisations, it was shown  that  these CST inspired models agrees
+with the observations as well as $\Lambda CDM$ models and in fact does better for the   Baryonic Acoustic Oscillations (BAO)
+measurements.  The very extensive and detailed analysis of \cite{recentlambda} sets the stage for direct comparisons
+with future observations and heralds an exciting phase of  quantum gravity phenomenology.  
+
+\section{Outlook} 
+\label{sec:outlook}
+
+CST has come a long way in the last three decades, despite the fact that there are only a few  practitioners who have been able
+to dedicate their time to it. Over the last
+decade, in particular, there has been a growth of interest with inputs from the wider quantum gravity community. 
+This is  heartening, since an  extensive exploration of the theory is required in order to make significant progress. It
+is our hope  that this review will spark the interest of the larger quantum gravity  community, and continue what has
+been a productive dialogue. 
+
+We have in this review touched upon several open questions, many  of which are challenging but some of which are
+straightforward to carry out. We will not summarise these but just pick two that are of utmost importance. One is the
+the pursuit of CST-inspired inhomogeneous models of fluctuating $\Lambda$ which can be tested against the most recent observations. The second, on the other side of the quantum gravity spectrum, is the construction from first
+principles of a viable quantum dynamics for causal sets. Between these two ends lie myriad interesting
+questions. We invite you to join us.   
+
+
+\begin{acknowledgements}
+I am indebted to Rafael Sorkin for his deep insights and  vast
+knowledge,  that have directly and indirectly shaped  this review. %We owe him this approach to quantum gravity, which has  opened  our eyes to the beauty  of Lorentzian geometry.
+I  am also deeply indebted  to Fay Dowker for our  interactions  and
+collaborations over the past 25 years, which have helped enrich my understanding of quantum gravity. I am 
+grateful  to my  other
+collaborators, 
+including David Rideout, Joe Henson, Graham Brightwell, 
+Petros Wallden, Lisa Glaser, Denjoe O'Connor,  Ian Jubb, Yasaman Yazdi and my students Nomaan X
+and Abhishek Mathur, for their active and continuous engagement with
+the questions in CST, which have led to fruitful discussions,
+arguments, disagreements and  debates over the years. Finally, I would like to thank Yasaman Yazdi and  Stav Zalel  for
+a careful reading through the first draft of the manuscript and giving me useful feedback. This research was supported
+in part by the Emmy Noether Fellowship (2017\,--\,2018) and also by a  Visiting Fellowship (2019\,--\,2022) at the Perimeter
+Institute of Theoretical Physics. 
+\end{acknowledgements}

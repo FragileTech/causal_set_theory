@@ -1,0 +1,64 @@
+\section{Notation and terminology} 
+\label{sec:aone} 
+
+
+We list some of the more widely used definitions as well as the abbreviations used in the paper.
+
+\subsection*{Definitions}
+
+  \begin{description}
+     \item[\textit{Relation:}] $e,e' \in C$ are said to be \emph{related} if $e \prec e'$ or   $e \prec e'$. 
+     \item[\textit{Link:}]  $e \prec e' \in C$ is said to be  a \emph{link} if  $\nexists \, \, e''\in C$ such
+      that $e''\neq e,e'$ and $e\prec e''\prec e'$. 
+     \item[\textit{Hasse diagram:}] In a \emph{Hasse diagram}, only the nearest neighbour relations or {links} are depicted with the remaining relations following from
+ transitivity (see Fig.~\ref{2drandom.fig}). 
+     \item[\textit{Valency:}] The \emph{valency} $v(e)$ of an element $e$ in a causal set $C$ is the set of elements in $C$
+   that are linked to $e$. 
+     \item[\textit{Order Interval:}]  The \emph{order interval} between the pair $e_i, e_j \in C$  is the set $\cAlex[e_i,e_j]
+   \equiv \fut(e_i) \cap \past(e_j)$ where $\fut(x), \past(x)$ are the exclusive future and past of $x$.  
+     \item[\textit{Labelling:}] A \emph{labelling} of the causal set $C$ of cardinality $n$  is an injective  map $L:C   \rightarrow  \bbN$,
+    where $\bbN$ is the set of natural numbers.  
+     \item[\textit{Natural Labelling:}] A labelling  $L:C   \rightarrow  \bbN $ is called \emph{natural}
+      if $e_i \prec e_j \Rightarrow L(e_i) < L(e_j)$.
+     \item[\textit{Total Order:}] A poset $C$ is \emph{totally ordered}  if for each pair $e_i, e_j \in C$, either $e_i \prec
+   e_j$ or $e_j \prec e_i$.     
+     \item[\textit{Chain:}] A $k$-element set  $C$ is called a \emph{chain} (or \emph{$k$-chain}) if it is a totally ordered
+       set, i.e., for every $e_i,e_j \in C$ either $e_i \prec e_j $ or $e_j \prec e_i$.    
+     \item[\textit{Length of a chain:}] The \emph{length of a $k$-chain} is  $k-2$.
+       
+     \item[\textit{Antichain:}] A causal set $C$ is an  \emph{antichain} if no two elements are related to
+       each other.
+       
+     \item[\textit{Inextendible Antichain:}] A subset  $\cA \subseteq  C$ is  an  \emph{inextendible antichain} in $C$
+       if it is an antichain and for every 
+        element $e \in C \backslash\cA$  (where $\backslash$ is set difference)  either $e \in \past(\cA)$ or $e\in \fut(\cA)$ (see Eq.~(\ref{eq:futpast})).
+     \item[\textit{Order Invariant:}] $\cO: \rightarrow \re$ is an \emph{order invariant}  if it is independent of the
+        labelling of the causal set $C$. It is possible to generalise from $\re $ to a  more general field, but since this has not been
+        explicitly used here, the above definition is sufficient.
+        
+     \item[\textit{Manifold-like:}] A causal set $C$ is said to be manifold-like if $C$ has a continuum approximation.
+     \item[\textit{Alexandrov interval:}] This is the generalised causal diamond in $(M,g)$,   $\Alex[p,q]\equiv
+          I^+(p)\cap I^-(q)$, $p,q \in M$.
+    
+     \item[\textit{Sample Space $\Omega$:}] This is a collection or  space of causal sets.
+     \item[\textit{non-locality parameter:}] $\epsilon \equiv {\rk}/{\rc}$  appears in the BD action. 
+  \end{description} 
+
+    
+\subsection*{Abbreviations in alphabetical order}
+
+    \begin{description}
+       \item[BD action:] Benincasa--Dowker action (see Sect.~\ref{ssec:bdaction}). 
+       \item[BLMS:] Bombelli, Lee, Meyer and Sorkin's CST proposal \citep{blms}.
+       \item[CSG:] Classical Sequential Growth Dynamics  (see Sect.~\ref{ssec:csg}). 
+       \item[CST:] Causal Set Theory. 
+       \item[GHY:] Gibbons--Hawking--York  (see Sect.~\ref{ssec:ghy}). 
+       \item[GNN:] Gaussian Normal Neighbourhood.  
+       \item[HKMM theorem:] Hawking--King--McCarthy--Malament theorem (see Sect.~\ref{sec:history}).  
+       \item[KR posets:] Kleitman--Rothschild posets (see Sect.~\ref{ssec:haupt}). 
+       \item[MCMC:] Markov Chain Monte Carlo (see Sect.~\ref{ssec:partn}). 
+       \item[QSG:] Quantum Sequential Growth Dynamics (see Sect.~\ref{ssec:qsg}). 
+       \item[RNN:] Riemann Normal Neighbourhood. 
+       \item[SJ vacuum:] Sorkin-Johnston vacuum (see Sect.~\ref{ssec:SJ}). 
+       \item[SSEE:] Sorkin Spacetime Entanglement Entropy  (see Sect.~\ref{ssec:SSEE}).
+    \end{description} 

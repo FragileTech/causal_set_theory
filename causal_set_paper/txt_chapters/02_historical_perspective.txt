@@ -1,0 +1,206 @@
+ \section{A historical perspective}
+\label{sec:history} 
+
+One of the most important conceptual realisations that arose from the
+special and general theories of relativity in the early part of the 20th century, was that space and
+time are part of a single construct, that of spacetime.  At a
+fundamental level, one does not exist without the other. Unlike
+Riemannian spaces, spacetime has a Lorentzian signature $(-, +,+,+)$ which
+gives rise to local lightcones and an associated  global causal
+structure. The causal structure $(M,\prec)$ of a  causal spacetime\footnote{Henceforth, we will assume that
+  spacetime is causal, i.e., without any closed causal curves.} $(M,g)$ is a partially ordered set or poset, with
+$\prec$ denoting the causal ordering on the ``event-set'' $M$. 
+
+\begin{figure}[ht]
+\centering \resizebox{4in}{!}{\includegraphics{Lightcone}}
+\caption{The local lightcone of a Lorentzian spacetime.}
+\end{figure}
+
+
+Causal set theory (CST) as proposed in \cite{blms}, takes the Lorentzian
+character of spacetime and the causal structure poset in particular, as a crucial starting point to
+quantisation. It is inspired by a long but sporadic history of investigations into
+Lorentzian geometry, in which the connections between $(M,\prec)$
+and the conformal geometry were eventually established. This history, while not a part of the
+standard narrative of General Relativity, is relevant to the sequence
+of ideas that led to CST. In looking for a quantum theory of spacetime, $(M,\prec)$ has also been paired with
+discreteness, though the earliest ideas on discreteness go back to pre-quantum and pre-relativistic physics. We now give a
+broad review of this history. 
+
+The first few decades after the formulation of General Relativity were dedicated to
+understanding the physical implications of the theory
+and to finding solutions to the field equations. The attitude  towards Lorentzian geometry was mostly 
+practical:  it was seen as a simple, though odd,  generalisation
+of Riemannian geometry.\footnote{Hence the term
+  ``pseudo-Riemannian''.}  There were however early attempts to understand this new geometry and to use causality as a
+starting point. Weyl
+and Lorentz  (see \citealt{weyl}) used light rays to attempt a
+reconstruction of $d $ dimensional Minkowski spacetime {$\mink^d$}, while 
+\cite{robbone,robbtwo} suggested an axiomatic framework for
+spacetime where the causal precedence on the collection of events was seen to play a critical role.
+It was only several decades later, however,  that the mathematical structure of Lorentzian geometry began to be explored more vigorously. 
+
+
+In a seminal paper titled ``Causality Implies the Lorentz Group'', \cite{zeeman} identified the {chronological poset}
+$(\mink^d,\pprec)$ in $\mink^d$, where  {{$\pprec$}} denotes  the  {chronological relation} on the event-set $\mink^d$. Defining a {chronological automorphism}\footnote{Zeeman used the term ``causal'' instead of
+ ``chronological'', but we will follow the more modern usage of these terms \citep{HE,Wald}.} $\fca$ of
+$\mink^d$ as the chronological poset-preserving bijection
+\begin{equation}
+ \fca: \mink^d \rightarrow \mink^d, \quad x \, \,\pprec \, \, y \Leftrightarrow \fca(x) \, \,\pprec \, \,\fca(y), \, \, \forall \, \, x,y
+ \in \mink^d, 
+ \end{equation} 
+Zeeman showed that the group of chronological automorphisms $\dca$ is
+isomorphic to  the group $\dlor$ 
+of inhomogeneous Lorentz transformations and dilations on
+$\mink^d$ when $\dm >2$.  While it is simple to see that
+the generators of $\dlor$ preserve the chronological structure so that $\dlor \subseteq \dca$, the
+converse is not obvious. In his proof Zeeman showed that every $\fca \in \dca$ maps light rays to light rays, such that
+parallel light rays remain parallel and moreover that the map is  linear.  In Minkowski spacetime every chronological
+automorphism is also a causal automorphism, so a Corollary to Zeeman's theorem is that the group of causal
+automorphisms is isomorphic to $\dlor$. This is a remarkable result, since it states that the physical invariants
+associated with $\mink^d$ follow naturally from its \emph{causal structure poset} $(\mink^d,\prec)$ where $\prec$
+denotes the causal relation on the event-set $\mink^d$.  
+
+
+\cite{kp} subsequently generalised
+Zeeman's ideas to an arbitrary causal spacetime $(M,g)$ where they identified both $(M,\prec)$ and $(M,\pprec)$ with
+the event-set $M$,  devoid of the differential and topological structures associated with a
+spacetime. They defined an abstract causal space axiomatically, using both 
+$(M,\prec)$ and $(M,\pprec)$ along with a mixed
+transitivity condition between the relations $\prec$ and $\pprec$, which mimics that in a causal spacetime.
+
+
+
+
+Zeeman's result in $\mink^d$ was then generalised to a larger class of spacetimes by
+\cite{hkm} and \cite{malament}. A chronological bijection generalises Zeeman's
+chronological automorphism between two 
+spacetimes $(M_1,g_1)$ and $(M_2,g_2)$, and is a chronological order preserving bijection, 
+\begin{equation}
+ \fcb :M_1 \rightarrow M_2, \quad x \, \,\pprec_1 \, \, y \Leftrightarrow \fcb(x) \, \,\pprec_2 \, \,\fcb(y), \, \, \forall \, \, x,y \in
+ M_1, 
+\end{equation}
+where $\pprec_{1,2}$ refer to the chronology relations on $M_{1,2}$, respectively. 
+The existence of a chronological bijection between two strongly causal spacetimes\footnote{A point $p$ in a spacetime is
+  said to be strongly causal if every neighbourhood of $p$ contains a subneighbourhood such that no causal curve
+  intersects it more than once. All the events in a  strongly causal spacetime are strongly causal.} was equated by  \cite{hkm} to the
+existence of a {conformal isometry}, which is a bijection $f:M_1\rightarrow M_2 $ such that $f, f^{-1}$ are smooth (with
+respect to the manifold topology and differentiable structure) and $f_*g_1=\lambda g_2$ for a real, smooth, strictly positive function
+$\lambda $ on $M_2$. \cite{malament}  then generalised this result to the larger class of \emph{future and past
+ distinguishing}  spacetimes.\footnote{These are spacetimes in which the
+chronological past and future $I^\pm(p)$ of each event $p$ is unique,
+i.e., $I^\pm(p)=I^\pm(q) \Rightarrow p=q$.} 
+We refer to these results collectively as the Hawking--King--McCarthy--Malament theorem or \emph{HKMM} theorem, summarised as 
+
+\begin{theorem} {\bf Hawking--King--McCarthy--Malament (HKMM)} \\
+If a chronological bijection $\fcb$ exists between two $\dm$-dimensional spacetimes which are both future and
+past distinguishing, then these spacetimes are conformally isometric when $\dm>2$. \label{HKMM}
+\end{theorem} 
+
+
+It was shown by  \cite{levichev} that a causal bijection implies a
+chronological bijection and hence the above theorem can be generalised
+by replacing ``chronological'' with ``causal''. Subsequently \cite{ps} showed that the causal structure poset
+$(M,\prec)$ of these spacetimes also contains information about the spacetime dimension. 
+
+Thus, the causal structure poset $(M,\prec)$ of a future and past distinguishing spacetime is
+equivalent its conformal geometry.  This means that $(M,\prec)$
+is equivalent to the spacetime, except for the local volume  element encoded in the conformal
+factor $\lambda$, which is a single scalar. As phrased by \cite{finkelstein}, the causal structure in $d=4$ 
+is therefore $\left(9/10\right)^{\mathrm{th}}$ of the metric! 
+
+En route to a theory of quantum gravity one must pause to ask:
+what ``natural''  structure of spacetime  should be quantised? Is it the metric  or is it the causal structure poset?  The
+former can be defined for all signatures,  but the latter is  an
+exclusive  embodiment  of a causal Lorentzian spacetime. In Fig.~\ref{nonlor.fig}, we show a 3d projection of a  non-Lorentzian and
+non-Riemannian $d=4$ ``space-time'' with  signature $(-,-,+,+)$. The fact that a time-like direction can be
+continuously transformed into any other while still remaining time-like means that there is no order  relation in the space and
+hence no associated causal structure poset. We can thus view  the  causal structure poset as an essential  embodiment of  Lorentzian spacetime.  
+
+\begin{figure}[ht]
+\centering \resizebox{4in}{!}{\includegraphics{othersignature}}
+\caption{An example of a signature $(-,-,+,+)$ spacetime with one spatial dimension suppressed. It is
+    not possible to distinguish a  past from a  future timelike direction and hence order events,  even locally.}
+\label{nonlor.fig}
+\end{figure}
+
+
+Perhaps the first explicit  statement of intent to quantise the {causal structure} of spacetime, rather than the
+spacetime geometry was  by \cite{kp},
+who listed, as one of their motivations for axiomatising the causal structure:
+\begin{quote}
+\textit{``To admit structures which can be very different from a
+  manifold. The possibility arises, for example, of a locally
+  countable or discrete event-space equipped with causal relations macroscopically similar to those of a space-time continuum.''
+}
+\end{quote}  
+
+
+This brings to focus  another historical thread of ideas 
+important to CST, namely that  of spacetime discreteness.   
+The idea  that  the  continuum is a  mathematical
+construct which approximates an underlying physical discreteness was already
+present in the writings of Riemann as he ruminated on the physicality of the continuum \citep{Riemann}:
+\begin{quote}
+\textit{``Now it seems that the empirical notions on which the metric determinations of  Space are based, the concept of a
+  solid body and that of a light ray; lose their validity in the infinitely small; it is therefore quite definitely
+  conceivable that the metric relations of Space in the infinitely small do not conform to the hypotheses of  geometry;
+  and in fact one ought to assume this as soon as it permits a simpler way of explaining phenomena.''} 
+\end{quote}
+
+Many years later, in their explorations of spacetime and quantum theory, Einstein and Feynman
+each questioned the physicality of the continuum \citep{Einstein,Feynman}.  
+These ideas were also expressed in Finkelstein's  ``spacetime code'' \citep{finkelstein}, and most relevant to CST, in
+Hemion's use of \emph{local finiteness},   to obtain discreteness in the causal
+structure poset 
+\citep{hemion}.  This last condition is the  requirement there are only a finite number of fundamental spacetime 
+elements  in any finite volume  \emph{Alexandrov interval} $\Alex[p,q]\equiv I^+(p)\cap I^-(q)$. 
+
+
+
+Although these ideas of spacetime discreteness resonate with the appearance of discreteness in quantum theory, 
+the latter  typically manifests itself as  a discrete spectrum of  a continuum observable. The discreteness
+proposed above is different: one is replacing the fundamental degrees of
+freedom, \emph{before} quantisation, already  at the kinematical
+level of the theory. 
+
+
+The most immediate motivation for discreteness however comes from the HKMM theorem itself.  The missing
+$\left(1/10\right)^{\mathrm{th}}$ of the $d=4$ metric is the volume element. A discrete causal set can supply this volume
+element by substituting the continuum volume with cardinality. 
+This idea was already present in Myrheim's remarkable (unpublished)  CERN preprint \citep{myrheim}, which contains many  of the main  ideas of CST. Here he states:
+\begin{quote}
+\textit{``It seems more natural to regard the metric as a statistical property of discrete spacetime. Instead we
+  want to suggest that the concept of absolute time ordering, or causal ordering of, space-time points, events, might
+  serve as the one and only fundamental concept of a discrete space-time geometry. In this view space-time is nothing
+  but the causal ordering of events.''}  
+\end{quote}
+
+The statistical nature of the poset is a key proposal that survives into CST with the  spacetime continuum emerging 
+via a random Poisson sprinkling. We will see this explicitly in Sect.~\ref{sec:cst}. Another key concept which plays a
+role in the dynamics is that the
+order relation replaces coordinate time and any evolution of spacetime takes meaning only in this intrinsic sense
+\citep{lambdatwo}. 
+
+
+There are of course many other motivations for spacetime discreteness. One of the expectations from a theory of quantum gravity is
+that the Planck scale will introduce a natural cut-off which cures both  the UV divergences of quantum field theory and
+regulates black hole entropy. The realisation of this hope lies in the details of a given discrete theory, and CST
+provides us a concrete way to study this question, as we will discuss in Sect.~\ref{sec:matter}.  %Conversely, there are potential observational signatures of
+                                %discreteness. In CST the most striking is the 1987 prediction of the cosmological
+                                %constant $\Lambda$ which arises from the specific nature of the CST continuum approximation \cite{lambdaone,lambdatwo}. 
+
+
+
+
+
+
+It has been 31 years  since the original CST proposal of BLMS \citep{blms}. The early work shed
+considerable  light on key aspects of the theory \citep{blms,bommeyer,bg} and resulted in  Sorkin's prediction of the
+cosmological constant $\Lambda$ 
+\citep{lambdaone}.  There was a seeming  hiatus in the 1990s, which ended  in the early 2000s
+with  exciting  results from the Rideout--Sorkin  classical sequential growth  models \citep{csgone,csgtwo,csgrg,davidthesis}.
+%which also  attracted the attention of mathematicians \cite{grnick}.
+There have been several non-trivial results  in CST in the intervening 19 odd years.  In the following sections we will
+make a broad sketch of the theory and its key  results,  with this historical perspective in
+mind. 
