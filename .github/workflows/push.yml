@@ -1,0 +1,85 @@
+name: Test and Lint
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+env:
+  PYTEST_CORES: "auto"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install ruff without running check or format
+        uses: astral-sh/ruff-action@v3
+        with:
+          args: "--version"
+      - name: Check format
+        run: ruff format --diff
+      - name:  Check style
+        run: ruff check
+
+  tests:
+    runs-on: ${{ matrix.os }}
+    needs: lint
+
+    strategy:
+      matrix:
+        os: [ ubuntu-latest] #, macos-latest]
+        python-version: [ "3.12" ]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Obtain Azure credentials (Service Principal)
+        if: ${{ !env.ACT }}
+        id: azure-credentials
+        uses: INAITSA/inait-ghactions-libs/azure-token-generation@main
+        with:
+          client_id: ${{ secrets.SP_CORESCIENCE_ID }}
+          client_secret: ${{ secrets.SP_CORESCIENCE_SECRET }}
+          subscription_id: ${{ secrets.SUBSCRIPTION_ID }}
+          tenant_id: ${{ secrets.TENANT_ID }}
+
+      - name: Install uv
+        id: setup-uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          enable-cache: true
+
+      - name: Check if cache was restored
+        if: ${{ steps.setup-uv.outputs.cache-hit == 'true' }}
+        run: echo "Cache was restored"
+
+      - name: Install dependencies UV
+        env:
+          UV_INDEX_QUANT_USERNAME: ${{ secrets.SP_CORESCIENCE_ID }}
+          UV_INDEX_QUANT_PASSWORD: ${{ steps.azure-credentials.outputs.token || secrets.SP_CORESCIENCE_TOKEN }}
+          UV_INDEX_EXPLORATORY_USERNAME: ${{ secrets.SP_CORESCIENCE_ID }}
+          UV_INDEX_EXPLORATORY_PASSWORD: ${{ steps.azure-credentials.outputs.token || secrets.SP_CORESCIENCE_TOKEN }}
+          UV_INDEX_CORESCIENCE_USERNAME: ${{ secrets.SP_CORESCIENCE_ID }}
+          UV_INDEX_CORESCIENCE_PASSWORD: ${{ steps.azure-credentials.outputs.token || secrets.SP_CORESCIENCE_TOKEN }}
+        run: |
+          # This includes azure-ml and dev dependencies
+          uv sync --locked --all-groups
+
+      - name: Run tests UV
+        run: uv run pytest --numprocesses $PYTEST_CORES --cov-report=term-missing --cov-config=pyproject.toml --cov=src/circuit_rl --cov=tests
