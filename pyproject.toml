@@ -60,18 +60,6 @@ path = "src/causet/version.py"
 [tool.hatch.build.targets.wheel]
 packages = ["src/causet"]
 
-[[tool.uv.index]]
-name = "quant"
-url = "https://pkgs.dev.azure.com/inait-python/pypi-saffron/_packaging/wheels/pypi/simple/"
-
-[[tool.uv.index]]
-name = "exploratory"
-url = "https://pkgs.dev.azure.com/inait-python/pypi-exploratory/_packaging/python/pypi/simple/"
-
-[[tool.uv.index]]
-name = "corescience"
-url = "https://pkgs.dev.azure.com/inait-python/pypi-corescience/_packaging/corescience/pypi/simple/"
-
 [tool.ruff]
 # Assume Python 3.12
 target-version = "py312"
