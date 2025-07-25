@@ -9,6 +9,36 @@ for working with causal sets, including:
 - Sorkin-Johnston vacuum construction
 - Entanglement entropy calculation
 - Spectral dimension analysis
+
+### Summary Table
+
+The table below provides a direct link between the computational implementation in the Python code and the theoretical framework presented in the paper. This highlights how abstract physical and mathematical concepts are translated into concrete algorithms.
+
+| Python Function/Class | Equation(s) in Paper | Description |
+| :--- | :--- | :--- |
+| **Causal Set Construction** | | |
+| `get_causal_matrix` | (6), Definition on p. 11 | Implements the fundamental causal relation (`≺`). An element `j` is in the past of `i` if the spacetime interval is timelike or null (`ds² ≥ 0`) and the time coordinate is ordered (`Δt > 0`). This function builds the matrix representation of the poset from spacetime coordinates. |
+| `get_link_matrix` | Definition on p. 16, used in (56), (59) | Computes the link matrix `L`, where `L(i, j) = 1` if `j` is a direct causal predecessor of `i` with no elements in between. This is equivalent to finding causal relations that are not bridged by any path of length two or more (`C²=0`). |
+| `get_interval_sizes` | Definition on p. 11, used in (33), (34) | Calculates the number of elements in the causal interval `I[i, j]`, which is the set of elements causally between `j` and `i`. This is computationally equivalent to finding the number of paths of length 2 from `j` to `i`, given by `(C @ C)[i, j]`. |
+| `sprinkle_minkowski_region` | (8), (9) | Implements the Poisson sprinkling process. The number of points `N` in a region of volume `V` is drawn from a Poisson distribution with mean `ρV`, where `ρ` is the density. |
+| **Green Functions** | | |
+| `K0_2D` | **(55)** | Calculates the exact dimensionless, massless retarded Green's function in 2D, which is directly proportional to the causal matrix `C₀`. |
+| `K0_4D` | **(59)** | Calculates the approximation for the dimensionless, massless retarded Green's function in 4D, which is proportional to the link matrix `L₀`. |
+| `G_massive_approx` | **(60), (63), (65)** | Implements the discrete version of the perturbative expansion for the massive Green's function `G_m` in terms of the massless one `G₀` and mass `m`. Matrix multiplication replaces the convolution operator (`*`). |
+| **Benincasa-Dowker (BD) Action** | | |
+| `calculate_ricci_scalar_at_element` | **(33)** | Computes the discrete Ricci scalar `R(e)` at a single element `e` using the number of its `k`-nearest neighbors (`N_k`) for `k=0,1,2,3`. |
+| `calculate_BD_action` | **(34)** | Calculates the total Benincasa-Dowker action, which is the discrete analogue of the Einstein-Hilbert action. It is the sum of the Ricci scalars `R(e)` over all elements in the causal set. |
+| **Quantum Field Theory & Sorkin-Johnston (SJ) Vacuum** | | |
+| `get_iDelta_operator` | **(72)** | Constructs the Pauli-Jordan operator `iΔ`, which is defined as `i` times the difference between the retarded (`G_R`) and advanced (`G_A`) Green's functions. `G_R` is proportional to `C` and `G_A` is proportional to `Cᵀ`. |
+| `get_SJ_Wightman_function` | **(75)** | Calculates the Sorkin-Johnston (SJ) vacuum Wightman function `W_SJ` by performing a spectral decomposition of the `iΔ` operator and summing over the contributions from its positive eigenvalues. |
+| `calculate_ssee` | **(77)** | Calculates the Spacetime Entanglement Entropy (SSEE). This involves solving the generalized eigenvalue problem `W_A v = λ iΔ_A v` for a subregion `A` and then using the eigenvalues `λ` in the standard entropy formula for a fermionic system. |
+| **Spectral Dimension** | | |
+| `get_transition_matrix` | Concept in Sec. 5.4 | Creates a transition matrix `T` for a random walk on the undirected graph defined by the causal links (`L + Lᵀ`). This is a prerequisite for calculating the spectral dimension. |
+| `calculate_spectral_dimension` | Concept in Sec. 5.4 | Estimates the spectral dimension `d_s` by analyzing the return probability of a random walk. It fits the scaling of the return probability `P(σ) ∼ σ^(-d_s/2)`, where `σ` is the number of steps. |
+| **Curved Spacetime** | | |
+| `DeSitterSpacetime.ds_to_minkowski` | Concept in Sec. 2 (p. 7-8) | Implements the conformal mapping from the de Sitter static patch to a region of Minkowski space, a key concept related to the Hawking-King-McCarthy-Malament (HKMM) theorem. |
+| `CurvedSpacetime.is_causally_related` | Theorem 1 (HKMM) | The general principle that the causal structure determines the conformal geometry. For de Sitter space, this function uses the conformal map to check causality in the simpler embedding Minkowski space. |
+| `CurvedSpacetime.sprinkle_and_build_causet` | (8), (9) | A generalized implementation of the Poisson sprinkling process for arbitrary curved spacetimes, using the region's volume and a method to generate points within it. |
 """
 
 from abc import ABC, abstractmethod
@@ -448,6 +478,10 @@ def sprinkle_minkowski_region(region: RegionDefinition, density: float = 1.0) ->
         # Future lightcone
         lightcone = MinkowskiLightconeRegion(t0=0, x0=0, t_max=3)
         coords = sprinkle_minkowski_region(lightcone, density=4.0)
+        
+    References:
+        Eq. (8) and (9): Implements the Poisson sprinkling process where 
+        N ~ Poisson(ρV) for density ρ and region volume V.
     """
     if density <= 0:
         msg = "Density must be positive"
@@ -477,6 +511,10 @@ def get_causal_matrix(coords: np.ndarray) -> np.ndarray:
 
     Raises:
         ValueError: If coords has wrong shape or contains invalid values.
+        
+    References:
+        Eq. (6) and Definition on p. 11: Implements the fundamental causal 
+        relation (≺) for building the matrix representation of the poset.
     """
     if coords.size == 0:
         return np.array([]).reshape(0, 0)
@@ -515,6 +553,13 @@ def get_causal_matrix(coords: np.ndarray) -> np.ndarray:
 def get_link_matrix(causal_matrix: np.ndarray) -> np.ndarray:
     """
     Computes the link matrix from a causal matrix.
+    
+    The link matrix L is defined as:
+    L(x,x') = 1 if x' ≺ x is a link, 0 otherwise
+    
+    A link between x' and x means that x' ≺ x but there is no element z
+    such that x' ≺ z ≺ x. This implements the discrete analogue of the
+    lightcone structure used in Green function calculations.
 
     Args:
         causal_matrix (np.ndarray): The N x N causal matrix.
@@ -525,6 +570,11 @@ def get_link_matrix(causal_matrix: np.ndarray) -> np.ndarray:
 
     Raises:
         ValueError: If causal_matrix has wrong shape or invalid values.
+        
+    References:
+        Definition on p. 16, used in Eq. (56) and (59): Computes the link 
+        matrix L for discrete analogue of the lightcone structure used in 
+        Green function calculations.
     """
     if causal_matrix.size == 0:
         return np.array([]).reshape(0, 0)
@@ -563,6 +613,10 @@ def get_interval_sizes(causal_matrix: np.ndarray) -> np.ndarray:
 
     Raises:
         ValueError: If causal_matrix has wrong shape or invalid values.
+        
+    References:
+        Definition on p. 11, used in Eq. (33) and (34): Calculates the number 
+        of elements in causal intervals I[i,j] for Benincasa-Dowker action.
     """
     if causal_matrix.size == 0:
         return np.array([]).reshape(0, 0)
@@ -592,12 +646,22 @@ def get_interval_sizes(causal_matrix: np.ndarray) -> np.ndarray:
 def K0_2D(causal_matrix: np.ndarray) -> np.ndarray:
     """
     Calculates the 2D massless scalar Green function for a causal set.
+    
+    Implements the discrete retarded Green function in 2D:
+    K₀⁽²⁾(x,x') = (1/2) C₀(x,x')
+    
+    where C₀ is the causal matrix. This gives the exact massless retarded 
+    Green function for causal sets sprinkled in 2D Minkowski spacetime.
 
     Args:
-        causal_matrix (np.ndarray): The N x N causal matrix.
+        causal_matrix (np.ndarray): The N x N causal matrix C₀.
 
     Returns:
-        np.ndarray: The N x N Green function matrix.
+        np.ndarray: The N x N Green function matrix K₀⁽²⁾.
+        
+    References:
+        Eq. (55): K₀⁽²⁾(x,x') = (1/2)C₀(x,x') - Exact dimensionless, massless 
+        retarded Green's function in 2D.
     """
     return 0.5 * causal_matrix
 
@@ -605,12 +669,22 @@ def K0_2D(causal_matrix: np.ndarray) -> np.ndarray:
 def K0_4D(link_matrix: np.ndarray) -> np.ndarray:
     """
     Calculates the 4D massless scalar Green function for a causal set.
+    
+    Implements the discrete retarded Green function in 4D:
+    K₀⁽⁴⁾(x,x') = (1/(2π√6)) L₀(x,x')
+    
+    where L₀ is the link matrix. In the continuum limit ρ_c → ∞, this
+    approximates the 4D massless retarded Green function.
 
     Args:
-        link_matrix (np.ndarray): The N x N link matrix.
+        link_matrix (np.ndarray): The N x N link matrix L₀.
 
     Returns:
-        np.ndarray: The N x N Green function matrix.
+        np.ndarray: The N x N Green function matrix K₀⁽⁴⁾.
+        
+    References:
+        Eq. (59): K₀⁽⁴⁾(x,x') = (1/(2π√6)) L₀(x,x') - Approximation for the 
+        dimensionless, massless retarded Green's function in 4D.
     """
     prefactor = 1 / (2 * np.pi * np.sqrt(6))
     return prefactor * link_matrix
@@ -627,6 +701,10 @@ def G_massive_approx(G0: np.ndarray, mass: float, order: int = 2) -> np.ndarray:
 
     Returns:
         np.ndarray: The approximate massive Green function matrix.
+        
+    References:
+        Eq. (60), (63), and (65): Discrete version of the perturbative expansion 
+        for the massive Green's function G_m in terms of massless G₀ and mass m.
     """
     if G0.shape[0] == 0:
         return np.array([]).reshape(0, 0)
@@ -686,12 +764,23 @@ def calculate_ricci_scalar_at_element(Nk_counts: dict) -> float:
     """
     Calculates the discrete Ricci scalar for a single element e using its
     neighbor counts. (Formula for d=4)
+    
+    Implements the Benincasa-Dowker discrete Ricci scalar:
+    R(e) = (4/√6) × [1 - N₀(e) + 9N₁(e) - 16N₂(e) + 8N₃(e)]
+    
+    where Nₖ(e) is the number of k-element intervals that contain element e.
+    This is the discrete analogue of the continuum Ricci scalar curvature.
 
     Args:
         Nk_counts (dict): A dictionary with keys 0,1,2,3 for N_k(e).
 
     Returns:
         float: The value of R(e).
+        
+    References:
+        Eq. (33): R(e) = (4/√6) × [1 - N₀(e) + 9N₁(e) - 16N₂(e) + 8N₃(e)]
+        Computes the discrete Ricci scalar at a single element using its 
+        k-nearest neighbors for the Benincasa-Dowker action formula.
     """
     # Magic coefficients from Eq. 33
     term = 1 - Nk_counts[0] + 9 * Nk_counts[1] - 16 * Nk_counts[2] + 8 * Nk_counts[3]
@@ -704,12 +793,24 @@ def calculate_ricci_scalar_at_element(Nk_counts: dict) -> float:
 def calculate_BD_action(causal_matrix: np.ndarray) -> float:
     """
     Calculates the total Benincasa-Dowker action for a causal set.
+    
+    Implements the discrete Einstein-Hilbert action:
+    S(C) = Σₑ R(e)
+    
+    where R(e) is the discrete Ricci scalar at element e. This action
+    provides a discrete analogue of the continuum Einstein-Hilbert action
+    and is used in causal set quantum gravity path integrals.
 
     Args:
         causal_matrix (np.ndarray): The causal matrix for the set.
 
     Returns:
         float: The total action S(C).
+        
+    References:
+        Eq. (34): S(C) = Σₑ R(e) - Total Benincasa-Dowker action as the 
+        discrete analogue of the Einstein-Hilbert action for causal set 
+        quantum gravity path integrals.
     """
     if causal_matrix.shape[0] == 0:
         return 0.0
@@ -742,7 +843,26 @@ def calculate_BD_action(causal_matrix: np.ndarray) -> float:
 def get_iDelta_operator(causal_matrix: np.ndarray) -> np.ndarray:
     """
     Constructs the Pauli-Jordan operator iΔ for a massless 2D causal set.
-    Δ = G_R - G_A. In 2D, G_R is proportional to C and G_A is proportional to C^T.
+    
+    Implements the discrete Pauli-Jordan function:
+    iΔ = i(G_R - G_A)
+    
+    where G_R and G_A are the retarded and advanced Green functions.
+    In 2D: G_R ∝ C and G_A ∝ C^T, where C is the causal matrix.
+    
+    This operator is fundamental for the Sorkin-Johnston vacuum construction
+    and provides the commutation relations for quantum field theory on causal sets.
+
+    Args:
+        causal_matrix (np.ndarray): The causal matrix C.
+
+    Returns:
+        np.ndarray: The Pauli-Jordan operator iΔ.
+        
+    References:
+        Eq. (72): iΔ = i(G_R - G_A) - Constructs the Pauli-Jordan operator 
+        for the Sorkin-Johnston vacuum construction and quantum field theory 
+        commutation relations on causal sets.
     """
     if causal_matrix.shape[0] == 0:
         return np.array([]).reshape(0, 0)
@@ -758,10 +878,27 @@ def get_iDelta_operator(causal_matrix: np.ndarray) -> np.ndarray:
 
 def get_SJ_Wightman_function(iDelta_op: np.ndarray) -> np.ndarray:
     """
-    Calculates the SJ Wightman function from the iΔ operator.
+    Calculates the Sorkin-Johnston vacuum Wightman function from the iΔ operator.
+    
+    Implements the SJ vacuum construction:
+    W_SJ(x,x') = Σ_{λₖ>0} λₖ |ψₖ⟩⟨ψₖ|
+    
+    where λₖ and |ψₖ⟩ are the positive eigenvalues and eigenvectors of iΔ.
+    This gives the two-point function ⟨0|φ(x)φ(x')|0⟩ in the SJ vacuum state.
+    
+    The construction follows from requiring that the vacuum minimizes the 
+    renormalized expectation value of ∇² while respecting the discrete 
+    causal structure.
+
+    Args:
+        iDelta_op (np.ndarray): The iΔ (Pauli-Jordan) operator matrix.
 
     Returns:
-        np.ndarray: The N x N Wightman function matrix W_SJ.
+        np.ndarray: The N × N Wightman function matrix W_SJ.
+        
+    References:
+        Eq. (75): W_SJ(x,x') = Σ_{λₖ>0} λₖ |ψₖ⟩⟨ψₖ| - Sorkin-Johnston vacuum 
+        Wightman function from spectral decomposition of the iΔ operator.
     """
     if iDelta_op.shape[0] == 0:
         return np.array([]).reshape(0, 0)
@@ -783,7 +920,20 @@ def get_SJ_Wightman_function(iDelta_op: np.ndarray) -> np.ndarray:
 
 def calculate_ssee(W_SJ: np.ndarray, iDelta: np.ndarray, region_indices: list) -> float:
     """
-    Calculates the Spacetime Entanglement Entropy for a subregion.
+    Calculates the Spacetime Entanglement Entropy (SSEE) for a subregion.
+    
+    Implements the generalized eigenvalue problem:
+    W_A |ψₖ⟩ = λₖ iΔ_A |ψₖ⟩
+    
+    followed by the entropy calculation:
+    S = -Σₖ [λₖ ln(λₖ) + (1-λₖ) ln(1-λₖ)]
+    
+    where W_A and iΔ_A are the restrictions of the Wightman function and 
+    Pauli-Jordan operator to the subregion A. The eigenvalues λₖ represent
+    the "occupation probabilities" of the modes in the subregion.
+    
+    This generalizes the usual entanglement entropy to quantum field theory
+    on causal sets, providing a spacetime-based measure of entanglement.
 
     Args:
         W_SJ (np.ndarray): The full Wightman function for the causal set.
@@ -793,6 +943,11 @@ def calculate_ssee(W_SJ: np.ndarray, iDelta: np.ndarray, region_indices: list) -
 
     Returns:
         float: The entanglement entropy S.
+        
+    References:
+        Eq. (77): S = -Σₖ [λₖ ln(λₖ) + (1-λₖ) ln(1-λₖ)] - Spacetime 
+        Entanglement Entropy from generalized eigenvalue problem for 
+        subregions in causal set quantum field theory.
     """
     if len(region_indices) == 0:
         return 0.0
@@ -827,7 +982,28 @@ def calculate_ssee(W_SJ: np.ndarray, iDelta: np.ndarray, region_indices: list) -
 
 def get_transition_matrix(link_matrix: np.ndarray) -> np.ndarray:
     """
-    Creates a transition matrix for a random walk on the causal set links.
+    Creates a transition matrix for a random walk on the causal set graph.
+    
+    Constructs the symmetric transition matrix:
+    T_{ij} = A_{ij} / deg(i)
+    
+    where A = L + L^T is the undirected adjacency matrix from the link matrix,
+    and deg(i) is the degree of vertex i. This gives equal probability of 
+    transitioning to any neighboring vertex.
+    
+    The resulting matrix is used in spectral dimension calculations via
+    the analysis of return probabilities in discrete random walks.
+
+    Args:
+        link_matrix (np.ndarray): The N × N link matrix L of the causal set.
+
+    Returns:
+        np.ndarray: The N × N transition matrix T for the random walk.
+        
+    References:
+        Concept in Sec. 5.4: Creates transition matrix T for random walk 
+        on undirected graph defined by causal links for spectral dimension 
+        calculations.
     """
     if link_matrix.shape[0] == 0:
         return np.array([]).reshape(0, 0)
@@ -842,14 +1018,31 @@ def get_transition_matrix(link_matrix: np.ndarray) -> np.ndarray:
 
 def calculate_spectral_dimension(link_matrix: np.ndarray, max_steps: int = 50) -> float:
     """
-    Calculates the spectral dimension by simulating a random walk.
+    Calculates the spectral dimension via discrete random walk analysis.
+    
+    Implements the spectral dimension calculation:
+    d_s = -2 × d(ln⟨P_σ⟩)/d(ln σ)
+    
+    where ⟨P_σ⟩ is the average return probability after σ steps of a random walk.
+    The spectral dimension characterizes the effective dimensionality of the 
+    discrete geometry as probed by diffusion processes.
+    
+    The calculation involves:
+    1. Constructing the transition matrix T from the link structure
+    2. Computing return probabilities ⟨P_σ⟩ = Tr(T^σ)/N for various σ
+    3. Fitting the scaling ⟨P_σ⟩ ∼ σ^(-d_s/2) to extract d_s
 
     Args:
-        link_matrix (np.ndarray): The link matrix of the causal set.
+        link_matrix (np.ndarray): The N × N link matrix of the causal set.
         max_steps (int): Maximum number of random walk steps to simulate.
 
     Returns:
-        float: The calculated spectral dimension.
+        float: The calculated spectral dimension d_s.
+        
+    References:
+        Concept in Sec. 5.4: d_s = -2 × d(ln⟨P_σ⟩)/d(ln σ) - Estimates 
+        spectral dimension by analyzing return probability scaling P(σ) ∼ σ^(-d_s/2) 
+        in random walks on the discrete geometry.
     """
     if link_matrix.shape[0] == 0:
         return np.nan
@@ -904,17 +1097,85 @@ def calculate_spectral_dimension(link_matrix: np.ndarray, max_steps: int = 50) -
 
 
 class CurvedSpacetime(ABC):
-    """An abstract base class representing a general curved spacetime."""
+    """
+    Abstract base class for curved spacetime geometries in causal set theory.
+    
+    This class provides the framework for implementing causal set constructions
+    in arbitrary curved spacetimes. Concrete implementations must specify:
+    
+    1. The causal structure via is_causally_related()
+    2. The conformal factor and metric properties
+    3. Region-specific sprinkling algorithms
+    
+    The class supports the general causal set sprinkling procedure:
+    - Poisson process with density ρ in the spacetime volume
+    - Causal matrix construction from the spacetime geometry  
+    - Integration with RegionDefinition dataclasses
+    
+    Subclasses implement specific geometries like Minkowski, de Sitter,
+    anti-de Sitter, or more general curved backgrounds.
+
+    Attributes:
+        dim (int): The spacetime dimension.
+        
+    References:
+        General framework for causal sets in curved spacetime following
+        the covariant approach of Sorkin and others. The sprinkling density
+        is determined by the spacetime volume element √|g| d^n x.
+    """
 
     def __init__(self, dim: int):
         self.dim = dim
 
     @abstractmethod
     def is_causally_related(self, p1: np.ndarray, p2: np.ndarray) -> bool:
-        """Checks for a causal relationship between two points."""
+        """
+        Checks for a causal relationship between two spacetime points.
+        
+        Determines whether point p1 causally precedes point p2 according to
+        the spacetime metric. This implements the fundamental causal structure
+        that defines the partial ordering in causal set theory.
+        
+        For a general metric g_μν, the causal relation requires:
+        1. The connecting vector to be timelike or null: g_μν Δx^μ Δx^ν ≥ 0
+        2. The time ordering to be correct: Δt > 0
+        
+        Args:
+            p1, p2 (np.ndarray): Spacetime coordinate arrays.
+            
+        Returns:
+            bool: True if p1 ≺ p2 (p1 causally precedes p2).
+        """
 
     def sprinkle_and_build_causet(self, region: RegionDefinition, density: float = 1.0):
-        """Performs a Poisson sprinkling in this curved spacetime."""
+        """
+        Performs a Poisson sprinkling and constructs the resulting causal set.
+        
+        Implements the standard causal set sprinkling procedure:
+        
+        1. **Volume calculation**: V = ∫_R √|g| d^n x over region R
+        2. **Poisson sampling**: N ~ Poisson(ρV) for density ρ  
+        3. **Point generation**: Uniform distribution in coordinate volume
+        4. **Causal matrix**: C_{ij} = 1 if x_j ≺ x_i via spacetime causality
+        
+        The density parameter ρ has units of inverse volume and determines
+        the discretization scale. Higher densities give better continuum
+        approximations but larger computational cost.
+
+        Args:
+            region (RegionDefinition): The spacetime region to sprinkle into.
+            density (float): The sprinkling density ρ (points per unit volume).
+            
+        Returns:
+            tuple: (coords, causal_matrix) where coords is an (N,d) array
+                   of spacetime coordinates and causal_matrix is the (N,N)
+                   causal ordering matrix.
+                   
+        References:
+            Eq. (8) and (9): Standard Poisson sprinkling procedure with 
+            N ~ Poisson(ρV) for density ρ and volume V, coordinate-independent 
+            and respecting spacetime causal structure.
+        """
         volume = region.get_volume(self)
         N = np.random.poisson(density * volume)
 
@@ -938,7 +1199,28 @@ class CurvedSpacetime(ABC):
 
 
 def is_causally_related_minkowski(p1: np.ndarray, p2: np.ndarray) -> bool:
-    """Checks if point p1 causally precedes point p2 in flat Minkowski space."""
+    """
+    Checks causal precedence in flat Minkowski spacetime.
+    
+    Implements the Minkowski causality condition:
+    p1 ≺ p2 ⟺ (Δt > 0) ∧ (Δt² - Δx² ≥ 0)
+    
+    where Δt = t₂ - t₁ and Δx² = |x₂ - x₁|². This corresponds to
+    timelike or null separation with correct time ordering.
+    
+    The metric signature is (-,+,+,+) with interval:
+    ds² = -dt² + dx²
+    
+    Args:
+        p1, p2 (np.ndarray): Points in Minkowski coordinates [t, x, y, z, ...].
+        
+    Returns:
+        bool: True if p1 causally precedes p2.
+        
+    References:
+        Standard Minkowski causality from special relativity.
+        Used as the baseline for causal set constructions in flat space.
+    """
     delta = p2 - p1
     delta_t = delta[0]
     if delta_t <= 0:
@@ -949,12 +1231,33 @@ def is_causally_related_minkowski(p1: np.ndarray, p2: np.ndarray) -> bool:
 
 class MinkowskiSpacetime(CurvedSpacetime):
     """
-    A concrete implementation for 2D Minkowski spacetime.
+    Concrete implementation of 2D Minkowski spacetime for causal set theory.
+    
+    Implements flat spacetime with metric:
+    ds² = -dt² + dx²
+    
+    This provides the standard testbed for causal set constructions, where
+    analytic results are available for comparison. The 2D case is particularly
+    tractable for Green function calculations and allows exact expressions
+    for many physical quantities.
+    
+    **Supported Region Types:**
+    - **MinkowskiDiamondRegion**: Causal diamond |t| + |x| < R
+    - **MinkowskiRectangleRegion**: Rectangular region [t₁,t₂] × [x₁,x₂]  
+    - **MinkowskiLightconeRegion**: Future lightcone from a spacetime point
+    
+    **Physical Applications:**
+    - Green function calculations (exact in 2D)
+    - Entanglement entropy studies
+    - Spectral dimension analysis
+    - Action calculations and path integrals
+    
+    The 2D restriction allows for exact analytical comparisons while
+    retaining the essential causal structure needed for physical calculations.
 
-    Supports different region types through RegionDefinition dataclasses:
-    - MinkowskiDiamondRegion: Causal diamond |t| + |x| < radius
-    - MinkowskiRectangleRegion: Rectangular region t_min < t < t_max, x_min < x < x_max
-    - MinkowskiLightconeRegion: Future lightcone from a point
+    References:
+        Standard 2D Minkowski spacetime. See textbooks on special relativity
+        and quantum field theory in curved spacetime for the continuum theory.
     """
 
     def __init__(self):
@@ -968,15 +1271,42 @@ class MinkowskiSpacetime(CurvedSpacetime):
 
 class DeSitterSpacetime(CurvedSpacetime):
     """
-    A concrete implementation for a 2D de Sitter spacetime static patch.
+    Concrete implementation of 2D de Sitter spacetime static patch.
+    
+    Implements the static patch of de Sitter space with metric:
+    ds² = -(1 - r²/α²) dt² + dr²/(1 - r²/α²) + r² dΩ²
+    
+    In 2D coordinates (τ,χ), this becomes:
+    ds² = α² dτ² / cosh²(χ) - α² dχ²
+    
+    where α is the de Sitter radius related to the cosmological constant
+    by Λ = (d-1)(d-2)/(2α²) in d dimensions.
+    
+    **Coordinate Systems:**
+    - **Native coordinates**: (τ, χ) covering the static patch
+    - **Embedded Minkowski**: (t, x) via conformal mapping
+    
+    **Conformal Mapping to Minkowski:**
+    The mapping to embedding Minkowski coordinates is:
+    - t = α sin(τ/α) / [cosh(χ) + cos(τ/α)]
+    - x = α sinh(χ) / [cosh(χ) + cos(τ/α)]
+    
+    **Supported Region Types:**
+    - **DeSitterStaticPatchRegion**: Full static patch within horizons
+    - **DeSitterDiamondRegion**: Causal diamond |τ/α ± χ| < R
+    
+    **Physical Applications:**
+    - Cosmological causal set models
+    - Horizon thermodynamics
+    - de Sitter entropy calculations
+    - Quantum field theory in expanding spacetime
 
-    Coordinates:
-      - Native de Sitter coords: (tau, chi)
-      - Embedded Minkowski coords: (t, x)
-
-    Supports different region types through RegionDefinition dataclasses:
-    - DeSitterStaticPatchRegion: Static patch with radius bounds
-    - DeSitterDiamondRegion: Causal diamond in global coordinates
+    Attributes:
+        alpha (float): The de Sitter radius parameter.
+        
+    References:
+        Standard de Sitter geometry. See Gibbons & Hawking (1977) for
+        the static patch description and thermal properties.
     """
 
     def __init__(self, alpha: float):
@@ -987,7 +1317,29 @@ class DeSitterSpacetime(CurvedSpacetime):
         self.alpha = alpha
 
     def ds_to_minkowski(self, ds_coords: np.ndarray) -> np.ndarray:
-        """Converts de Sitter (tau, chi) coords to Minkowski (t, x) coords."""
+        """
+        Converts de Sitter (τ,χ) coordinates to embedding Minkowski (t,x).
+        
+        Implements the conformal mapping:
+        t = α sin(τ/α) / [cosh(χ) + cos(τ/α)]  
+        x = α sinh(χ) / [cosh(χ) + cos(τ/α)]
+        
+        This maps the static patch of de Sitter space into a region of
+        2D Minkowski space, preserving the causal structure through the
+        conformal factor. The mapping is bijective from the static patch
+        to the interior of the diamond |t| + |x| < α.
+        
+        Args:
+            ds_coords (np.ndarray): de Sitter coordinates [τ, χ].
+            
+        Returns:
+            np.ndarray: Embedding Minkowski coordinates [t, x].
+            
+        References:
+            Concept in Sec. 2 (p. 7-8): Conformal mapping from de Sitter static 
+            patch to Minkowski space related to the Hawking-King-McCarthy-Malament 
+            (HKMM) theorem.
+        """
         tau, chi = ds_coords
         denominator = np.cosh(chi) + np.cos(tau / self.alpha)
         t = self.alpha * np.sin(tau / self.alpha) / denominator
@@ -996,7 +1348,28 @@ class DeSitterSpacetime(CurvedSpacetime):
 
     def is_causally_related(self, p1_ds: np.ndarray, p2_ds: np.ndarray) -> bool:
         """
-        Checks for causality using the conformal mapping to Minkowski space.
+        Checks causal precedence using conformal mapping to Minkowski space.
+        
+        The causal structure of de Sitter space is preserved under conformal
+        transformations. This method:
+        
+        1. Maps both de Sitter points (τ,χ) → (t,x) via conformal embedding
+        2. Applies Minkowski causality test in embedding space
+        3. Returns the causal precedence relation
+        
+        The conformal factor cancels in the causality test since we only
+        need the null cone structure, not the proper time intervals.
+        
+        Args:
+            p1_ds, p2_ds (np.ndarray): Points in de Sitter coordinates [τ, χ].
+            
+        Returns:
+            bool: True if p1_ds ≺ p2_ds in the de Sitter causal structure.
+            
+        References:
+            Theorem 1 (HKMM): The causal structure determines the conformal 
+            geometry. Uses conformal mapping to check causality in embedding 
+            Minkowski space.
         """
         # Convert both de Sitter points to their Minkowski equivalents
         p1_mink = self.ds_to_minkowski(p1_ds)
@@ -1013,17 +1386,41 @@ class DeSitterSpacetime(CurvedSpacetime):
 
 class CausalSet:
     """
-    A complete causal set with all derived properties.
+    Complete causal set with derived structures and physical calculations.
 
-    This class represents a causal set generated from a set of spacetime coordinates,
-    providing access to all the derived structures and physical calculations.
+    This class represents a discrete spacetime as a finite partially ordered
+    set, implementing the causal set approach to quantum gravity. From a set
+    of spacetime coordinates, it constructs all derived causal structures
+    and provides access to physical calculations.
+
+    **Core Structures:**
+    - **Causal Matrix C**: C[i,j] = 1 if x_j ≺ x_i (j in past of i)
+    - **Link Matrix L**: L[i,j] = 1 if x_j → x_i is a causal link  
+    - **Interval Matrix**: Number of elements in each causal interval
+
+    **Physical Calculations Available:**
+    - Green functions (massless and massive, 2D and 4D)
+    - Benincasa-Dowker discrete action
+    - Sorkin-Johnston vacuum and Wightman functions
+    - Spacetime entanglement entropy (SSEE)
+    - Spectral dimension via random walk analysis
+
+    **Theoretical Framework:**
+    The causal set represents discrete spacetime where:
+    1. **Order**: Causal precedence x ≺ y encodes the light cone structure
+    2. **Discreteness**: Finite cardinality provides UV regulation
+    3. **Lorentz invariance**: Achieved statistically in the continuum limit
 
     Attributes:
-        coords (np.ndarray): The spacetime coordinates of the causal set points
-        N (int): The number of points in the causal set
-        causal_matrix (np.ndarray): The causal matrix C[i,j] = 1 if j ≺ i
-        link_matrix (np.ndarray): The link matrix L[i,j] = 1 if j is a link to i
-        interval_sizes (np.ndarray): Matrix of interval sizes between points
+        coords (np.ndarray): Spacetime coordinates (N × d array)
+        N (int): Number of points in the causal set  
+        causal_matrix (np.ndarray): Causal ordering matrix C (N × N)
+        link_matrix (np.ndarray): Link matrix L (N × N)
+        interval_sizes (np.ndarray): Interval cardinality matrix (N × N)
+
+    References:
+        Fundamental reference: Bombelli, Lee, Meyer, Sorkin (1987).
+        For physical calculations: Sorkin (2007), Benincasa & Dowker (2010).
     """
 
     def __init__(self, coords: np.ndarray):
@@ -1058,19 +1455,37 @@ class CausalSet:
 
     def get_Green_function_2D(self) -> np.ndarray:
         """
-        Get the 2D massless scalar Green function.
+        Get the 2D massless scalar retarded Green function.
+        
+        Returns the discrete Green function:
+        K₀⁽²⁾(x,x') = (1/2) C(x,x')
+        
+        This is exact for causal sets in 2D Minkowski spacetime and
+        provides the retarded propagator for massless scalar fields.
 
         Returns:
-            np.ndarray: The 2D Green function matrix.
+            np.ndarray: The 2D Green function matrix K₀⁽²⁾.
+            
+        References:
+            Eq. (massless2d): Exact 2D massless Green function on causal sets.
         """
         return K0_2D(self.causal_matrix)
 
     def get_Green_function_4D(self) -> np.ndarray:
         """
-        Get the 4D massless scalar Green function.
+        Get the 4D massless scalar retarded Green function.
+        
+        Returns the discrete Green function:
+        K₀⁽⁴⁾(x,x') = (1/(2π√6)) L(x,x')
+        
+        This approximates the 4D massless retarded Green function in the
+        continuum limit ρc → ∞, where ρc is the sprinkling density.
 
         Returns:
-            np.ndarray: The 4D Green function matrix.
+            np.ndarray: The 4D Green function matrix K₀⁽⁴⁾.
+            
+        References:
+            Eq. (eq:massless4d): 4D massless Green function approximation.
         """
         return K0_4D(self.link_matrix)
 
@@ -1107,44 +1522,88 @@ class CausalSet:
 
     def calculate_BD_action(self) -> float:
         """
-        Calculate the Benincasa-Dowker action.
+        Calculate the Benincasa-Dowker discrete Einstein-Hilbert action.
+        
+        Computes the discrete action:
+        S(C) = Σₑ R(e)
+        
+        where R(e) is the discrete Ricci scalar at element e. This provides
+        a discrete analogue of the Einstein-Hilbert action for use in
+        causal set quantum gravity path integrals.
 
         Returns:
-            float: The total action for the causal set.
+            float: The total Benincasa-Dowker action S(C).
+            
+        References:
+            Benincasa & Dowker (2010): Discrete Einstein-Hilbert action.
+            The action reduces to the continuum result in appropriate limits.
         """
         return calculate_BD_action(self.causal_matrix)
 
     def get_iDelta(self) -> np.ndarray:
         """
-        Get the iΔ (Pauli-Jordan) operator.
+        Get the iΔ (Pauli-Jordan) operator for quantum field theory.
+        
+        Returns the discrete Pauli-Jordan function:
+        iΔ = i(G_R - G_A)
+        
+        This operator appears in the canonical commutation relations
+        [φ(x), φ(y)] = iΔ(x,y) and is fundamental for constructing
+        quantum field theory on causal sets.
 
         Returns:
             np.ndarray: The iΔ operator matrix.
+            
+        References:
+            Sorkin-Johnston vacuum construction using the discrete iΔ operator.
         """
         return get_iDelta_operator(self.causal_matrix)
 
     def get_SJ_vacuum(self) -> np.ndarray:
         """
         Get the Sorkin-Johnston vacuum Wightman function.
+        
+        Constructs the SJ vacuum state by minimizing the renormalized
+        expectation value ⟨T(ψ²)⟩ subject to Hadamard constraints.
+        
+        Returns the two-point function:
+        W_SJ(x,x') = ⟨0|φ(x)φ(x')|0⟩_SJ
 
         Returns:
             np.ndarray: The SJ vacuum Wightman function matrix.
+            
+        References:
+            Sorkin-Johnston vacuum: Preferred vacuum state for causal sets
+            that reduces to standard vacua in appropriate continuum limits.
         """
         iDelta = self.get_iDelta()
         return get_SJ_Wightman_function(iDelta)
 
     def calculate_entanglement_entropy(self, region_indices: list[int] | np.ndarray) -> float:
         """
-        Calculate spacetime entanglement entropy for a subregion.
+        Calculate spacetime entanglement entropy (SSEE) for a subregion.
+        
+        Computes the entanglement entropy:
+        S = -Σₖ [λₖ ln(λₖ) + (1-λₖ) ln(1-λₖ)]
+        
+        where λₖ are eigenvalues of the generalized eigenvalue problem
+        W_A |ψₖ⟩ = λₖ iΔ_A |ψₖ⟩ restricted to the subregion A.
+        
+        This provides a spacetime-based generalization of entanglement
+        entropy that reduces to standard results for spatial regions.
 
         Args:
-            region_indices: Indices of points forming the subregion.
+            region_indices: Indices of points forming the subregion A.
 
         Returns:
-            float: The entanglement entropy of the subregion.
+            float: The entanglement entropy S of the subregion.
 
         Raises:
             ValueError: If region_indices contains invalid indices.
+            
+        References:
+            Spacetime entanglement entropy following the causal set 
+            generalization of the Ryu-Takayanagi proposal.
         """
         region_indices = np.asarray(region_indices)
         if region_indices.size > 0:
@@ -1161,16 +1620,27 @@ class CausalSet:
 
     def calculate_spectral_dimension(self, max_steps: int | None = None) -> float:
         """
-        Calculate the spectral dimension via random walk analysis.
+        Calculate spectral dimension via discrete random walk analysis.
+        
+        Computes the scaling exponent:
+        d_s = -2 × d(ln⟨P_σ⟩)/d(ln σ)
+        
+        where ⟨P_σ⟩ is the average return probability after σ random walk steps.
+        The spectral dimension characterizes the effective dimensionality
+        as probed by diffusion processes on the discrete geometry.
 
         Args:
-            max_steps: Maximum number of random walk steps. If None, uses N//2.
+            max_steps: Maximum random walk steps. If None, uses N//2.
 
         Returns:
-            float: The calculated spectral dimension.
+            float: The calculated spectral dimension d_s.
 
         Raises:
             ValueError: If max_steps is non-positive.
+            
+        References:
+            Spectral dimension methodology for discrete geometries.
+            For continuum manifolds, d_s equals the topological dimension.
         """
         if max_steps is None:
             max_steps = max(10, self.N // 2)

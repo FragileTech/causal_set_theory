@@ -11,5 +11,5 @@ wheels/
 _build/
 *.Identifier
 .idea
-conf.py
+docs/.py
 docs/requirements.txt
